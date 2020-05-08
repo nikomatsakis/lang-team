@@ -32,9 +32,15 @@ impl Trait for Type {
 }
 
 trait TraitDefinition {
+    type Bar: 
+        PartialEq<impl Trait>; /* where clause on associated type definition */
+
     fn foo(
         arg: impl Trait /* Trait method argument position */
-    ) -> impl Trait; /* Trait method return position */
+    ) -> impl Trait /* Trait method return position */
+    where
+        T: PartialEq<impl Trait> /* where clause position, trait method */
+    ;
 }
 
 const MY_CONSTANT: impl Trait = ...;
@@ -43,6 +49,11 @@ static MY_STATIC: impl Trait = ...;
 
 impl Trait for impl Type { /* Impl parameter position */
 }
+
+struct Foo<T> {
+    x: impl Debug /* Struct field position */
+}
+
 ```
 
 ## The master table

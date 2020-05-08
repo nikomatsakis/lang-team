@@ -208,6 +208,10 @@ What should `fn foo(x: impl Trait<'_>)` mean ([#49287])? Does it mean
 
 Note that this *is* settled for `impl FnOnce(&u32)`.
 
+Adopting the principles proposed above suggests it means the former, `fn foo<'a>(x: impl Trait<'a>)`, because that is the innermost binding scope for `<>`.
+
+I think the same applies to where clauses like `where T: PartialEq<impl Trait<'_>>` and so forth.
+
 ### Interaction of `impl Trait` within `Fn` sugar ([#45994])
 
 Do we permit `fn(impl Trait)`, `dyn Fn(impl Trait)`, or `dyn Fn() -> impl Trait`? ([#45994]) If so, what does it mean?

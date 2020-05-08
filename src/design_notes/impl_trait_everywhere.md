@@ -54,6 +54,12 @@ struct Foo<T> {
     x: impl Debug /* Struct field position */
 }
 
+let x = |
+    arg: impl Debug, /* closure argument position */
+| -> impl Debug { /* closure return position */
+    ...
+};
+
 ```
 
 ## The master table

@@ -6,61 +6,42 @@
 # Summary
 [summary]: #summary
 
-* Introduce a new step, a **proposal**, that is taken before an RFC is created.
-  **Proposals** are created by opening a pull request on the lang-team
-  repository, and they are designed to be relatively short and easy to write,
-  with a focus on motivation and a de-emphasis on the details of the solution.
+* Introduce a new step, the **proposal**, that is taken before an RFC is created. 
+    * **Proposals** are created by opening a pull request on the lang-team repository, and they are designed to be relatively short and easy to write, with a focus on motivation and a de-emphasis on the details of the solution.
   * A Zulip topic is also created to discuss the proposal.
-* If somebody in the lang team likes the proposal and has available bandwidth,
-  they will opt to serve as a **liaison**. The liaison will work with you to see
-  the proposal move forward.
+* If somebody in the lang team likes the proposal and has available bandwidth, they will opt to serve as a **liaison**. The liaison will work with you to see the proposal move forward.
   * Depending on their scope, a proposal may go forward in one of two ways:
     * For small changes, simply create a PR.
     * For larger changes that require an RFC -- or even multiple RFCs -- create a
       [project group] to jointly work on drafting it.
-* To help in tracking what the lang-team is up to, as well as the set of
-  bandwidth available for each member, we will track (and make publicly visible)
+* To help in tracking what the lang-team is up to, as well as the set of bandwidth available for each member, we will track (and make publicly visible)
   * Active project groups, grouped by liasion
   * Topics of interest that each member may wish to pursue
-  * A "short list" of proposals that the liaison liked and would like to pursue, but
-    only after some other projects in their queue have completed
-* Finally, if there is no activity on a proposal for a fixed amount of time,
-  then it will be merged into a directory of "draft proposals".
-  * Proposals from this directory can be resurrected later if there are new ideas, or
-    if there is a liaison who has available bandwidth.
-* In some cases, we may opt to actively decline a proposal, in which case we
-  will give an explanation for why we do not wish to take that direction or try
-  to solve that problem.
+  * A "short list" of proposals that the liaison liked and would like to pursue, but only after some other projects in their queue have completed
+* Finally, if there is no activity on a proposal for a fixed amount of time, then it will be merged into a directory of "draft proposals".
+  * Proposals from this directory can be resurrected later if there are new ideas, or if there is a liaison who has available bandwidth.
+* In some cases, we may opt to actively decline a proposal, in which case we will give an explanation for why we do not wish to take that direction or try to solve that problem.
 
 In order to transition to this system:
 
-* We will tag all existing lang-team RFCs as "needs proposal" and block
-  the threads.
+* We will tag all existing lang-team RFCs as "needs proposal" and block the threads.
 * We encourage authors of all RFCs to create proposals.
-* Presuming we are happy with the new system, at some point we will announce a
-  time when existing "needs proposal" RFCs will be closed (or merged as draft
-  proposals).
+* Presuming we are happy with the new system, at some point we will announce a time when existing "needs proposal" RFCs will be closed (or merged as draft proposals).
 
 [project group]: https://github.com/rust-lang/rfcs/pull/2856
 
 # Motivation
 [motivation]: #motivation
 
-The RFC system is one of Rust's great strengths, but we have found over time
-that there are also some shortcomings. The hope is that the "proposal" process
-will allow us to better focus our energies and create a more collaborative
-environment. Some of the benefits we foresee are as follows.
+The RFC system is one of Rust's great strengths, but we have found over time that there are also some shortcomings. The hope is that the "proposal" process will allow us to better focus our energies and create a more collaborative environment. Some of the benefits we foresee are as follows.
 
 ## More collaboration throughout the design process
 
-Many people have reported that they have ideas that they would like to pursue,
-but that they find the RFC process intimidating. For example, they may lack the
-detailed knowledge of Rust required to complete the drafting of the RFC. 
+Many people have reported that they have ideas that they would like to pursue, but that they find the RFC process intimidating. For example, they may lack the detailed knowledge of Rust required to complete the drafting of the RFC. 
 
 Another common problem is that the "RFC discussion thread" 
 
-Under the proposal system, people are able to bring ideas at an early stage and
-get feedback.
+Under the proposal system, people are able to bring ideas at an early stage and get feedback.
 
 ## More focus 
 

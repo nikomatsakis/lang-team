@@ -39,15 +39,15 @@ The RFC system is one of Rust's great strengths, but we have found over time tha
 
 Many people have reported that they have ideas that they would like to pursue, but that they find the RFC process intimidating. For example, they may lack the detailed knowledge of Rust required to complete the drafting of the RFC. 
 
-Another common problem is that the "RFC discussion thread" 
+Under the proposal system, people are able to bring ideas at an early stage and get feedback. If the idea is something we'd like to see happen, then a group of people can gather to push the RFC through to completion. The lang-team liaison can provide suggestions and keep the rest of the lang-team updated, so that if there are concerns, they are raised early.
 
-Under the proposal system, people are able to bring ideas at an early stage and get feedback.
+## More focus on RFCs that reflect current priorities
 
-## More focus 
+The RFC repository currently contains far too many RFCs for anyone to keep up with -- especially members of the lang-team. Some of these RFCs are unlikely to be accepted, either because the ideas are too early stage, or because they don't align well with the project's current goals. Other RFCs may be very solid indeed, but they can be lost in the noise. 
 
+We expect that after this change, the only RFCs that will be open are those that have a lang-team liaison and which have already seen some amount of iteration in a project group. This makes the RFC repository a good place to monitor for ideas that have traction.
 
-
-Why are we doing this? What use cases does it support? What is the expected outcome?
+Meanwhile, the lang-team proposals directory will still contain quite a mix of ideas. However, unlike the RFC repository, we do not intend to allow proposals to stay open indefinitely. Proposals that do not receive a liaison (or have active discussion) will be merged into a draft directory, possibly to be resurrected later (but, regardless, serving as "design notes" fur possible future reference).
 
 # Guide-level explanation
 [guide-level-explanation]: #guide-level-explanation

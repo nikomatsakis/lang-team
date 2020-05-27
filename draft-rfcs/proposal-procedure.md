@@ -6,28 +6,20 @@
 # Summary
 [summary]: #summary
 
-* Introduce a new step, the **proposal**, that is taken before an RFC is created. 
-    * **Proposals** are created by opening a pull request on the lang-team repository, and they are designed to be relatively short and easy to write, with a focus on motivation and a de-emphasis on the details of the solution.
-  * A Zulip topic is also created to discuss the proposal.
-* If somebody in the lang team likes the proposal and has available bandwidth, they will opt to serve as a **liaison**. The liaison will work with you to see the proposal move forward.
-  * Depending on their scope, a proposal may go forward in one of two ways:
-    * For small changes, simply create a PR.
-    * For larger changes that require an RFC -- or even multiple RFCs -- create a
-      [project group] to jointly work on drafting it.
+* Introduce a new step, a **major change proposal** (MCP), that is taken before an RFC is created. 
+    * **Major change proposals** are created by opening an issue on the lang-team repository. The issue includes a short summary of an idea with a focus on motivation and a de-emphasis on the details of the solution.
+    * A Zulip topic is also created to discuss the proposal.
+* MCPs can be resolve in a few ways:
+    * If the proposal is small and approved, then a PR against rust-lang/rust can be created and FCP'd.
+    * If the proposal is larger, and there is a willing lang-team liaison, then a project group can be chartered to draft an RFC.
+    * Finally, the proposal may be closed, along with an explanation as to why. This may simply be that there is no available bandwidth to move the proposal forward right now.
 * To help in tracking what the lang-team is up to, as well as the set of bandwidth available for each member, we will track (and make publicly visible)
-  * Active project groups, grouped by liasion
-  * Topics of interest that each member may wish to pursue
-  * A "short list" of proposals that the liaison liked and would like to pursue, but only after some other projects in their queue have completed
-* Finally, if there is no activity on a proposal for a fixed amount of time, then it will be merged into a directory of "draft proposals".
-  * Proposals from this directory can be resurrected later if there are new ideas, or if there is a liaison who has available bandwidth.
-* In some cases, we may opt to actively decline a proposal, in which case we will give an explanation for why we do not wish to take that direction or try to solve that problem.
+    * Active project groups, grouped by liasion
+    * Topics of interest that each member may wish to pursue
+    * A "short list" of proposals that the liaison liked and would like to pursue, but only after some other projects in their queue have completed
+    * A [design notes] section that can be used to log exploration or discussions that yielded interesting results but didn't ultimately lead to a project group at this time.
 
-In order to transition to this system:
-
-* We will tag all existing lang-team RFCs as "needs proposal" and block the threads.
-* We encourage authors of all RFCs to create proposals.
-* Presuming we are happy with the new system, at some point we will announce a time when existing "needs proposal" RFCs will be closed (or merged as draft proposals).
-
+[design notes]: https://lang-team.rust-lang.org/design_notes.html
 [project group]: https://github.com/rust-lang/rfcs/pull/2856
 
 # Motivation
@@ -70,59 +62,62 @@ This should help with the problem that longer RFCs threads can be quite hard to 
 
 Hello! If you would like propose a change to the Rust language, you've come to the right place. The process can be summarized as follows:
 
-* Create a **lang-team proposal** -- this should summarize your motivations and sketch out some of the details of your idea. You don't have to have everything figured out at this stage, and it's more important to emphasize the problems you are solving and why they're important than the nitty gritty details of how to solve them.
-    * When you create a proposal, we will also automatically make a Zulip stream for discussion.
-* If the proposal is accepted, then a **lang team liaison** may opt to work with you.
-    * If the proposal is simple enough, then the liaison may suggest you go straight to implementation. In this case, you can create a PR against the rust-lang repository.
-    * Otherwise, we'll create a **project group** to start working on the design. This may first involve some amount of iteration on the design space and will eventually culminate in drafting one or more RFCs.
-* Most proposals are not accepted. In that case, your proposal will be merged into a "draft proposals" directory. That can occur for a number of reasons:
+* Open a **major change proposal** (MCP) issue on the lang-team repository
+    * The issue should summarize the motivation and sketch out some details of your idea.
+    * You don't have to have everything figured out at this stage, and it's more important to emphasize the problems you are solving and why they're important than the nitty gritty details of how to solve them.
+    * When you create a proposal, we will also automatically make a Zulip stream for discussion. The issue thread is reserved for summaries, announcements, or procedural updates.
+* If the MCP is simple enough, the team may direct you to go straight to implementation.
+    * In that case, you can create a PR against the rust-lang/rust repository.
+* Otherwise, the proposal will require chartering a project group and drafting an RFC. This step requires a **lang-team liaison** who is willing and able to help the idea move forward.
+    * The first step will be chartering a project group, which the liaison will help you with.
+    * The charter is very similar to the MCP itself, and describes the motivation and other considerations that may have come up.
+* Of course, many proposals will not be accepted. This can occur for a numbe of reasons:
     * There are no lang team members who have available bandwidth to serve as a liaison right now.
     * The problem being solved doesn't seem important enough or is not a match for Rust's current priorities.
     * The proposal has flaws in its design that don't seem like they can be solved.
-* Whenever possible, we will try to comment on the proposal 
 
-## Forming a project group
+## Reasons to accept or decline a proposal
 
-XXX -- let's talk a bit about procedure here, the drafting of a charter, and especially when we want to have an RFC and when we don't. I think that for some larger projects, such as inline assembly or embarking on something like async await, an RFC to "charter" the group feels potentially appropriate. Or at least I am concerned that we don't have a sufficiently "public" place to host discussion of that kind, if we stick solely to proposals on the lang-team repo and Zulip threads.
+In the proposal stage, we are looking for proposals that have
 
-## Diagram
+* high motivation -- this is a good fit for the project's priorities
+* available bandwidth -- there are lang team members who want to work on it as well as (if appropriate) members of other Rust teams
 
-```mermaid
-graph TD
-    HaveGoodIdea[Have a good idea]
-    FileLangProposal[File proposal issue<br>on lang-team repository]
-    RejectWithExplanation[Proposal closed,<br>with an explanation of why]
-    OpenPR[Open a rust-lang/rust PR<br>implementing the idea]
-    PRIsApproved[PR is approved<br>by the lang team]
-    MergePR[PR is merged<br>by compiler team]
-    ApprovedIssue[Add issue to backlog<br>with liaison labels]
-    CharterProjectGroup[Charter a project group]
-    IterativelyDevelopRFCs["Iteratively develop RFC(s)"]
+The focus is primarily on the motivation and secondarily on the solution(s) proposed. If we feel that the problem is worth solving, but the solutions have flaws that seem surmountable, it still makes sense to accept the proposal.
 
-    HaveGoodIdea-- Idea seems ready -->FileLangProposal
-    HaveGoodIdea-- iterate on internals/zulip/etc -->HaveGoodIdea
+Reasons to decline a proposal, or to oppose the creation of a project group, include the following:
 
-    LangTeamSolicitsProposals[Language team list of<br>proposals we'd like to see] -- An intrepid volunteer! --> FileLangProposal
+* The team has grave doubts about the feasibility of solving this problem.
+    * When possible, though, it is better not to block a proposal on technical grounds. Instead, those grounds can be noted as something that must be resolved by the project group during the design process.
+* There isn't available bandwidth to tackle the problem right now.
+    * In particular, it may require input from particular members who have the requisite expertise, and they may be too busy with other things.
+* The proposed solutions disproportionate to the scale of the problem.
+    * For example, the solutions may be too invasive or they will likely be too much work to implement, and we can't really envision solutions that would 
+* The proposal is incomplete or is proposing a direction that seems wrong.
+    * The team may ask for the proposal to include more potential solutions, or to be rewritten to emphasize a particular direction that we think would be better. If the author of the proposal disagrees with that direction, they should make the case for the existing solutions, but of course the proposal may not ultimately be accepted if the lang team doesn't find that case persuasive
 
-    FileLangProposal-- Concept declined by lang team -->RejectWithExplanation
-    FileLangProposal-- Idea is simple<br>and approved -->OpenPR
+## Simple MCPs can be implemented directly
 
-    OpenPR-- Lang team review -->PRIsApproved
-    PRIsApproved-- Compiler Team review -->MergePR
+In some cases, MCPs are sufficiently simple that we can just move straight to implementation. In this case, someone from the lang-team will leave a command indicating that we'd be happy to see a PR implementing this proposal and close the issue, and you can go ahead and create a PR against the rust-lang/rust repository directly. In that PR, you can cc the lang team and we will `fcp merge` the PR to make the final, official decision.
 
-    FileLangProposal-- Idea is complex but approved<br>and lang team liaisons volunteer -->ApprovedIssue
-    ApprovedIssue-- Lang team liaison has time now -->CharterProjectGroup
-    ApprovedIssue-- Lang team liaisons are <br>busy with other things -->ApprovedIssue
+## Chartering a project group
 
-    CharterProjectGroup --> IterativelyDevelopRFCs
-    IterativelyDevelopRFCs -- present to lang team --> IterativelyDevelopRFCs
-    IterativelyDevelopRFCs -- RFC accepted --> OpenPRWithGroup[Open a rust-lang/rust PR<br>Project group supports implementers<br>Project group reviews and tests PRs]
-```
+For more complex MCPs, we will instead charter a [project group]. The goal of the group is to create an RFC. Chartering a project group is a lightweight process and a group doesn't necessarily imply a lot of people, it might just be one or two. But every project group always includs a liaison with the lang team. The job of a liaison is to help move the idea through the process. In some cases, they may actively help with the RFC and discussion in other cases they serve more as a bridge.
+
+[project group]: https://github.com/rust-lang/rfcs/pull/2856
+
+Mechanically, chartering a project group involves creating a PR against the rust-lang/lang-team repository with the charter text. The liaison will initiate an `rfcbot fcp merge` command, so that lang-team members can check their boxes to indicate they agree with chartering the new project group. This also initiates a Final Comment Period that is advertised to the broader community.
+
+Writing a charter is not meant to be a big job. Often, it will suffice to copy over the MCP itself, perhaps with some light edits. However, in cases where there is a lot of discussion, charters should summarize the key points made during that discussion, and hence they can in some rare cases be longer.
+
+## Declining a proposal
+
+Proposals that are not accepted are called "declined". Proposals may be declined for many reasons and it does not mean that the proposal is not a good idea. Before closing issues, we try to leave comments laying out the reasoning behind the decision, but we also close issues in an automated fashion if they have not received comments from lang-team members after a certain period of time (this indicates a general lack of bandwidth to take on the proposal). Like any issue, closing an issue doesn't mean that that the proposal can never be re-opened, particularly if circumstances change in some way that invalidates the reasoning behind closing in the first place.
 
 # Reference-level explanation
 [reference-level-explanation]: #reference-level-explanation
 
-## Template for lang-team proposals
+## Template for lang-team MCPs
 
 We will create a template for lang-team proposals that has the following sections:
 
@@ -135,22 +130,34 @@ We will create a template for lang-team proposals that has the following section
 * Solution sketches
     * sketch of one or more ways to solve the problem
 
+The intent is that proposals do not have to be exhaustively researched. They should contain enough details to understand the idea at a high level, but they don't have to have all the details worked out yet.
+
+The intent is also that proposals will largely be accepted or declined "as is" -- if major changes are required, it is better to close and open a fresh proposal.
+
 ## Automation
 
-We will have a bot that monitors proposals for activity. The bot will take the following automated actions:
+We will have a bot that monitors proposals for activity. The bot will take the following automated actions (though the details here are subject to change as we experiment).
 
-* When a PR is opened that creates a single file or root directory in the "draft proposals" directory, it will tag it as "draft proposal" and create a Zulip stream.
-* Lang team members may write a `@rustbot liaison` command to indicate their willingness to serve as liaison.
-* After N days in which no lang-team members have made comments on the proposal PR, the bot will post a comment, both on the proposal and on the Zulip stream, putting the proposal into FCP for automatic close due to inactivity.
-* After the FCP expires, if no comment from a lang-team member has been made, the proposal is marked as "draft" and the comment thread is locked.
-    * A human will briefly review the PR for inappropriate language or other such things and merge it.
+* When an issue is opened with the Major Change Proposal template, it will be tagged as a "draft proposal".
+    * An automated bot will create a dedicated Zulip topic in the `#t-lang/major changes` stream (same as the compile team process).
+* (Optional) After N days without a comment from a lang-team member, an automated bot will indicate that the issue will be closed soon due to inactivity. After N more days, the issue is autoclosed.
 
+## Transitioning to the new system
+
+There are a number of existing RFCs, many of which have received quite a lot of work, that have to be transitioned to the new system. We do not want to just "auto close" all of those RFCs because in many cases they represent a significant amount of effort and "near consensus".
+
+Our plan is to first create the new system and encourage folks to create proposals who wish to. Presuming our experience with the new system is positive, and once we have "ironed out the kinks", we will begin a process to port over the existing RFCs. 
+
+The precise plans will be determined then, but they will likely include:
+
+* A review of the RFCs to try and find those lang-team liaisons where possible.
+* Announcing a date when we will complete the migate and posting a notice on existing RFCs. This notice would encourage others to try out the new process. After that date expires, existing RFCs would be closed.
+* An alternative might be to "auto-migrate" all existing proposals via automation to create proposals, perhaps spaced out in groups.
 
 # Drawbacks
 [drawbacks]: #drawbacks
 
-* More procedure
-* 
+* There is an additional step to prepare an RFC, which indicates more overhead and procedures to be followed.
 
 # Rationale and alternatives
 [rationale-and-alternatives]: #rationale-and-alternatives
@@ -161,37 +168,34 @@ We will have a bot that monitors proposals for activity. The bot will take the f
 * We could try this for all teams at once.
     * Why? Uniform process is good.
     * Why not? Not sure how it will work, and each team has somewhat different needs.
+* We could have MCPs be opened as a PR
+    * In earlier versions of this RFC, we made the MCP proposas be a PR against the lang-team repo that contained the proposal.
+    * The idea here was that it would be useful to have the text of the proposal as something we can merge as "not accepted" in order to have a better record.
+    * We ultimately moved to an issue for a few reasons:
+        * YAGNI: The tooling and workflow seemed more esoteric. The idea of opening first to a "not accepted" directory and then merging just felt a bit "unexpected" and harder to explain and envision.
+        * It is hard to collaborate actively on a PR; a hackmd or other such document is better for this purpose.
+        * Capturing the initial version of a proposal *but not the associated discussion thread* is pretty incomplete. There's a decent chance that the proposal didn't go forward because of critiques or concerns that surfaced early on and people could easily overlook that.
+        * The current workflow does allow us to capture and explicitly choose to postpone proposals where not needed.
+* We could require chartering project groups to be done as an RFC
+    * In the past, we used RFCs to charter project groups, but the sense is that this process was a bit more heavy-weight than was really necessary, and that it would be better to reserve RFCs for actual proposals.
 
 # Prior art
 [prior-art]: #prior-art
 
-* TC39 Champion Process
-* ...?
+The compiler-team has **[major change proposals]** as well and they operate in a similar way: a lightweight proposal is prepared that must be seconded, and that proposal can either lead to a PR (or series of PRs) or a project group and even RFCs. The major difference is that language team changes are much more likely to wind up as project groups.
+
+[major change proposals]: https://forge.rust-lang.org/compiler/mcp.html
+
+This proposal grew out of a long-running conversation on integrating [staging into our RFC process][staging]. It has echoes of the [TC39 process](https://tc39.es/process-document/). an MCP corresponds roughly to TC39's "Stage 1 proposal", and the TC39 notion of a "champion" corresponds to our term of "liaison".
+
+[staging]: http://smallcultfollowing.com/babysteps/blog/2018/06/20/proposal-for-a-staged-rfc-process/
 
 # Unresolved questions
 [unresolved-questions]: #unresolved-questions
 
-- What parts of the design do you expect to resolve through the RFC process before this gets merged?
-- What parts of the design do you expect to resolve through the implementation of this feature before stabilization?
-- What related issues do you consider out of scope for this RFC that could be addressed in the future independently of the solution that comes out of this RFC?
+* None at this time.
 
 # Future possibilities
 [future-possibilities]: #future-possibilities
 
-Think about what the natural extension and evolution of your proposal would
-be and how it would affect the language and project as a whole in a holistic
-way. Try to use this section as a tool to more fully consider all possible
-interactions with the project and language in your proposal.
-Also consider how the this all fits into the roadmap for the project
-and of the relevant sub-team.
-
-This is also a good place to "dump ideas", if they are out of scope for the
-RFC you are writing but otherwise related.
-
-If you have tried and cannot think of any future possibilities,
-you may simply state that you cannot think of anything.
-
-Note that having something written down in the future-possibilities section
-is not a reason to accept the current or a future RFC; such notes should be
-in the section on motivation or rationale in this or subsequent RFCs.
-The section merely provides additional information.
+We may wish to add additional steps towards "staged RFCs" as a follow-up to this work or to refine our process around project groups.

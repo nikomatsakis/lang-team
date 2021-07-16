@@ -1,0 +1,1835 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Rust Language Design Team</title>
+                <meta name="robots" content="noindex" />
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item "><a href="initiatives.html"><strong aria-hidden="true">2.</strong> Initiatives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/priorities.html"><strong aria-hidden="true">2.1.</strong> Current priorities</a></li><li class="chapter-item "><a href="initiatives/process.html"><strong aria-hidden="true">2.2.</strong> Process</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/process/roles.html"><strong aria-hidden="true">2.2.1.</strong> Roles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/process/roles/owner.html"><strong aria-hidden="true">2.2.1.1.</strong> Owner</a></li><li class="chapter-item "><a href="initiatives/process/roles/liaison.html"><strong aria-hidden="true">2.2.1.2.</strong> Liaison</a></li></ol></li><li class="chapter-item "><a href="initiatives/process/stages.html"><strong aria-hidden="true">2.2.2.</strong> Stages</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/process/stages/proposal.html"><strong aria-hidden="true">2.2.2.1.</strong> Proposal</a></li><li class="chapter-item "><a href="initiatives/process/stages/experimental.html"><strong aria-hidden="true">2.2.2.2.</strong> Experimental</a></li><li class="chapter-item "><a href="initiatives/process/stages/development.html"><strong aria-hidden="true">2.2.2.3.</strong> Development</a></li><li class="chapter-item "><a href="initiatives/process/stages/feature_complete.html"><strong aria-hidden="true">2.2.2.4.</strong> Feature complete</a></li><li class="chapter-item "><a href="initiatives/process/stages/stabilized.html"><strong aria-hidden="true">2.2.2.5.</strong> Stabilized</a></li><li class="chapter-item "><a href="initiatives/process/stages/inactive.html"><strong aria-hidden="true">2.2.2.6.</strong> Inactive</a></li></ol></li></ol></li><li class="chapter-item "><a href="initiatives/faq.html"><strong aria-hidden="true">2.3.</strong> FAQ</a></li></ol></li><li class="chapter-item "><a href="how_to.html"><strong aria-hidden="true">3.</strong> Lang team &quot;how to&quot; guide</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="how_to/nominate.html"><strong aria-hidden="true">3.1.</strong> Nominate an issue</a></li><li class="chapter-item "><a href="how_to/propose.html"><strong aria-hidden="true">3.2.</strong> Propose an initiative</a></li><li class="chapter-item "><a href="how_to/design_meeting.html"><strong aria-hidden="true">3.3.</strong> Request a design meeting</a></li></ol></li><li class="chapter-item "><a href="chat_platform.html"><strong aria-hidden="true">4.</strong> Chat platform</a></li><li class="chapter-item "><a href="calendar.html"><strong aria-hidden="true">5.</strong> Calendar</a></li><li class="chapter-item "><a href="meetings.html"><strong aria-hidden="true">6.</strong> Meetings</a></li><li class="chapter-item "><a href="design_notes.html"><strong aria-hidden="true">7.</strong> Design notes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="design_notes/int_literal_as_float.html"><strong aria-hidden="true">7.1.</strong> Allowing integer literals like 1 to be inferred to floating point</a></li><li class="chapter-item "><a href="design_notes/general_coroutines.html"><strong aria-hidden="true">7.2.</strong> Generalizing coroutines</a></li><li class="chapter-item "><a href="design_notes/fn_type_trait_impls.html"><strong aria-hidden="true">7.3.</strong> Extending the capabilities of compiler-generated function types</a></li><li class="chapter-item "><a href="design_notes/auto_traits.html"><strong aria-hidden="true">7.4.</strong> Auto traits</a></li><li class="chapter-item "><a href="design_notes/eager_drop.html"><strong aria-hidden="true">7.5.</strong> Eager drop</a></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">The Rust Language Design Team</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="welcome"><a class="header" href="#welcome">Welcome</a></h1>
+<p>Welcome to the repository for the Rust Language Design Team.  This
+page stores our administrative information, meeting minutes, as well
+as some amount of design constraints. It's also still a
+work-in-progress (insert omnipresent mid 90s logo for under
+construction here).</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="initiatives"><a class="header" href="#initiatives">Initiatives</a></h1>
+<p>A lang team <strong>initiative</strong> is some active effort with a clear goal or deliverable.
+Typically initiatives are changes to the language, but they could also be documentation, specifications, or something internal to the lang team.</p>
+<h2 id="proposed-initiatives"><a class="header" href="#proposed-initiatives">Proposed initiatives</a></h2>
+<p>You can see the <a href="https://github.com/rust-lang/lang-team/issues?q=is%3Aissue+is%3Aopen+label%3Amajor-change">currently proposed initiatives</a> on Github.</p>
+<h2 id="active-initiatives"><a class="header" href="#active-initiatives">Active initiatives</a></h2>
+<p>You can see the active initiatives, and their state, on the lang team <a href="https://github.com/rust-lang/lang-team/projects/2">project board</a>.</p>
+<h3 id="learning-more-about-an-active-initiative"><a class="header" href="#learning-more-about-an-active-initiative">Learning more about an active initiative</a></h3>
+<p>Each initiative has a tracking issue that describes its state in more detail along with regular updates. The tracking issue also identifies two key people for the intiative:</p>
+<ul>
+<li>The <a href="initiatives/roles/owner.html">owner</a>, who drives the design.</li>
+<li>The <a href="initiatives/roles/liaison.html">liaison</a>, who synchronizes with the lang team and helps resolve thorny questions.</li>
+</ul>
+<p>If you have questions, the issue also identifies the <a href="./chat_platform.html">Zulip</a> stream where conversation is taking place. If you look at the comments of the issue, you may also find requests for help or other forms of participation.</p>
+<h2 id="how-does-one-propose-a-new-initiative"><a class="header" href="#how-does-one-propose-a-new-initiative">How does one propose a new initiative?</a></h2>
+<p>Read more in the <a href="./initiatives/process.html">process</a> page!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="priorities"><a class="header" href="#priorities">Priorities</a></h1>
+<p>This page describes the current lang team priorities and explains
+their motivations. This page is typically updated as part of the
+yearly Rust roadmap process. They are derived from a combination of
+the Rust survey results, feedback from users, and other soruces. When
+new project proposals are created, they can cite priorities listed in
+this page.</p>
+<p>Each priority also lists lang-team members who typically prefer to
+liaison for issues in this area. This can give you an idea of who you
+might reach out to if you wish to discuss a project proposal.</p>
+<p><strong>Last updated:</strong> 2020-07-28</p>
+<ul>
+<li>Async I/O
+<ul>
+<li><strong>What?</strong> Continued improvements with ergonomics and productivity related to Async I/O.</li>
+<li><strong>Why?</strong> Shows up heavily on the survey, this is an obvious area where a lot of Rust developers are working.</li>
+<li><strong>Who:</strong> <a href="https://github.com/nikomatsakis">nikomatsakis</a>, <a href="https://github.com/withoutboats">withoutboats</a>, <a href="https://github.com/cramertj">cramertj</a></li>
+</ul>
+</li>
+<li>C Parity, interop, and embedded -- these often overlap in 'low level capabilities'
+<ul>
+<li><strong>What</strong>? Extending Rust's low-level capabilities to do &quot;things otherwise only possible in C or assembly&quot;, as well as enabling smooth, ergonomic FFI between other languages and Rust.</li>
+<li><strong>Why?</strong> Embedded is a large factor in the survey.</li>
+<li><strong>Why?</strong> Our ability to act like &quot;native C&quot; is a differentiating capability for Rust. We've seen a lot of traction integrating into big companies on this basis, as a C++ replacement. It's clear that doing this requires the ability to do piecewise adoption.</li>
+<li><strong>Who:</strong> <a href="https://github.com/joshtriplett">joshtriplett</a></li>
+</ul>
+</li>
+<li>Const generics and constant evaluation
+<ul>
+<li><strong>What?</strong> Supporting </li>
+<li><strong>Why?</strong> Heavily requested feature and important for key areas.</li>
+<li><strong>Who:</strong> <a href="https://github.com/nikomatsakis">nikomatsakis</a>, <a href="https://github.com/withoutboats">withoutboats</a></li>
+</ul>
+</li>
+<li>Trait and type system extensions
+<ul>
+<li><strong>What?</strong> Specifically impl Trait, GATs, and specialization</li>
+<li><strong>Why?</strong> Long-standing areas that affect a lot of domains, including async</li>
+<li><strong>Who:</strong> <a href="https://github.com/nikomatsakis">nikomatsakis</a></li>
+</ul>
+</li>
+<li>Error handling
+<ul>
+<li><strong>What?</strong> Combination of <a href="https://blog.yoshuawuyts.com/error-handling-survey/#conclusion">library related improvements</a> that consolidate &quot;best practices&quot; into standard library, documentation to describe how it works, as well as possible language improvements to leverage those changes (try blocks, <code>yeet</code>/<code>throw</code> keyword, etc).</li>
+<li><strong>Why?</strong> Cross-cutting productivity concern, and a persistent problem that makes working with Rust code more difficult than it should be.</li>
+<li><strong>Why?</strong> Anecdotally, something that comes up for a lot of people (see e.g. <a href="https://www.ncameron.org/blog/rust-in-2020-one-more-thing/">nrc's #rust2020 blog post</a>)</li>
+<li><strong>Who:</strong> <a href="https://github.com/withoutboats">withoutboats</a>, <a href="https://github.com/joshtriplett">joshtriplett</a></li>
+</ul>
+</li>
+<li>Borrow checker expressiveness and other lifetime issues
+<ul>
+<li><strong>What?</strong> Think Polonius, RFC 2229, RFC 66, and other ideas like knowing which fields of <code>self</code> are used by particular methods.</li>
+<li><strong>Why?</strong> Learning curve remains a stubborn problem, and the best way to improve it is to make the compiler smarter.</li>
+<li><strong>Who:</strong> <a href="https://github.com/nikomatsakis">nikomatsakis</a>, <a href="https://github.com/pnkfelix">pnkfelix</a></li>
+</ul>
+</li>
+<li>Unsafe code capabilities and reference material
+<ul>
+<li><strong>What?</strong> Document the rules for legal unsafe code and add features that either add required capabilities or make correct code easier and more ergonomic to write.</li>
+<li><strong>Why?</strong> Growing base of unsafe code, changes here are getting harder, this represents a kind of &quot;reputation risk&quot;. We really want to be &quot;better than C&quot; here.</li>
+<li><strong>Who:</strong> <a href="https://github.com/nikomatsakis">nikomatsakis</a>, <a href="https://github.com/pnkfelix">pnkfelix</a></li>
+</ul>
+</li>
+<li>Targeted ergonomic wins and extensions
+<ul>
+<li><strong>What?</strong> Small additions or improvements to make Rust easier to use.</li>
+<li><strong>Why?</strong> These will never rise to the &quot;top of the list&quot;, but they often have outsized impact on people's enjoyment of Rust.</li>
+<li><strong>Who:</strong> <a href="https://github.com/scottmcm">scottmcm</a></li>
+</ul>
+</li>
+<li>Soundness holes to try and correct
+<ul>
+<li><strong>What?</strong> </li>
+<li><strong>Why?</strong> Rust's appeal rests on safety. We have to make steady progress on these points. It's often hard to prioritize them compared to &quot;whiz-bang&quot; features. Also, long-running safety issues can cause fallout when fixed, weakening our stability guarantees.</li>
+<li><strong>Who:</strong> <a href="https://github.com/nikomatsakis">nikomatsakis</a></li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="process"><a class="header" href="#process">Process</a></h1>
+<p>This page describes how lang team initiatives work. This is the process to use if you have an idea for a change you would like to make in the language.</p>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>In a nutshell, the process for a successful initiative is as follows:</p>
+<ul>
+<li>Have an idea
+<ul>
+<li>Talk about it on internals, Zulip, etc to flesh it out a bit</li>
+<li>Ideally, identify a potential <a href="initiatives/./process/roles/owner.html">owner</a></li>
+</ul>
+</li>
+<li>Open a <a href="initiatives/./process/stages/proposal.html">proposal</a> as an issue on the lang-team repository
+<ul>
+<li>A lang team member can decide to be your <a href="initiatives/./process/roles/liaison.html">liaison</a> and <a href="initiatives/./process/stages/proposal.html#exit-seconding-a-proposal"><em>second</em> your proposal</a>.</li>
+<li>Once that happens, we will create a Zulip stream, tracking issue, and (optionally) repository, etc.</li>
+</ul>
+</li>
+<li>If warranted, <a href="initiatives/./process/stages/experimental.html">explore</a> the design space and author the RFC
+<ul>
+<li>In this phase, the <a href="initiatives/./process/roles/owner.html">owner</a> works with the <a href="initiatives/./process/roles/liaison.html">liaison</a> and other contributors to expore the design space and develop the RFC</li>
+<li>Code can be landed in this phase, but the feature gate is marked as &quot;experimental&quot; and its associated page in the <a href="https://doc.rust-lang.org/nightly/unstable-book/the-unstable-book.html">Unstable Book</a> also incudes a disclaimer that the content has not been RFC'd.</li>
+<li>Users of the feature gate will get a warning that the RFC is under development</li>
+<li>Once the RFC is ready, it can be opened on the RFC repository and approved by the lang team</li>
+</ul>
+</li>
+<li>Finish <a href="initiatives/./process/stages/development.html">development</a>
+<ul>
+<li>At this point, development proceeds but the feature gate does not have to be marked as &quot;experimental&quot; (the unstable book can also be updated).</li>
+<li>The goal here is both to implement the feature and to create an &quot;explainer&quot; that guides people on what it does (this can be located in the unstable book or elsewhere).</li>
+</ul>
+</li>
+<li><a href="initiatives/./process/stages/feature_complete.html">Feature complete</a>
+<ul>
+<li>When the liaison feels that the code and explainer are ready, the initiative may be declared &quot;feature complete&quot;.</li>
+<li>This is primarily a 'signaling' mechanism to the broader community to encourage testing and feedback.</li>
+<li>This is a good phase in which to write the Rust reference chapter and other supporting documentation.</li>
+<li>Presuming feedback is positive, a stabilization report is prepared and (hopefully) approved.</li>
+</ul>
+</li>
+<li><a href="initiatives/./process/stages/stabilized.html">Stabilized</a>
+<ul>
+<li>Done! The Zulip stream can stick around as a place for further discussion, but the initiative is complete. Any Rust team and repository is typically archived.</li>
+<li>The final step is to conduct a retrospective discussion between the <a href="initiatives/./process/roles/owner.html">owner</a> and <a href="initiatives/./process/roles/liaison.html">liaison</a> about how the process went.</li>
+</ul>
+</li>
+</ul>
+<h2 id="goals"><a class="header" href="#goals">Goals</a></h2>
+<ul>
+<li><strong>Empower individuals and give ownership:</strong>
+<ul>
+<li>Each initiative in this proposal is ultimately owned by a single person who drafts the proposals and recommendations.</li>
+<li>The role of the lang team is to review the designs, provide feedback, and ultimately decide whether to accept the design.</li>
+<li>The team can introduce constraints and requests that the owner should either satisfy or explain why they are not able to do so.</li>
+</ul>
+</li>
+<li><strong>Clarify the role of each individual:</strong>
+<ul>
+<li>As described in the <a href="initiatives/./process/roles.html">roles</a> page, each individual and group involved in an initiative has a clear, defined role in the decision making process.</li>
+</ul>
+</li>
+<li><strong>Minimize friction for &quot;reversible&quot; decisions and enable experimentation:</strong>
+<ul>
+<li>We avoid requiring &quot;full checkoff&quot; from team members for things that can be readily reversed.</li>
+<li>We want to make it relatively easy to start hacking and experimenting with an idea. Under this proposal, all it takes is to find an owner, a liaison, and to have the team leads approve.</li>
+<li>Other team members are encouraged to log concerns and constraints that ought to be addressed in the design, rather than blocking experimentation.</li>
+</ul>
+</li>
+<li><strong>Ensure that decisions are truly reversible:</strong>
+<ul>
+<li>On the flip side, although we wish to make it easy for ideas to move forward, we recognize that this can create a lot of momentum that allows ideas to force their way through the process.</li>
+<li>This is why code in the <a href="initiatives/./process/stages/experimental.html">experimental</a> phase issues a warning, for example.</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="roles"><a class="header" href="#roles">Roles</a></h1>
+<p>There are several key roles for any initiative:</p>
+<ul>
+<li>The <a href="initiatives/process/./roles/owner.html">owner</a> assembles the &quot;menu&quot; of overall solutions to the problem and helps to narrow them down to the most viable.
+<ul>
+<li>Naturally, they are encouraged to make recommendations on what they consider to be the right choice. These recommendations should include an explanation of what analysis they did on the other options that led them to this recommendation.</li>
+</ul>
+</li>
+<li>The <a href="initiatives/process/./roles/liaison.html">liaison</a> represents the lang team:
+<ul>
+<li>They guide the owner in picking from the menu. Naturally they may also make suggestions, ask questions, or request that the owner expand or explore a fresh area.</li>
+<li>They identify when to involve the full team via a <a href="initiatives/process/../../meetings.html">design meeting</a>.</li>
+<li>They keep up to date on the initiative's progress and can summarize its status for other lang team members.</li>
+</ul>
+</li>
+<li>The <strong>lang team members</strong> make the ultimate decision on what changes to accept.
+<ul>
+<li>They don't typically do the design, though of course they may make suggestions or introduce constriants that the design ought to meet (the owner can argue that these constraints are undesirable).</li>
+</ul>
+</li>
+<li>The <strong>lang team leads</strong> make the ultimate decisions on prioritiziation (which initiatives to pursue).
+<ul>
+<li>They also help resolve other disputes that fail to come to agreement</li>
+</ul>
+</li>
+</ul>
+<p>The owner and liaison are each a single person, though that person can change over time. They cannot both be the same person.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="initiative-owner"><a class="header" href="#initiative-owner">Initiative owner</a></h1>
+<p>The <strong>owner</strong> of an initiative is the person who is ultimately responsible for its design and implementation. They are driving and managing its overall process from conception to completion, though they may work with others to manage pieces of tha process (for example, the implementation is often done by someone else).</p>
+<p>The owner is not the decision maker, but they have a huge influence on the design. They assemble the &quot;menu&quot; of overall solutions to the problem and help to narrow the choices down to the ones that are most viable. They are also encouraged to make recommendations on what they consider to be the right choice. These recommendations should include an explanation of what analysis they did on the other options that led them to this recommendation.</p>
+<p>Owners do not have to be members of the lang team, but they do have to be sufficiently experienced and dedicated to drive the initiative with minimal assistance. Owning an initiative is also a common stepping stone on the path to full lang team membership.</p>
+<h2 id="pre-requisites"><a class="header" href="#pre-requisites">Pre-requisites</a></h2>
+<ul>
+<li>Sufficient experience to perform or mentor the above tasks independently</li>
+<li>Demonstrated good judgement</li>
+</ul>
+<h2 id="tasks"><a class="header" href="#tasks">Tasks</a></h2>
+<p>Note that in practice these may be delegated or done in concert with a group:</p>
+<ul>
+<li>Exploring the design space and preparing the final design</li>
+<li>Escalating tricky decisions by defining the 'menu' of choices and alternatives for the team to consider (with recommendations, where appropriate)</li>
+<li>Documenting the design space and alternatives that were not chosen (and why)</li>
+<li>Interacting with people on Zulip or elsewhere who are offering feedback and ideas, incorporating those ideas where appropriate into the final design</li>
+<li>Developing and writing the code for the feature</li>
+<li>Documenting the feature in the Rust reference or other sites as appropriate</li>
+</ul>
+<h2 id="estimated-time-commitment"><a class="header" href="#estimated-time-commitment">Estimated time commitment</a></h2>
+<p>The time commitment will vary depending on the initiative. Some initiatives are effectively full-time endeavors (40 hours per week). Others can move along at a pokier pace. For an initiative to be considered <em>active</em>, however, it should have some form of update most months. After several months of inactivity, we will discuss with the owner whether the initiative should be moved to &quot;inactive&quot; state or whether we should seek another owner.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="initiative-liaison"><a class="header" href="#initiative-liaison">Initiative liaison</a></h1>
+<p>The <strong>liaison</strong> for an initiative is a lang team member who is responsible for tracking its progress and giving updates to the lang team. They should also help advise the owner on how to resolve issues and when to seek the feedback of the broader lang team or other stakeholders.</p>
+<p>The liaison and the owner cannot be the same person.</p>
+<h2 id="tasks-1"><a class="header" href="#tasks-1">Tasks</a></h2>
+<ul>
+<li>Mentoring the initiative owner and helping them to decide when facing difficult design decisions.</li>
+<li>Preparing a summary for the monthly planning meeting documenting the decisions that were made and why.</li>
+<li>Escalating important decisions to the team where appropriate for broader feedback.</li>
+<li>Generally serving as a kind of &quot;outside voice&quot; where necessary.</li>
+</ul>
+<h2 id="pre-requisites-1"><a class="header" href="#pre-requisites-1">Pre-requisites</a></h2>
+<ul>
+<li>Lang team member</li>
+<li>Interest in the initiative and sufficient context to help guide (don't have to be an <em>expert</em>, but should be able to recognize what you don't know)</li>
+</ul>
+<h2 id="estimated-time-commitment-1"><a class="header" href="#estimated-time-commitment-1">Estimated time commitment</a></h2>
+<p>15-30 minutes per week (regular sync meeting) and the occasional deep dive. If the liaison is spending much more time than this, then they may in fact be playing the role of owner, and that is a problem.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stages-of-an-initiative"><a class="header" href="#stages-of-an-initiative">Stages of an initiative</a></h1>
+<p>Presuming that an initiative continues successfully, it will go through the following stages:</p>
+<table><thead><tr><th>Phase</th><th>Goal</th><th>Permits</th><th>Successful exit</th></tr></thead><tbody>
+<tr><td><a href="initiatives/process/./stages/proposal.html">Proposal</a></td><td>Find a team <a href="initiatives/process/../roles/liaison.html">liaison</a></td><td>Discussion</td><td>Team member seconds, thereby agreeing to act as <a href="initiatives/process/../roles/liaison.html">liaison</a></td></tr>
+<tr><td><a href="initiatives/process/./stages/experimental.html">Experimental</a><br>(sometimes skipped)</td><td>Refine the design and work towards an RFC</td><td>Active zulip stream; tracking issue / repository; code can land under &quot;unstable&quot; feature gate</td><td>RFC is approved by team</td></tr>
+<tr><td><a href="initiatives/process/./stages/development.html">Development</a></td><td>Finalize design and implementation</td><td>Removing the &quot;experimental&quot; tag on a feature</td><td>Liaison declares the proposal feature complete</td></tr>
+<tr><td><a href="initiatives/process/./stages/feature_complete.html">Feature complete</a></td><td>Gathering feedback</td><td>Advertisting the initiative as &quot;feature complete&quot;</td><td>Stabilization proposal approved</td></tr>
+<tr><td><a href="initiatives/process/./stages/stabilized.html">Stabilized</a></td><td></td><td>Use on stable branch</td><td>(none)</td></tr>
+</tbody></table>
+<p>The &quot;experimental&quot; stage can be skipped if the initiative is sufficiently simple that a RFC doesn't seem necessary; see <a href="initiatives/process/stages.html#simple-initiatives">&quot;simple initiatives&quot;</a> below.</p>
+<p>Initiatives can also become <a href="initiatives/process/./stages/inactive.html">inactive</a> for a variety of reasons.</p>
+<h2 id="simple-initiatives"><a class="header" href="#simple-initiatives">Simple initiatives</a></h2>
+<p>The above process is the ideal, but there are alternative routes that occur in practice for simple initiatives. The most common is one that begins with a PR:</p>
+<ul>
+<li>Implement the idea and open a PR.</li>
+<li><a href="initiatives/process//how_to/nominate.html">Nominate</a> the PR to the lang team's attention.</li>
+<li>The lang team may opt to either approve the PR (skip directly to &quot;feature complete&quot;), assign an owner (skip directly to &quot;development&quot;), or to request a proposal.</li>
+</ul>
+<h2 id="umbrella-initiatives"><a class="header" href="#umbrella-initiatives">Umbrella initiatives</a></h2>
+<p>Some initiatives are broader in scope and are tagged as &quot;umbrella initiatives&quot;. These are far-reaching tasks like &quot;async I/O&quot;. While they have goals, they don't have a clear stage. Instead, they have project boards (and potentially subinitiatives) of their own that track their state.</p>
+<h2 id="diagram"><a class="header" href="#diagram">Diagram</a></h2>
+<pre><code class="language-mermaid">graph TD
+    HaveGoodIdea[Have a good idea]
+    FileLangProposal[File proposal issue&lt;br&gt;on lang-team repository]
+    RejectWithExplanation[Proposal closed,&lt;br&gt;with an explanation of why]
+    Experimental[Expermental: Iterate on design and develop an RFC]
+    Development[&quot;Develop implementation&quot;]
+    FeatureComplete[&quot;Feature complete&quot;]
+    Stabilized[&quot;Stabilization is approved&quot;]
+
+    HaveGoodIdea-- Idea seems ready --&gt;FileLangProposal
+    HaveGoodIdea-- iterate on internals/zulip/etc --&gt;HaveGoodIdea
+
+    FileLangProposal-- Concept declined by lang team --&gt;RejectWithExplanation
+    FileLangProposal-- Liason seconds, no RFC required--&gt;Development
+    FileLangProposal-- Liason seconds, RFC required --&gt;Experimental
+
+    Experimental-- RFC is approved --&gt;Development
+    Development -- Iterate and improve design --&gt; Development;
+    Development -- Ready for people to experiment --&gt; FeatureComplete;
+    FeatureComplete -- Decide to make changes --&gt; Development;
+    FeatureComplete -- Prepare stabilization report --&gt; Stabilized;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stage-1-proposal"><a class="header" href="#stage-1-proposal">Stage 1: Proposal</a></h1>
+<h2 id="summary-1"><a class="header" href="#summary-1">Summary</a></h2>
+<p>The proposal stage is where specific ideas start. A <em>proposal</em> is, like today, an issue on the lang-team repository. It should include:</p>
+<ul>
+<li>Motivation and general idea</li>
+<li>Any relevant background links</li>
+<li>Enough detail to understand the problem and some sense of how it might be solved</li>
+<li>Someone interested in being the <a href="initiatives/process/stages/../roles/owner.html">owner</a> for the initiative, if any.</li>
+</ul>
+<p>Proposals are meant to be raised early. The idea should have undergone some amount of iteration, perhaps on internals or elsewhere, but it doesn't have to be -- and ideally is not -- a fully formed, concrete proposal. It can be a sketch of &quot;here is a problem and here are a few general ideas for how to address it&quot;.</p>
+<p>Once a proposal is opened, it can be discussed asynchronously by lang team members. If some member likes the idea, they first check with the team leads. If the leads agree, the member can <strong>second</strong> it, which means the member agrees to serve as the lang team <a href="initiatives/process/stages/../roles/liaison.html">liaison</a>.</p>
+<ul>
+<li>Proposal does not have to include:
+<ul>
+<li>Specific details or a known plan, uncertainty is expected</li>
+</ul>
+</li>
+<li>Lang team members will review, consider, and discuss</li>
+</ul>
+<p>While a proposal is open, it can undergo refinements simply by editing the issue text. Discussions typically take place on Zulip, but it is expected that regular summaries will be posted.</p>
+<h2 id="timeframe"><a class="header" href="#timeframe">Timeframe</a></h2>
+<p>Proposals represent pending decisions and are not meant to stay open. The decision about whether to accept a proposal or not is typically made within 1-2 weeks and is meant to decided within one month. In some cases, we may close a proposal but continue discussing and decide to open a fresh proposal shortly thereafter.</p>
+<h2 id="exit-seconding-a-proposal"><a class="header" href="#exit-seconding-a-proposal">Exit: Seconding a proposal</a></h2>
+<p>Any team member can <strong>second</strong> a proposal: this means that they volunteer to serve as initiative <a href="initiatives/process/stages/../roles/liaison.html">liaison</a>. Before seconding a proposal:</p>
+<ul>
+<li>The proposed owner should ensure that all relevant conversation from the Zulip threads, internals forum, and other forums is summarized in the issue.
+<ul>
+<li>If they are not willing/able to do this, they are likely not a good choice to act as owner.</li>
+</ul>
+</li>
+<li>The liaison should check with the team lead(s).
+<ul>
+<li>This gives the leads a chance to discuss whether the initiative seems like a good fit and whether the proposed initiative owner/liaison is a good choice (and, if not, why not).</li>
+<li>Team lead(s) should check with the moderation team to see if the proposed owner (or prominent likely members) has any prior history that may not be known to them. The leads do this to keep this info on a narrow basis.</li>
+<li>It's better to have those kind of sensitive discussions before things have been said publicly.</li>
+</ul>
+</li>
+</ul>
+<p>After this is done, members may second the proposal by writing <code>@rustbot second</code> in the issue thread along with a short comment identifying the owner. Seconding a proposal will cause it enter an FCP period. Team members may opt to suspend the FCP period by issuing <code>@rustbot pause</code>, this will cause the FCP to suspend. This is typically done to raise a concern which can then be discussed. The FCP can be resumed by any member saying <code>@rustbot resume</code> (to re-enter FCP) or <code>@rustbot cancel</code> (to cancel FCP).</p>
+<p>Once a proposal is seconded, the next step depends on its complexity:</p>
+<ul>
+<li>Most initiatives proceed to <a href="initiatives/process/stages/./experimental.html">Stage 2 (Experimental)</a>, which is focused on authoring an RFC.</li>
+<li>However, simple initiatives can skip directly to <a href="initiatives/process/stages/./development.html">Stage 3 (Development)</a>.
+<ul>
+<li>This indicates that the design is well understood and there aren't any complex tradeoffs to explore and document.</li>
+<li>A common example of this is for new lints.</li>
+</ul>
+</li>
+</ul>
+<p>Types of objections that make sense at this period:</p>
+<ul>
+<li>Technical concerns:
+<ul>
+<li>These are typically managed by adding the scenario or concern to a list of constraints to be taken under consideration and addressed.</li>
+<li>It is absolutely not necessary to have answers to all the technical problems before seconding a proposal!</li>
+</ul>
+</li>
+<li>Overload concerns:
+<ul>
+<li>A single owner or liaison should not be involved in too many things.</li>
+</ul>
+</li>
+<li>Prioritization concerns:
+<ul>
+<li>This idea might seem premature or like a poor choice of resources.</li>
+</ul>
+</li>
+<li>People concerns:
+<ul>
+<li>Concerns about the people involved are best raised by taking directly to the leads first.</li>
+</ul>
+</li>
+</ul>
+<h2 id="exit-proposal-is-not-accepted"><a class="header" href="#exit-proposal-is-not-accepted">Exit: Proposal is not accepted</a></h2>
+<p>In some cases, proposals will not be accepted. This could happen because there is nobody who wants to second it at this time. It could also happen because the lang team leads decide that the proposal doesn't it the current priorities of the team, or because the lang team leads feel that the task is not a good fit for the proposed owner or liaison (for example, the task may require specialized skills or more time than they have available). In these cases, the proposal will be closed.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stage-2-experimental-optional"><a class="header" href="#stage-2-experimental-optional">Stage 2: Experimental (optional)</a></h1>
+<p>If an initiative is sufficiently complex as to warrant an RFC, then, after being seconded, the initiative enters the &quot;experimental&quot; state. The goal at this stage is to iterate on exploring and documenting the design space and preparing an RFC, or even multiple RFCs. These initiatives have their own Zulip stream and can land code in the compiler.</p>
+<p>Being in the experimental stage does not represent a commitment to land the code. There may well be team members with very live concerns about the feature and it may well get removed if those concerns cannot be resolved.</p>
+<p>Initiatives in the experimental stage can have the following resources:</p>
+<ul>
+<li>Their own dedicated Zulip stream (<code>#project-xxx</code>)</li>
+<li>A tracking issue</li>
+<li>A repository if desired</li>
+<li>They can land code in the compiler under an &quot;experimental&quot; feature gate (i.e., one that warns when you use it)
+<ul>
+<li>Ideally we would warn that this represents an early stage, &quot;experimental&quot; proposal</li>
+</ul>
+</li>
+</ul>
+<h3 id="skipping-this-stage"><a class="header" href="#skipping-this-stage">Skipping this stage</a></h3>
+<p>Some initiatives are rather simple. In that case, we can skip this &quot;experimental&quot; stage and go straight towards development without authoring an RFC. This often applies to small tweaks in the language, or to things like adding a new lint.</p>
+<h3 id="advertising-that-a-feature-is-exprimenal"><a class="header" href="#advertising-that-a-feature-is-exprimenal">Advertising that a feature is exprimenal</a></h3>
+<p>Feature development that occurs in the experimental stage is very tentative. We must take care to ensure that users ar aware of this. All feature gates related to &quot;experimental&quot; initiatives need to be flagged as experimental and issue a suitable warning to users. Furthermore, the &quot;unstable book&quot; page for the features should indicate that they are currently experimental and do not yet have an accepted RFC.</p>
+<h3 id="during-this-stage-updates-to-the-team"><a class="header" href="#during-this-stage-updates-to-the-team">During this stage: updates to the team</a></h3>
+<p>During this stage, the owner and the liaison should meet on a regular basis. The owner should update the liaison about major design directions and seek their guidance on complex issues (particularly if the owner is not a member of the team). The liaison is responsible for documenting these updates and preparing a monthly update to the team as a whole. They are also responsible for deciding when an issue should be escalated to a lang team design meeting. Sometimes it makes sense to have a design meeting even if there isn't a decision to be made, just to update the team about the overall progress.</p>
+<h3 id="exit-rfc-approval"><a class="header" href="#exit-rfc-approval">Exit: RFC approval</a></h3>
+<p>To exit the Experimental stage, you need to prepare an RFC on the rust-lang/rfcs repository. This RFC needs to be approved by the lang team. The RFC can include &quot;unresolved questions&quot; to be resolved during the &quot;development&quot; phase.</p>
+<h3 id="exit-go-inactive"><a class="header" href="#exit-go-inactive">Exit: Go inactive</a></h3>
+<p>It often happens that initiatives &quot;stall out&quot;. This could be because some of the problems seem insurmountable, because the people involved wind up not having enough time to continue, or because other things take priority. At any point, the owner can decide to step back, at which point the initiative becomes <a href="initiatives/process/stages/./inactive.html">inactive</a>. If an initiative has not made progress in several months, the team may also opt to move it to inactive status.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stage-3-development"><a class="header" href="#stage-3-development">Stage 3: Development</a></h1>
+<p>After an RFC is approved, the initiative enters &quot;development&quot; stage. The only difference from the &quot;experimental&quot; stage is that the feature gate can now be marked as &quot;non-experimental&quot; and hence used without any sort of warning.</p>
+<p>During this stage, the focus is on implementing the complete feature and on resolving any unresolved features.</p>
+<h2 id="exit-group-declares-feature-feature-complete"><a class="header" href="#exit-group-declares-feature-feature-complete">Exit: Group declares feature &quot;feature complete&quot;.</a></h2>
+<p>At some point, the group can declare a feature to be &quot;feature complete&quot;. This requires the following materials to be available:</p>
+<ul>
+<li>Accessible documentation in the &quot;unstable Rust&quot; user's guide, if appropriate.</li>
+<li>All unresolved questions from the RFC have documented answers.</li>
+<li>Tests are written covering all major points in the RFC.
+<ul>
+<li>Ideally, those tests should be documented, as well, though we don't have a real convention here.</li>
+</ul>
+</li>
+</ul>
+<h2 id="exit-go-inactive-1"><a class="header" href="#exit-go-inactive-1">Exit: Go inactive</a></h2>
+<p>It often happens that initiatives &quot;stall out&quot;. This could be because some of the problems seem insurmountable, because the people involved wind up not having enough time to continue, or because other things take priority. At any point, the owner can decide to step back, at which point the initiative becomes <a href="initiatives/process/stages/./inactive.html">inactive</a>. If an initiative has not made progress in several months, the team may also opt to move it to inactive status.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stage-4-feature-complete"><a class="header" href="#stage-4-feature-complete">Stage 4: Feature complete</a></h1>
+<p>&quot;Feature complete&quot; initiatives are awaiting community experimentation and stabilization. Typically this is done by writing a blog post (on Inside Rust, perhaps) encouraging experimentation and feedback. That feedback should be gathered and summarize in the monthly reports. It is particularly useful to have lists of users.</p>
+<p>The owner should continue to meet regularly with the liaison at this time, though the meeting frequency is often just once a month and quite short.</p>
+<h2 id="entry-criteria"><a class="header" href="#entry-criteria">Entry criteria</a></h2>
+<p>Entering the &quot;feature complete&quot; stage typically requires that there is documentation available to users about how the feature works overall (but not necessarily detailed reference material):</p>
+<ul>
+<li>Liaison agrees that the feature is feature complete.</li>
+<li>An explainer is prepared that explains to end-users how the feature works.</li>
+<li>A blog post, linking to the explainer, that announces progress and requests testing and feedback.</li>
+</ul>
+<p>In addition, it's a good place to explain how any &quot;unresolved questions&quot; from the RFC would up being resolved.</p>
+<h2 id="preparing-reference-documentation"><a class="header" href="#preparing-reference-documentation">Preparing reference documentation</a></h2>
+<p>In addition to evaluating the feature, this is a good period to prepare &quot;reference&quot; documentation that explains the changes in depth. This is typically included in the [Rust reference] but may appear in other documentation as well, such as the Necronomicon. These changes will be reviewed as part of the stabilization report and will land after the feature is stabilized.</p>
+<p>[Rust reference]:</p>
+<h2 id="exit-stabilization-report-prepared-and-approved"><a class="header" href="#exit-stabilization-report-prepared-and-approved">Exit: Stabilization report prepared and approved</a></h2>
+<p>To exit the stage, the owner prepares a stabilization report. Stabilization reports follow the templat and generally give details about:</p>
+<ul>
+<li>Final design of the feature
+<ul>
+<li>In particular, how were unresolved questions or other details from the RFC resolved?</li>
+</ul>
+</li>
+<li>What is tested and where</li>
+<li>Link to the Rust reference materials or other documentation</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stage-5-stabilized"><a class="header" href="#stage-5-stabilized">Stage 5: Stabilized</a></h1>
+<p>This is the final stage. The development is done and support transitions to the regular team members. The initiative is now considered [inactive]. However, the stream often sticks around as a convenient place to ping the people who were involved in implementing the feature for follow-up questions and for fixing bugs or other maintenance. The expectation is that if you helped to develop a feature, you will stay involved for some period of time after it hits stable to help in resolving problems that arise.</p>
+<p>After stabilization, the owner and liaison should meet to do a final retrospective on how everything went and what could have been improved. This should be done within a few weeks of stabilization, while the memories are fresh.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="inactive-groups"><a class="header" href="#inactive-groups">Inactive groups</a></h1>
+<p>As an alternative to stabilization, initiatives may become <em>inactive</em>. This could be because we decided the idea doesn't work, but it could also be that people just no longer had time to work on it and so the idea was paused until somebody else shows up with time and energy. When marking an initiative as inactive, we try to do a final retrospective that judges how well the experience went. We also try to prepare a summary of the final state in case someone wants to start working on the design again (or perhaps a small piece of it; a common failing for initiatives is trying to tackle too big of a problem). These technical summaries can be placed in the <a href="initiatives/process/stages//design_notes.html">design notes</a> section of this website.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="frequently-asked-questions-about-initiatives"><a class="header" href="#frequently-asked-questions-about-initiatives">&quot;Frequently asked questions&quot; about initiatives</a></h1>
+<h2 id="does-the-initiative-owner-make-decisions"><a class="header" href="#does-the-initiative-owner-make-decisions">Does the initiative owner make decisions?</a></h2>
+<p>The initiative owner drafts the proposed design and takes feedback from the liaison and team about what direction to take. This feedback can take the form of &quot;you need to do X&quot;, but typically it is more about &quot;you need to address this scenario&quot;. Or, put another way, if the initiative owner doesn't like the proposed direction, it's up to them to find an alternative that they do like which meets those same constraints, or to argue why the constraints are not necessary.</p>
+<p>Note that serving as initiative owner is a high level of responsibility and may not be a good &quot;starting place&quot; for involvement within the Rust project. In practice, initiative owners should be experienced enough that they could mentor others to do the implementation work. If you don't know the language or system well enough to do that, then you probably are not ready to be an owner -- but you may be ready to be mentored by the owner!</p>
+<h2 id="is-the-word-of-a-lang-team-member-law"><a class="header" href="#is-the-word-of-a-lang-team-member-law">Is the word of a lang team member law?</a></h2>
+<p>Of course not. Well, ok, sometimes. For the most part, initiative owners are encouraged to treat lang team members like any other member of the community -- this implies a lot of respect for their opinions, since they are experienced, knowledgeable people, but the initiative owner still ultimately owns the design and should use their own judgement about what things to recommend. However, lang team members do have the option of adding constraints that must be met, and they can override the initiative owner if necessary. That is typically done by raising the concern with the rest of the team/leads in a more formal way.</p>
+<h2 id="what-happens-if-an-owner-stops-working-on-things"><a class="header" href="#what-happens-if-an-owner-stops-working-on-things">What happens if an owner stops working on things?</a></h2>
+<p>Initiative owners are often volunteers and may have changes in priorities or find they don't have as much time as they thought they did. In that case, they can simply step back. The liaison can then either find a new initiative owner, or perhaps assume initiative owner duties themselves but find a new liaison. If they are not able to do that, the initiative will be closed as &quot;paused&quot;.</p>
+<h2 id="what-if-we-decide-a-initiative-is-a-bad-idea"><a class="header" href="#what-if-we-decide-a-initiative-is-a-bad-idea">What if we decide a initiative is a bad idea?</a></h2>
+<p>Sometimes, in the course of trying to design a initiative, we decide it was the wrong direction. That's ok! At any point the liaison can decide that the initiative isn't working out and close it. However, in doing so, they should document WHY they feel it did not work out -- and identify potential conditions where the idea may make sense later on. This documentation will typically take the form of a <a href="initiatives/../design_notes.html">design note</a> in the lang-team repository.</p>
+<p>If there are concerns about this, those concerns can be raised with the lang team leads.</p>
+<p>Closed initiatives will be removed from the project board and the code for them will be removed from the compiler.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lang-team-how-to-guide"><a class="header" href="#lang-team-how-to-guide">Lang team &quot;how to&quot; guide</a></h1>
+<p>This section includes instructions on how to do various interactions with the lang team.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="nominate-an-issue"><a class="header" href="#nominate-an-issue">Nominate an issue</a></h1>
+<ul>
+<li>Nomination is currently supported on the following repositories:
+<ul>
+<li>rust-lang/rfcs</li>
+<li>rust-lang/rust</li>
+<li>rust-lang/reference</li>
+<li>rust-lang/lang-team</li>
+<li>(this set is defined by the <code>nominated</code> list in the <a href="https://github.com/rust-lang/triagebot/blob/master/src/agenda.rs">triagebot source code</a>)</li>
+</ul>
+</li>
+<li>Tag the issue with the <code>I-nominated</code> and <code>T-lang</code> labels by issuing the following <a href="https://github.com/rust-lang/triagebot/wiki">rustbot</a> command:
+<ul>
+<li><code>@rustbot label +I-nominate +T-lang</code></li>
+</ul>
+</li>
+<li>Add a comment explaining
+<ul>
+<li>What question you would like answered by the lang team</li>
+<li>Relevant background info or links to relevant info that the lang team can use to get &quot;oriented&quot; in the discussion</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="propose-an-initiative"><a class="header" href="#propose-an-initiative">Propose an initiative</a></h1>
+<p>See the <a href="how_to/../initiatives/process.html">initiative process</a> for more details.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="proposing-a-topic-for-a-design-meeting"><a class="header" href="#proposing-a-topic-for-a-design-meeting">Proposing a topic for a design meeting</a></h1>
+<p>You can propose a topic for a design meeting by opening an <a href="https://github.com/rust-lang/lang-team/issues/new/choose">Design
+meeting proposal</a> issue on the lang-team repository. We schedule meetings in our monthly
+planning meeting.</p>
+<p>Every design meeting begins by reading a document and leaving comments. That document
+must be prepared 24 hours in advance of the design meeting and posted on the issue.
+If you propose an issue, you should be willing to prepare that document, or else indicate
+who will do the preparation.</p>
+<p>Typically, design meetings are associated with active initiatives: you may wish to
+<a href="how_to/./propose.html">propose an initiative</a> instead.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chat-platform"><a class="header" href="#chat-platform">Chat platform</a></h1>
+<p>The lang team hangs out in the <a href="https://forge.rust-lang.org/chat/zulip.html">rust-lang Zulip</a> in the <code>#t-lang</code>
+stream. There are also other <code>#t-lang/*</code> streams that might be of
+interest.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="calendar"><a class="header" href="#calendar">Calendar</a></h1>
+<p>We have a lang-team calendar that shows the time for our various meetings.
+Meetings are generally open to anyone who wants to listen in. We also try to
+post <a href="./minutes.html">minutes and recordings</a> on a &quot;best-effort&quot; basis from our
+meetings.</p>
+<ul>
+<li><a href="https://calendar.google.com/calendar/embed?src=recud4b9o8cmc0m5rmr033p5nk%40group.calendar.google.com">View calendar</a> -- use this to view the calendar online and add it to your Google Calendar</li>
+<li><a href="https://calendar.google.com/calendar/ical/recud4b9o8cmc0m5rmr033p5nk%40group.calendar.google.com/public/basic.ics">ICS file, for use outside from google calendar</a> -- you can use this to subscribe from other programs</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="meetings"><a class="header" href="#meetings">Meetings</a></h1>
+<p>The lang team has several standing meetings. The current timing for these
+can be found on the <a href="./calendar.html">lang team calendar</a>. We
+generally record our public meetings and post the recordings in our
+<a href="https://www.youtube.com/playlist?list=PL85XCvVPmGQg-gYy7R6a_Y91oQLdsbSpa">YouTube playlist</a> (along with automatically created subtitles). We
+also publish notes and minutes in written form in this github
+repository.</p>
+<h2 id="triage-meeting"><a class="header" href="#triage-meeting">Triage meeting</a></h2>
+<p>The weekly triage meeting is when we go over the newly filed project
+proposals along with issues that have been nominated for lang-team
+feedback. We also get regular updates from the active project groups
+so we can stay on top of what is going on.</p>
+<p><a href="https://github.com/rust-lang/lang-team/tree/master/minutes">Triage meeting minutes are available in this directory.</a></p>
+<h3 id="nominating-an-issue-pr-rfc-etc-for-the-triage-meeting"><a class="header" href="#nominating-an-issue-pr-rfc-etc-for-the-triage-meeting">Nominating an issue, PR, RFC etc for the triage meeting</a></h3>
+<p>You can nominate an issue/PR/RFC etc for the triage meeting by adding
+the <code>T-lang</code> and <code>I-nominated</code> labels. When you do so, it's best if
+you leave a comment explaining what kind of feedback you would
+like. We try to go over all nominated issues and leave a comment
+of some kind in response.</p>
+<h2 id="planning-meeting"><a class="header" href="#planning-meeting">Planning meeting</a></h2>
+<p>We hold a monthly <strong>planning meeting</strong> in which we do two things:</p>
+<ul>
+<li>Updates from <a href="./initiatives.html">active initiatives</a>.</li>
+<li>Schedule design meetings for the remainder of the month.</li>
+</ul>
+<p>After each planning meeting, we post a blog post to the <a href="https://blog.rust-lang.org/inside-rust/">Inside Rust</a>
+blog announcing the upcoming meetings and any particularly interesting updates.
+Minutes from the planning meetings are posted in the <a href="https://github.com/rust-lang/lang-team/tree/master/design-meeting-minutes">design-meeting-minutes</a> directory.</p>
+<h2 id="design-meeting"><a class="header" href="#design-meeting">Design meeting</a></h2>
+<p>We reserve a weekly slot to hold <strong>design meetings</strong>. They are scheduled during
+the planning meeting and hence known in advance. Design
+meeting topics are used for in-depth discussions on a particular
+topic, typically in connection with an <a href="./initiatives.html">active initiative</a>.</p>
+<p>Every design meeting begins by reading a document and leaving comments. That document
+must be prepared 24 hours in advance of the design meeting and posted on the issue.
+During the meeting, we append notes and minutes to the end of the document, and
+that combination is posted in <a href="https://github.com/rust-lang/lang-team/tree/master/design-meeting-minutes">the design-meeting-minutes directory</a>.</p>
+<p><a href="./how_to/design_meeting.html">Instructions for proposing a design meeting are here.</a></p>
+<div style="break-before: page; page-break-before: always;"></div><p>This section contains &quot;notes&quot; about the design of various proposals.
+These are often just links to conversations, along with a few key
+ideas and summaries. Sometimes it includes other information, such as
+lang-team decisions about whether a particular proposal is viable.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="can-we-allow-integer-literals-like-1-to-be-inferred-to-floating-point-type"><a class="header" href="#can-we-allow-integer-literals-like-1-to-be-inferred-to-floating-point-type">Can we allow integer literals like <code>1</code> to be inferred to floating point type?</a></h1>
+<h2 id="background"><a class="header" href="#background">Background</a></h2>
+<p>In rust today, an integer like <code>1</code> cannot be inferred to floating
+point type. This means that valid-looking numeric expressions like
+<code>22.5 + 1</code> will not compile, and one must instead write <code>22.5 + 1.0</code>. Can/should we change this?</p>
+<h2 id="history"><a class="header" href="#history">History</a></h2>
+<p>This was discussed on Zulip in <a href="https://zulip-archive.rust-lang.org/213817tlang/43153EditionRequestlet1beafloatliteral.html">May 2020</a>. Some of the key highlights from the discussion were:</p>
+<ul>
+<li>Floating point literals are prone to many surprises that integers
+are not. For <a href="https://zulip-archive.rust-lang.org/213817tlang/43153EditionRequestlet1beafloatliteral.html#196887384">example</a>, <code>20_000_000 + 1</code>, if inferred to <code>f32</code>
+type, would have the final value <code>20_000_000.0</code>. This leads some to
+conclude that <a href="https://zulip-archive.rust-lang.org/213817tlang/43153EditionRequestlet1beafloatliteral.html#196887384">&quot;the surprise factor of floats is so high that they
+are qualitatively different than integers&quot;</a>.</li>
+<li>But there are a lot of similar surprising things:
+<ul>
+<li><a href="https://zulip-archive.rust-lang.org/213817tlang/43153EditionRequestlet1beafloatliteral.html#196930252"><code>20_000_001_f32</code>, for example, is also going to be <code>20_000_000</code>.</a></li>
+<li>Integer overflow can mean that <code>255 + 1</code> has the value 0.</li>
+</ul>
+</li>
+<li>Some key questions to consider:
+<ul>
+<li><a href="https://zulip-archive.rust-lang.org/213817tlang/43153EditionRequestlet1beafloatliteral.html#196926142">How often does adding <code>.0</code> result in some insight?</a></li>
+<li>How much would <em>seeing</em> the <code>.0</code> help to debug a tricky problem?</li>
+</ul>
+</li>
+<li>Balanced against the annoyance and surprise factor.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="generalized-coroutines"><a class="header" href="#generalized-coroutines">Generalized coroutines</a></h1>
+<p>Since even before Rust 1.0, users have desired the ability to <code>yield</code> like in
+other languages. The compiler infrastructure to achieve this, along with an
+unstable syntax, have existed for a while now. But despite <em>a lot</em> of debate,
+we've failed to polish the feature up enough to stabilize it. I've tried to
+write up a summary of the different design considerations and the past debate
+around them below:</p>
+<h2 id="terminology"><a class="header" href="#terminology">Terminology</a></h2>
+<ul>
+<li>The distinction between a &quot;coroutine&quot; and a &quot;generator&quot; can be a bit vague,
+varying from one discussion to the next.</li>
+<li>In these notes a generator is anything which <em>directly</em> implements <code>Iterator</code>
+or <code>Stream</code> while a coroutine is anything which can take arbitrary input,
+yield arbitrary output, and later resume execution at the previous yield.</li>
+<li>Thus, the &quot;generator&quot; syntax proposed in <a href="https://github.com/rust-lang/rfcs/pull/2033">eRFC-2033</a> and currently
+implemented behind the &quot;generator&quot; feature is actually a coroutine syntax for
+the sake of these notes, <em>not a true generator</em>.
+<ul>
+<li><a href="https://github.com/rust-lang/rfcs/pull/2996/">RFC-2996</a> defines a true generator syntax in &quot;future additions&quot;.</li>
+</ul>
+</li>
+<li>Note also that &quot;coroutines&quot; here are really &quot;semicoroutines&quot; since they can
+only yield back to their caller.</li>
+<li>I will continue to group the <a href="https://github.com/rust-lang/rfcs/pull/2033">original eRFC text</a> and the later <a href="https://github.com/rust-lang/rust/pull/68524">generator
+resume arguments</a> extension
+togther as &quot;<a href="https://github.com/rust-lang/rfcs/pull/2033">eRFC-2033</a>&quot;. That way I only have 3 big proposals to deal
+with.</li>
+<li>In rustc, a coroutine's &quot;witness&quot; is the space where stack-allocated values
+are stored if needed across yields. I'm borrowing this terminology here. Any
+such cross-yield bindings are said to be &quot;witnessed&quot;.</li>
+</ul>
+<pre><code class="language-rust ignore">// This is an example coroutine which might assist a streaming base64 encoder
+|sextet, octets| {
+    let a = sextet; // witness a, b, and c sextets for later use
+    yield;
+    let b = sextet;
+    octets.push(a &lt;&lt; 2 | b &gt;&gt; 4); // aaaaaabb
+    yield;
+    let c = sextet;
+    octets.push((b &amp; 0b1111) &lt;&lt; 4 | c &gt;&gt; 2); // bbbbcccc
+    yield;
+    octets.push((c &amp; 0b11) &lt;&lt; 6 | sextet) // ccdddddd
+}
+
+// This is an example generator which might be used in Iterator::flat_map.
+gen {
+  for item in inner {
+    for mapped in func(item) {
+      yield mapped;
+    }
+  }
+}
+
+// This is an example async generator which might be used in Stream::and_then
+async gen {
+  while let Some(item) = inner.next().await {
+    yield func(item).await;
+  }
+}
+</code></pre>
+<h2 id="coroutine-trait"><a class="header" href="#coroutine-trait">Coroutine trait</a></h2>
+<ul>
+<li>The coroutine syntax must produce implementations of some trait.</li>
+<li><a href="https://github.com/rust-lang/rfcs/pull/2781">RFC-2781</a> and <a href="https://github.com/rust-lang/rfcs/pull/2033">eRFC-2033</a> propose the <code>Generator</code> trait.</li>
+<li>Note that Rust's coroutines and subroutines look the same from the outside:
+take input, mutate state, produce output.</li>
+<li>Thus, <a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a> proposes using the <code>Fn*</code> traits instead, including a new
+<code>FnPin</code> for immovable coroutines.
+<ul>
+<li>Hierarchy: <code>Fn</code> is <code>FnMut + Unpin</code> is <code>FnPin</code> is <code>FnOnce</code>.
+<ul>
+<li>May not be <em>required</em> at the trait level (someone may someday find a use
+to implementing <code>FnMut + !FnPin</code>) but all closures implement the traits in
+this order.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="coroutine-syntax"><a class="header" href="#coroutine-syntax">Coroutine syntax</a></h2>
+<ul>
+<li>The closure syntax is reused for coroutines by <a href="https://github.com/rust-lang/rfcs/pull/2033">eRFC-2033</a>, <a href="https://github.com/rust-lang/rfcs/pull/2781">RFC-2781</a>,
+and <a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a>.</li>
+<li>Commentators have suggested that the differences between coroutines and
+closures under <a href="https://github.com/rust-lang/rfcs/pull/2033">eRFC-2033</a> and <a href="https://github.com/rust-lang/rfcs/pull/2781">RFC-2781</a> justify an entirely distinct
+syntax to reduce confusion.</li>
+<li><a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a> fully reuses the <em>semantics</em> of closures, greatly simplifying the
+design space and making the shared syntax obvious.</li>
+</ul>
+<h2 id="taking-input"><a class="header" href="#taking-input">Taking input</a></h2>
+<ul>
+<li>The major disagreement between past proposals is whether to use &quot;yield
+expressions&quot; or &quot;magic mutation&quot;.
+<ul>
+<li>Yield expression: <code>let after = yield output;</code>
+<ul>
+<li>Used by <a href="https://github.com/rust-lang/rfcs/pull/2033">eRFC-2033</a></li>
+</ul>
+</li>
+<li>Magic mutation: <code>let before = arg; yield output; let after = arg;</code>
+<ul>
+<li>Used by <a href="https://github.com/rust-lang/rfcs/pull/2781">RFC-2781</a> and <a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Many people have a strong gut preference for yield expressions.
+<ul>
+<li>In simple cases, Rust generally prefers to produce values as output from
+expressions rather than by mutation of state. &quot;Yield expressions <em>feel</em> more
+Rusty.&quot;</li>
+<li>However, magic mutation is likely correct, even though at first glance it
+feels surprising. In addition to reasons below, holding references to past
+resume args is rare, often a logic error. Rust can use mutation checks to
+catch and give feedback.</li>
+</ul>
+</li>
+<li>&quot;Magic mutation&quot; is a bit of a misnomer. The resume argument values are <em>not
+themselves being mutated.</em> The argument bindings are simply being reassigned
+across yields.
+<ul>
+<li>In a sense, argument bindings are reassigned in the exact same way across
+returns.</li>
+<li>Previous arguments (if unmoved) are dropped prior to yielding and are
+reassigned after resuming.</li>
+<li>People will get yelled at by the borrow checker if they try to hold borrows
+of arguments across yields. But the fix is generally easy: move the argument
+to a new binding before yielding.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-text">=&gt; |x| {
+    let y = &amp;x;
+    yield;
+    dbg!(y, x);
+}
+
+error[E0506]: cannot pass new `x` because it is borrowed
+ --&gt; src/lib.rs:3:4
+  |
+2 |     let y = &amp;x;
+  |             -- borrow of `x` occurs here
+3 |     yield;
+  |     ^^^^^ assignment to borrowed `x` occurs here
+4 |     dbg!(y, x);
+  |             - borrow later used here
+  |
+  = help: consider moving `x` into a new binding before borrowing
+
+=&gt; |x| {
+    let a = x;
+    let y = &amp;a;
+    yield;
+    dbg!(y, x);
+}
+</code></pre>
+<ul>
+<li>Magic mutation could be replaced by &quot;magic shadowing&quot; where new arguments
+shadow old ones at yield in order to allow easy borrowing of past argument
+values. But this is a huge footgun. See if you can spot the issue with the
+following code if <code>ctx</code> shadows its past value rather than overwriting it:</li>
+</ul>
+<pre><code class="language-rust ignore">std::future::from_fn(|ctx| {
+  if is_blocked() {
+    register_waker(ctx);
+    yield Pending;
+  }
+
+  while let Pending = task.poll(ctx) { .. }
+})
+</code></pre>
+<ul>
+<li>&quot;Yield expression&quot; causes problems with first-resume input.
+<ul>
+<li><a href="https://github.com/rust-lang/rfcs/pull/2033">eRFC-2033</a> passes the first resume argument via a closure parameters
+while later arguments are produced by <code>yield</code> expressions.</li>
+<li>This part of why it is so hard to unify generalized coroutines with a
+generator syntax like <code>gen { }</code> or <code>gen fn</code>. Where does the first input go?
+Where do you annotate the argument type even?</li>
+</ul>
+</li>
+<li>To increase clarity, users almost always want resume arguments to be named.
+<ul>
+<li>With magic mutation, all resume arguments are already named since they reuse
+the closures arguments on every resume. Any unmoved arguments are dropped
+just prior to yielding, so they are not witnessed and do not increase the
+coroutine size.
+<ul>
+<li>Also get multiple arguments for free if using the <code>Fn*</code> traits.</li>
+</ul>
+</li>
+<li>Yield expressions require users to repeatedly assign resume arguments to
+named bindings manually. Such bindings must be included in the closure state
+if they have any drop logic.</li>
+</ul>
+</li>
+</ul>
+<h2 id="borrowed-resume-arguments"><a class="header" href="#borrowed-resume-arguments">Borrowed resume arguments</a></h2>
+<ul>
+<li>What happens when a coroutine witnesses a borrow passed as a resume argument?
+For example:</li>
+</ul>
+<pre><code class="language-rust ignore">let co = |x: &amp;i32| {
+  let mut values = Vec::new();
+  loop {
+    values.push(x);
+    yield;
+  }
+};
+
+// potentially ok:
+let mut x = 0;
+co(&amp;x);
+
+// must not be allowed:
+x = 1;
+co(&amp;x);
+</code></pre>
+<ul>
+<li>As of writing, <a href="https://github.com/rust-lang/rfcs/pull/2781">RFC-2781</a> leaves this as an unresolved question with a note
+to potentially restrict resume arguments to being <code>'static</code>.</li>
+<li>Since coroutines under <a href="https://github.com/rust-lang/rfcs/pull/2781">MCP-49</a> act as much like closures as possible, and
+treat the witness and capture data the same whenever possible, the example
+above would fail in a similar way to the example below, giving a &quot;borrowed
+data escapes into closure state&quot; error or similar even if <code>x</code> is not mutated.</li>
+</ul>
+<pre><code class="language-rust ignore">let mut values = Vec::new();
+|x: &amp;i32| {
+  loop {
+    values.push(x);
+//  ^^^^^^^^^^^^^^ `x` escapes the closure body here
+    yield;
+  }
+}
+</code></pre>
+<ul>
+<li>As of writing, <a href="https://github.com/rust-lang/rfcs/pull/2033">eRFC-2033</a> appears to take a similar approach (although the
+error message is not super descriptive).</li>
+<li>Ideally someday we'd do something nicer but any such solution would apply to both captured state and witnessed state in the same way.</li>
+</ul>
+<h2 id="lending"><a class="header" href="#lending">Lending</a></h2>
+<ul>
+<li>Coroutines would eventually like to yield borrows of state to the caller. This
+is &quot;lending&quot; coroutine (sometimes also called an &quot;attached&quot; coroutine).</li>
+<li>Using <a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a>, a lending coroutine might look like:</li>
+</ul>
+<pre><code class="language-rust ignore">|| {
+  let mut buffer = Vec::new();
+  loop {
+    let n = fill_buffer(&amp;mut buffer);
+    yield &amp;buffer[..n];
+  }
+}
+</code></pre>
+<ul>
+<li>None of the major proposals have made an effort to resolve this directly as
+far as I am aware.
+<ul>
+<li><a href="https://github.com/rust-lang/rfcs/pull/2996/">RFC-2996</a> gets the closest with a mention of <code>LendingStream</code> and
+<code>LendingIterator</code> traits in &quot;future additions&quot;.</li>
+<li>We should probably get some experience with lending traits at the lib level
+before attempting to add language level support.</li>
+</ul>
+</li>
+<li>If lending closures were implemented, <a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a> could immediately be used to
+build lending streams, iterators, etc so long as the respective traits have
+the needed GAT-ification.</li>
+</ul>
+<h2 id="enum-wrapping"><a class="header" href="#enum-wrapping">Enum-wrapping</a></h2>
+<ul>
+<li><a href="https://github.com/rust-lang/rfcs/pull/2781">RFC-2781</a> and <a href="https://github.com/rust-lang/rfcs/pull/2033">eRFC-2033</a> propose that <code>yield x</code> should produce
+<code>GeneratorState::Yielded(x)</code> or equivalent as an output, in order to
+discriminate between yielded and returned values.</li>
+<li><a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a> instead gives <code>yield x</code> and <code>return x</code> nearly identical semantics
+and output <code>x</code> directly, so the two must return the same type.</li>
+<li>Enum-wrapping here is analogous to Ok-wrapping elsewhere. Similar debates
+result.</li>
+<li>When using enum-wrapping, the syntax to specify distinct return/yield types is
+hotly debated.</li>
+<li>Generators always want return and yield to have different types (<code>()</code> vs <code>T</code>)
+but a generator syntax on top of coroutines could be used to auto-insert enum
+wrappers around yield vs return arguments.</li>
+<li>Auto-enum-wrapping can slightly improve type safety in some cases where
+<code>return</code> should be treated specially to avoid bugs.</li>
+<li>No-enum-wrapping when combined with the <code>impl Fn*</code> choice of trait, allow
+the coroutine syntax to be used directly with existing higher-order methods
+on iterator, stream, collection types, async traits, etc.</li>
+<li>Note these two approaches are &quot;isomorphic&quot;: a coroutine that returns
+<code>GeneratorState&lt;T, T&gt;</code> could be wrapped to return <code>T</code> by some sort of
+combinator and a coroutine that only returns <code>T</code> can have <code>yield</code> and <code>return</code>
+values manually wrapped in <code>GeneratorState</code>. This is just about ergonomics:</li>
+</ul>
+<pre><code class="language-rust ignore">// Without enum wrapping:
+std::iter::from_fn(|| {
+  yield Some(1);
+  yield Some(2);
+  yield Some(3);
+  None
+}).map(|x| {
+  yield -x;
+  yield x;
+});
+
+// With enum wrapping:
+std::iter::from_gen_fn(|| {
+  yield 1;
+  yield 2;
+  yield 3;
+}).map(unwrap_gen_state(|x| {
+  yield -x;
+  yield x;
+}));
+
+// Needed for un-enum-wrapping when not desired.
+// Could be replaced by sufficiently fancy !-casting?
+fn unwrap_gen_state&lt;T&gt;(f: impl FnMut() -&gt; GeneratorState&lt;T, !&gt;) -&gt; T { ... }
+fn merge_gen_state&lt;T&gt;(f: impl FnMut() -&gt; GeneratorState&lt;T, T&gt;) -&gt; T { ... }
+
+// With no wrapping + generators:
+(gen {
+  yield 1;
+  yield 2;
+  yield 3;
+}).map(|x| {
+  yield -x;
+  yield x;
+})
+</code></pre>
+<h2 id="movability"><a class="header" href="#movability">Movability</a></h2>
+<ul>
+<li>All proposals want movability/<code>impl Unpin</code> to be inferred.
+<ul>
+<li>If we forbid &quot;borrowed data escaping into closure state&quot;, the inference
+rules should be relatively simple: witnessing any borrow triggers
+immovability.
+<ul>
+<li>Dead borrows should not be witnessed.</li>
+</ul>
+</li>
+<li>But exact inference rules may only be well understood after an attempt at
+implementation.</li>
+</ul>
+</li>
+<li>Soundness of <code>pin_mut!</code> is a little tricky but seems to be fine no matter what.
+<ul>
+<li>If the resulting mutable borrow is witnessed ⇒ coroutine is <code>!Unpin</code> because
+of inference rules</li>
+<li>If the pinned data is <code>!Unpin</code> and is witnessed ⇒ coroutine is <code>!Unpin</code>
+because witness contains <code>!Unpin</code> data</li>
+<li>Thus, if the coroutine can be moved after resume, any data stack-pinned
+(really witness-pinned) by <code>pin_mut!</code> is not referenced and is <code>Unpin</code>.</li>
+</ul>
+</li>
+<li>Until inference is solved, the <code>static</code> keyword can be used as a modifier.</li>
+</ul>
+<pre><code class="language-rust ignore">// movable via inference
+|| {
+  let x = 4;
+  let y = &amp;x;
+  dbg!(y);
+  yield;
+}
+
+// guaranteed movable (pending inference)
+static || {
+  ...
+}
+
+// immovable
+|| {
+  let x = 4;
+  let y = &amp;x;
+  yield;
+  dbg!(y);
+}
+</code></pre>
+<h2 id="once-coroutines"><a class="header" href="#once-coroutines">&quot;Once&quot; coroutines</a></h2>
+<ul>
+<li>A lot of coroutines destroy captured data when run.</li>
+<li>These coroutines (notably futures) can be resumed many times but can only be
+run through &quot;once&quot;.</li>
+<li>In contrast to non-yield <code>FnOnce</code> closures, this can not be solved at the type
+level because a coroutine can run out after an arbitrary, runtime-dependent
+number of resumptions.
+<ul>
+<li>Attempts to discriminate with enums tend to run up against <code>Pin</code>.</li>
+</ul>
+</li>
+<li>Coroutines must have the ability to block restart with a <code>panic!</code>.
+<ul>
+<li>Following <code>return</code>.</li>
+<li>Following <code>panic!</code> and recovery.</li>
+<li>The term &quot;poison state&quot; technically refers to only the later case. But here
+I will use it to mean any state at which the closure panics if resumed.</li>
+</ul>
+</li>
+<li><a href="https://github.com/rust-lang/rfcs/pull/2781">RFC-2781</a> and <a href="https://github.com/rust-lang/rfcs/pull/2033">eRFC-2033</a> propose that all coroutines become poisoned
+after returning.</li>
+<li><a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a> recommends that all non-capture-destroying coroutines resume at
+their initial state after returning.
+<ul>
+<li>This can be very handy in some situations. In fact, I use it several times
+in examples to increase readability. See anywhere I <code>iter.map(coroutine)</code> or
+the base64 encoder.</li>
+<li>Similar question around generators: should they loop to save on a state or
+should they be fused-by-default?</li>
+<li>If we do decide to panic-after-return, restart-after-return can still be
+emulated using <code>loop { .. }</code> as the coroutine body instead of simply <code>{ .. }</code>. This is even zero-cost because unreachable poison states are eliminated.</li>
+</ul>
+</li>
+<li><a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a> also optionally proposes that capture-destroying closures should
+only implement <code>FnOnce</code> unless explicitly annotated, even if they should
+apparently be resumable several times.
+<ul>
+<li><code>mut || { drop(capture); }</code> is recommended as the modifier, to hint that an
+<code>FnMut</code> impl is being requested when the closure in question would otherwise
+impl only <code>FnOnce</code>.</li>
+<li>But the behavior of this modifier is probably too obscure and requires
+too much explanation vs &quot;closures always impl FnMut/FnPin if they contain
+yield&quot;.</li>
+</ul>
+</li>
+</ul>
+<h2 id="async-coroutines"><a class="header" href="#async-coroutines">Async coroutines</a></h2>
+<ul>
+<li>I am aware of no strong proposal for an async version of generalized
+coroutines although a fair amount of discussion has taken place.
+<ul>
+<li>In the context of <a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a>, how should <code>async || { ... yield ...}</code> be
+handled in the very long-term? <em>Error right now.</em></li>
+</ul>
+</li>
+<li>Async coroutines don't make much sense because of resume arguments. Async
+functions are already coroutines which take an <code>&amp;mut Context</code> as a resume
+argument. How should additional arguments should be specified?
+<ul>
+<li>Do the additional args need to be passed every single poll or are they only
+needed when resuming after <code>Ready</code>?</li>
+<li>If they are stored between <code>Ready</code>s, how does that interact with the ban on
+witnessing external borrows? Badly.</li>
+<li>On resume, the the coroutine might only take the additional arguments. It
+could then yield a future to take the async context and handle any <code>Pending</code>
+yields.</li>
+<li>If so, how is the coroutine body broken up into distinct futures to be
+yielded?</li>
+<li>What happens if a yielded future is destroyed early? Panic on resume?</li>
+</ul>
+</li>
+<li>Generators and async are both sugars on top of coroutines and are orthogonal
+to each other. But neither is orthogonal to the underlying coroutine feature:</li>
+</ul>
+<pre><code class="language-rust ignore">// an async block
+async {
+  &quot;hello&quot;
+}
+
+// an async generator
+async gen {
+  yield &quot;hello&quot;;
+}
+
+// an &quot;async coroutine&quot;
+|ctx: &amp;mut Context| {
+  yield Poll::Ready(&quot;hello&quot;);
+}
+</code></pre>
+<ul>
+<li>Taking the async context explicitly makes it cleaner to implement some complex
+async functions which take additional poll parameters.
+<ul>
+<li>An <code>await_with!</code> macro would be quite useful for implementing <code>await</code> loops
+on arbitrary <code>Poll</code>-returning functions.
+<ul>
+<li>Would be a good candidate for an <code>.await(args..)</code> syntax if very heavily
+used.</li>
+</ul>
+</li>
+<li>For example, an simple little checksumming async write wrapper might look
+like this:</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-rust ignore">|ctx: &amp;mut Context, bytes: &amp;[u8]| -&gt; Poll&lt;usize&gt; {
+  let mut checksum = 0;
+  let mut count = 0;
+  pin_mut!(writer);
+
+  loop {
+    let n = 4096 - count;
+    if n == 0 {
+      await_with!(writer.poll_write, ctx, &amp;[checksum]);
+    }
+
+    let part = &amp;bytes[..bytes.len().min(n)];
+    checksum = part.fold(checksum, |x, &amp;y| x ^ y);
+    await_with!(writer.poll_write, ctx, part);
+
+    count += part.len();
+    yield Ready(part.len());
+  }
+}
+</code></pre>
+<h2 id="try"><a class="header" href="#try">Try</a></h2>
+<ul>
+<li>All proposals work fine with the <code>?</code> operator without even trying (haha).</li>
+<li><code>Poll&lt;Result&lt;_, _&gt;&gt;</code> and <code>Poll&lt;Option&lt;Result&lt;_, _&gt;&gt;&gt;</code> already implement <code>Try</code>!</li>
+<li>Generators usually want a totally different <code>?</code> desugar that does <code>yield Some(Err(...)); return None;</code> instead of <code>return Err(...)</code>.
+<ul>
+<li>This comes up a lot in discussions of general coroutine syntaxes but just
+muddies things up because (say it with me) generators ≠ coroutines.</li>
+<li>Sugar-free implementation is easy: <code>yield Some(try { ... }); None</code></li>
+</ul>
+</li>
+<li>Try blocks in general are super useful for handing errors by moving into
+specific error-handeling states.</li>
+</ul>
+<h2 id="language-similarity"><a class="header" href="#language-similarity">Language similarity</a></h2>
+<ul>
+<li>Rust's version of coroutines can be a bit unusual compared to other languages.
+But the reason for this is simple: you need arguments to resume Rusty
+coroutines.</li>
+<li>Resume arguments in other languages can be passed just fine by sharing mutable
+data. So all they need to implement are generators, not true coroutines as
+defined here.</li>
+</ul>
+<pre><code class="language-python"># Generator function takes a word list and name on construction.
+# The shared list is mutated to make room for new words.
+def write_greeting(name, words):
+    words.append('hello')
+    if words.is_full:
+        yield
+    words.append(name)
+
+</code></pre>
+<pre><code class="language-rust ignore">// Function only needs name to construct coroutine.
+// Coroutine gets mutable access to the word list each resume.
+fn write_greeting(name: String) -&gt; impl FnMut(&amp;mut Vec&lt;String&gt;) {
+  |words| {
+    words.push(&quot;hello&quot;.to_string());
+    if words.len() == words.capacity() {
+      yield
+    }
+    words.push(name);
+  }
+}
+
+</code></pre>
+<h2 id="language-complexity"><a class="header" href="#language-complexity">Language complexity</a></h2>
+<ul>
+<li>The main selling point of <a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a> is that it avoids adding a whole new language feature with associated design questions. Instead, the common answer to questions regarding MCP-49 is that yield-closures simply do whatever closures do.
+<ul>
+<li>The syntax is the same.</li>
+<li>Captures work the same way.</li>
+<li>Arguments are passed the same way.</li>
+<li>Return and yield both drop the latest arguments and then pop the call stack.</li>
+<li>The only big difference is that once <code>yield</code> is involved, some variables get
+stored in a witness struct rather than in the stack frame. Plus the need for
+a poison state.</li>
+</ul>
+</li>
+<li>In fact, <code>return</code> behaves exactly like a simultaneous <code>yield</code> + <code>break 'closure_body</code>.
+<ul>
+<li>In a sense, every closure already has a single yield point at which it
+resumes after <code>return</code>.</li>
+<li>A <code>yield</code> adds a second resume point: hence the need for a discriminant.</li>
+</ul>
+</li>
+<li>Under that proposal, anywhere a closure can be used, a coroutine can too. And
+vice versa.</li>
+</ul>
+<h2 id="generator-unification"><a class="header" href="#generator-unification">Generator unification</a></h2>
+<ul>
+<li>So far in this proposal, I've been very careful to distinguish generators (as
+supported by the propane and async_stream crates, proposed by <a href="https://github.com/rust-lang/rfcs/pull/2996/">RFC-2996</a>,
+etc) from the coroutines discussed here. They are treated as two separate
+language features.</li>
+<li>Does Rust have &quot;room&quot; for both stream syntax and a generator syntax? Would it
+be better to find a single solution to both?</li>
+<li>A single solution is difficult for a few reasons:
+<ul>
+<li>Taking resume arguments muddies the syntax. For example, what would be the
+syntax for a generator function which takes an explicit resume argument?</li>
+<li>The closure syntax works great for coroutines which implement <code>Fn*</code> a la
+<a href="https://github.com/rust-lang/lang-team/issues/49">MCP-49</a>! But reusing that syntax to magically implement <code>Iterator</code> or
+<code>Stream</code> would cause confusion.</li>
+<li>On that note, generators <em>definitely</em> want to implement different traits vs
+coroutines. <code>Iterator</code> and <code>Stream</code> rather than <code>Fn</code> or (ironically)
+<code>Generator</code>.</li>
+<li>As stated above, async coroutines don't make much sense: async interacts
+poorly with resume arguments.</li>
+<li>Async generators are super important, don't care about resume arguments.</li>
+<li>As mentioned in the section on try, generators and coroutines generally want
+different error handling. Or at lest, some more complex <code>?</code> desugar is not
+so obvious for coroutines in general as it is for generators specifically.</li>
+</ul>
+</li>
+<li>Once generalized coroutines are in place, a generator syntax like the one in
+<a href="https://github.com/rust-lang/rfcs/pull/2996/">RFC-2996</a> is a trivial sugar on top:</li>
+</ul>
+<pre><code class="language-rust ignore">gen {
+  for item in inner {
+    for mapped in func(item) {
+      yield mapped;
+    }
+  }
+}
+
+// becomes
+
+std::iter::from_fn(|| {
+  for item in inner {
+    for mapped in func(item) {
+      yield Some(mapped);
+    }
+  }
+  None
+})
+</code></pre>
+<pre><code class="language-rust ignore">async gen {
+  while let Some(item) = inner.next().await {
+    yield func(item).await;
+  }
+}
+
+// becomes
+
+std::stream::from_fn(|ctx| {
+  while let Some(item) = await_with!(inner.next(), ctx) {
+    yield Ready(Some(await_with!(func(item), ctx)));
+  }
+  Ready(None)
+})
+</code></pre>
+<ul>
+<li>Proc-macro crates could provide very satisfactory <code>gen</code> and <code>gen_async</code> macros
+until we are sure of the need to support such a sugar directly in language as
+a keyword or in core as a first-party macro.</li>
+</ul>
+<h2 id="past-discussions"><a class="header" href="#past-discussions">Past discussions</a></h2>
+<p>There are a <em>lot</em> of these. Dozens of internals threads, reddit posts, blog
+posts, draft RFCs, pre RFCs, actual RFCs, who knows what in Zulip, and so on.
+So this isn't remotely exhaustive:</p>
+<ul>
+<li>https://github.com/CAD97/rust-rfcs/pull/1</li>
+<li>https://github.com/rust-lang/lang-team/issues/49</li>
+<li>https://github.com/rust-lang/rfcs/pull/2033</li>
+<li>https://github.com/rust-lang/rfcs/pull/2781</li>
+<li>https://github.com/rust-lang/rust/issues/43122</li>
+<li>https://github.com/rust-lang/rust/pull/68524</li>
+<li>https://internals.rust-lang.org/t/crazy-idea-coroutine-closures/1576</li>
+<li>https://internals.rust-lang.org/t/no-return-for-generators/11138</li>
+<li>https://internals.rust-lang.org/t/syntax-for-generators-with-resume-arguments/11456</li>
+<li>https://internals.rust-lang.org/t/trait-generator-vs-trait-fnpin/10411</li>
+<li>https://reddit.com/r/rust/comments/dvd3az/generalizing_coroutines/</li>
+<li>https://samsartor.com/coroutines-2</li>
+<li>https://smallcultfollowing.com/babysteps/blog/2020/03/10/async-interview-7-withoutboats/#async-fn-are-implemented-using-a-more-general-generator-mechanism</li>
+<li>https://users.rust-lang.org/t/coroutines-and-rust/9058</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="extending-the-capabilities-of-compiler-generated-function-types"><a class="header" href="#extending-the-capabilities-of-compiler-generated-function-types">Extending the capabilities of compiler-generated function types</a></h1>
+<h2 id="background-1"><a class="header" href="#background-1">Background</a></h2>
+<p>Both standalone functions and closures have unique compiler-generated types.
+The rest of this document will refer to both categories as simply &quot;function
+types&quot;, and will use the phrase &quot;function types without upvars&quot; to refer to
+standalone functions <em>and</em> closures without upvars.</p>
+<p>Today, these function types have a small set of capabilities, which are
+exposed via trait implementations and implicit conversions.</p>
+<ul>
+<li>
+<p>The <code>Fn</code>, <code>FnMut</code> and <code>FnOnce</code> traits are implemented based on the way
+in which upvars are used.</p>
+</li>
+<li>
+<p><code>Copy</code> and <code>Clone</code> traits are implemented when all upvars implement the
+same trait (trivially true for function types without upvars).</p>
+</li>
+<li>
+<p><code>auto</code> traits are implemented when all upvars implement the same trait.</p>
+</li>
+<li>
+<p>Function types without upvars have an implicit conversion to the
+corresponding <em>function pointer</em> type.</p>
+</li>
+</ul>
+<h2 id="motivation"><a class="header" href="#motivation">Motivation</a></h2>
+<p>There are several cases where it is necessary to write a <a href="https://en.wikipedia.org/wiki/Trampoline_(computing)">trampoline</a>. A trampoline
+is a (usually short) generic function that is used to adapt another function
+in some way.</p>
+<p>Trampolines have the caveat that they must be standalone functions. They cannot
+capture any environment, as it is often necessary to convert them into a
+function pointer.</p>
+<p>Trampolines are most commonly used by compilers themselves. For example, when a
+<code>dyn Trait</code> method is called, the corresponding vtable pointer might refer
+to a trampoline rather than the original method in order to first down-cast
+the <code>self</code> type to a concrete type.</p>
+<p>However, trampolines can also be useful in low-level code that needs to interface
+with C libraries, or even in higher level libraries that can use trampolines in
+order to simplify their public-facing API without incurring a performance
+penalty.</p>
+<p>By expanding the capabilities of compiler-generated function types it would
+be possible to write trampolines using only safe code.</p>
+<h2 id="purpose"><a class="header" href="#purpose">Purpose</a></h2>
+<p>The goal of this design note is describe a range of techniques for implementing
+<em>trampolines</em> (defined below) and some of the feedback regarding those solutions.
+This design note does not intend to favor any specific solutions, just reflect past
+discussions. The presence or absence of any particular feedback in this document
+does not necessarily serve to favor or disfavor any particular solution.</p>
+<h2 id="history-1"><a class="header" href="#history-1">History</a></h2>
+<p>Several mechanisms have been proposed to allow trampolines to be written in safe
+code. These have been discussed at length in the following places.</p>
+<p>PR adding <code>Default</code> implementation to function types:</p>
+<ul>
+<li>https://github.com/rust-lang/rust/pull/77688</li>
+</ul>
+<p>Lang team triage meeting discussions:</p>
+<ul>
+<li>https://youtu.be/NDeAH3woda8?t=2224</li>
+<li>https://youtu.be/64_cy5BayLo?t=2028</li>
+<li>https://youtu.be/t3-tF6cRZWw?t=1186</li>
+</ul>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<h3 id="an-adaptor-which-prevents-unwinding-into-c-code"><a class="header" href="#an-adaptor-which-prevents-unwinding-into-c-code">An adaptor which prevents unwinding into C code</a></h3>
+<p>In this example, we are building a crate which provies a safe wrapper around
+an underlying C API. The C API contains at least one function which accepts
+a function pointer to be used as a callback:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>mod c_api {
+    extern {
+        pub fn call_me_back(f: extern &quot;C&quot; fn());
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>We would like to allow users of our crate to safely use their own callbacks.
+The problem is that if the callback panics, we would unwind into C code and this
+would be undefined behaviour.</p>
+<p>To avoid this, we would like to interpose between the user-provided callback and
+the C API, by wrapping it in a call to <code>catch_unwind</code>. Unfortunately, the C API
+offers no way to pass an additional &quot;custom data&quot; field that we could use to
+store the original function pointer.</p>
+<p>Instead, we could write a generic function like this:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::{panic, process};
+
+pub fn call_me_back_safely&lt;F: Fn() + Default&gt;(_f: F) {
+    extern &quot;C&quot; fn catch_unwind_wrapper&lt;F: Fn() + Default&gt;() {
+        if panic::catch_unwind(|| {
+            let f = F::default();
+            f()
+        }).is_err() {
+            process::abort();
+        }
+    }
+    unsafe {
+        c_api::call_me_back(catch_unwind_wrapper::&lt;F&gt;);
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>This compiles, and is intended to be used like so:</p>
+<pre><pre class="playground"><code class="language-rust">fn my_callback() {
+    println!(&quot;I was called!&quot;)
+}
+
+fn main() {
+    call_me_back_safely(my_callback);
+}
+</code></pre></pre>
+<p>However, this will fail to compile with the following error:</p>
+<blockquote>
+<p>error[E0277]: the trait bound <code>fn() {my_callback}: Default</code> is not satisfied</p>
+</blockquote>
+<h2 id="implementing-the-default-trait"><a class="header" href="#implementing-the-default-trait">Implementing the <code>Default</code> trait</a></h2>
+<p>The solution initially proposed was to implement <code>Default</code> for function types
+without upvars. Safe trampolines would be written like so:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn add_one_adapter&lt;F: Fn(i32) + Default&gt;(arg: i32) {
+    let f = F::default();
+    f(arg + 1);
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Discussions of this design had a few central themes.</p>
+<h3 id="when-should-default-be-implemented"><a class="header" href="#when-should-default-be-implemented">When should <code>Default</code> be implemented?</a></h3>
+<p>Unlike <code>Clone</code>, it intuitively does not make sense for a closure to implement
+<code>Default</code> just because its upvars are themselves <code>Default</code>. A closure like
+the following might not expect to ever observe an ID of zero:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn do_thing() -&gt; impl FnOnce() {
+    let id: i32 = generate_id();
+    || {
+      do_something_with_id(id)
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>The closure may have certain pre-conditions on its upvars that are violated
+by code using the <code>Default</code> implementation. That said, if a function type has
+no upvars, then there are no pre-conditions to be violated.</p>
+<p>The general consensus was that if function types are to implement <code>Default</code>,
+it should only be for those without upvars.</p>
+<p>However, this point was also used as an argument against implementing
+<code>Default</code>: traits like <code>Clone</code> are implemented structurally based on the
+upvars, whereas this would be a deviation from that norm.</p>
+<h3 id="leaking-details--weakening-privacy-concerns"><a class="header" href="#leaking-details--weakening-privacy-concerns">Leaking details / weakening privacy concerns</a></h3>
+<p>Anyone who can observe a function type, and can also make use of the <code>Default</code>
+bound, would be able to safely call that function. The concern is that this
+may go against the intention of the function author, who did not explicitly
+opt-in to the <code>Default</code> trait implementation for their function type.</p>
+<p>Points against this argument:</p>
+<ul>
+<li>
+<p>We already leak this kind of capability with the <code>Clone</code> trait implementation.
+A function author may write a <code>FnOnce</code> closure and rely on it only being callable once. However, if the upvars are all <code>Clone</code> then the function itself can be
+cloned and called multiple times.</p>
+</li>
+<li>
+<p>It is difficult to construct practical examples of this happening. The leakage
+happens in the wrong direction (upstream) to be easily exploited whereas we
+usually care about what is public to downstream crates.</p>
+<p>Without specialization, the <code>Default</code> bound would have to be explicitly listed
+which would then be readily visible to consumers of the upstream code.</p>
+</li>
+<li>
+<p>Features like <code>impl Trait</code> make it relatively easy to avoid leaking this
+capability when it's not wanted.</p>
+</li>
+</ul>
+<p>Points for this argument:</p>
+<ul>
+<li>The <code>Clone</code> trait requires an existing instance of the function in order to be
+exploited. The fact that the <code>Default</code> trait gives this capability to types
+directly makes it sufficiently different from <code>Clone</code> to warrant a different
+decision.</li>
+</ul>
+<p>These discussions also raise the question of whether the <code>Clone</code> trait itself
+should be implemented automatically. It is convenient, but it leaves a very
+grey area concerning which traits ought to be implemented for compiler-generated
+types, and the most conservative option would be to require an opt-in for all
+traits beyond the basic <code>Fn</code> traits (in the case of function types).</p>
+<h3 id="unnatural-ness-of-using-default-trait"><a class="header" href="#unnatural-ness-of-using-default-trait">Unnatural-ness of using <code>Default</code> trait</a></h3>
+<p>Several people objected on the grounds that <code>Default</code> was the wrong trait,
+or that the resulting code seemed unnatural or confusing. This lead to
+proposals involving other traits which will be described in their own
+sections.</p>
+<ul>
+<li>
+<p>Some people do not see <code>Default</code> as being equivalent to the
+default-constructible concept from C++, and instead see it as something
+more specialized.</p>
+<p>To avoid putting words in people's mouths I'll quote @Mark-Simulacrum
+directly:</p>
+<blockquote>
+<p>I think the main reason I'm not a fan of adding a Default impl here is
+because you (probably) would never actually use it really as a &quot;default&quot;;
+e.g. Vec::resize'ing with it is super unlikely. It's also not really a
+Default but more just &quot;the only value.&quot; Certainly the error message telling
+me that Default is not implemented for &amp;fn() {foo} is likely to be pretty
+confusing since that does have a natural default too, like any pointer to
+ZST). That's in some sense just more broadly true though.</p>
+</blockquote>
+</li>
+<li>
+<p>There were objections on the grounds that <code>Default</code> is not sufficient to
+guarantee <em>uniqueness</em> of the function value. Code could be written today that
+exposes a public API with a <code>Default + Fn()</code> bound, expecting all types
+meeting that bound to have a single unique value.</p>
+<p>If we expanded the set of types which could implement <code>Default + Fn()</code> (such
+as by stabilizing <code>Fn</code> trait implementations or by making more function
+types implement <code>Default</code>) then the assumptions of such code would be
+broken.</p>
+<p>On the other hand, we really can't stop people from writing faulty code and
+this does not seem like a footgun people are going to accidentally use, in
+part because it's so obscure.</p>
+</li>
+</ul>
+<h3 id="new-lang-item"><a class="header" href="#new-lang-item">New lang-item</a></h3>
+<p>This was a relatively minor consideration, but it is worth noting that this
+solution would require making <code>Default</code> a lang item.</p>
+<h2 id="safe-transmute"><a class="header" href="#safe-transmute">Safe transmute</a></h2>
+<p>This proposal was to materialize the closure using the machinery being
+added with the &quot;safe transmute&quot; RFC to transmute from the unit <code>()</code> type.</p>
+<p>The details of how this would work in practice were not discussed in detail,
+but there were some salient points:</p>
+<ul>
+<li>
+<p>This solves the &quot;uniqueness&quot; problem, in that ZSTs are by definition unique.</p>
+</li>
+<li>
+<p>It does not help with the &quot;privacy leakage&quot; concerns.</p>
+</li>
+<li>
+<p>It opens up a new can of worms relating to the fact that ZST closure types
+may still have upvars.</p>
+</li>
+<li>
+<p>Several people expressed something along the lines of:</p>
+<blockquote>
+<p>if we were going to have a trait that allows this, it might as well be
+Default, because telling people &quot;no, you need the special default&quot; doesn't
+really help anything.</p>
+</blockquote>
+<p>Or, that if it's possible to do this one way with safe code, it should be
+possible to do it in every way that makes sense.</p>
+</li>
+</ul>
+<h2 id="singleton-or-zst-trait"><a class="header" href="#singleton-or-zst-trait"><code>Singleton</code> or <code>ZST</code> trait</a></h2>
+<p>New traits were proposed to avoid using <code>Default</code> to materialize the function
+values. The considerations here are mostly the same as for the &quot;safe
+transmute&quot; propsal. One note is that if we <em>were</em> to add a <code>Singleton</code> trait,
+it would probably make sense for that trait to inherit from the <code>Default</code>
+trait anyway, and so a <code>Default</code> implementation now would be
+backwards-compatible.</p>
+<h2 id="fnstatic-trait"><a class="header" href="#fnstatic-trait"><code>FnStatic</code> trait</a></h2>
+<p>This would be a new addition to the set of <code>Fn</code> traits which would allow
+calling the function without any <code>self</code> argument at all. As the most
+restrictive (for the callee) and least restrictive (for the caller) it
+would sit at the bottom of the <code>Fn</code> trait hierarchy and inherit from <code>Fn</code>.</p>
+<ul>
+<li>Would be easy to understand for users already familiar with the <code>Fn</code> trait hierarchy.</li>
+<li>More unambiguously describes a closure with no upvars rather than one which is a ZST.</li>
+<li>Doesn't solve the problem of accidentally leaking capabilities.</li>
+<li>Does not force a decision on whether closures should implement <code>Default</code>.</li>
+</ul>
+<p>This approach would also generalize the existing closure -&gt; function pointer
+conversion for closures which have no upvars. Instead of being special-cased
+in the compiler, the conversion can apply to all types implementing <code>FnStatic</code>.
+Furthermore, the conversion could be implemented by simply returning a pointer
+to the <code>FnStatic::call_static</code> function, which makes this very elegant.</p>
+<h3 id="example-1"><a class="header" href="#example-1">Example</a></h3>
+<p>With this trait, we can implement <code>call_me_back_safely</code> from the prior example
+like this:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::{panic, process};
+
+pub fn call_me_back_safely&lt;F: FnStatic()&gt;(_f: F) {
+    extern &quot;C&quot; fn catch_unwind_wrapper&lt;F: FnStatic()&gt;() {
+        if panic::catch_unwind(F::call_static).is_err() {
+            process::abort();
+        }
+    }
+    unsafe {
+        c_api::call_me_back(catch_unwind_wrapper::&lt;F&gt;);
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h2 id="const-eval"><a class="header" href="#const-eval">Const-eval</a></h2>
+<p>Initially proposed by @scalexm, this solution uses the existing implicit
+conversion from function types to function pointers, but in a const-eval
+context:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn add_one_adapter&lt;const F: fn(i32)&gt;(arg: i32) {
+    F(arg + 1);
+}
+
+fn get_adapted_function_ptr&lt;const F: fn(i32)&gt;() -&gt; fn(i32) {
+    add_one_adapter::&lt;F&gt;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<ul>
+<li>Avoids many of the pitfalls with implementing <code>Default</code>.</li>
+<li>Requires giving up the original function type. There could be cases where
+you still need the original type but the conversion to function pointer
+is irreversible.</li>
+<li>It's not yet clear if const-evaluation will be extended to support this
+use-case.</li>
+<li>Const evaluation has its own complexities, and given that we already have
+unique function types, it seems like the original problem should be solvable
+using the tools we already have available.</li>
+</ul>
+<h2 id="opt-in-trait-implementations"><a class="header" href="#opt-in-trait-implementations">Opt-in trait implementations</a></h2>
+<p>This was barely touched on during the discussions, but one option would be to
+have traits be opted-in via a <code>#[derive(...)]</code>-like attribute on functions and
+closures.</p>
+<ul>
+<li>Gives a lot of power to the user.</li>
+<li>Quite verbose.</li>
+<li>Solves the problem of leaking capabilities.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="auto-traits"><a class="header" href="#auto-traits">Auto traits</a></h1>
+<p>Auto traits permit automatically implementing a trait for types which contain
+fields implementing the trait. That is, they are fairly close to an automatic
+derive. They describe properties of types rather than behaviors; current stable
+Rust has several auto traits: <code>Send</code>, <code>Sync</code>, <code>Unpin</code>, <code>UnwindSafe</code>,
+<code>RefUnwindSafe</code>.</p>
+<p><code>Freeze</code> is also an auto trait indirectly observable on stable; it is used by
+the compiler to determine which types can be placed in read-only memory, for
+example.</p>
+<p>Auto traits are tracked in <a href="https://github.com/rust-lang/rust/issues/13231">rust-lang/rust#13231</a>, and are also sometimes
+referred to as OIBITs (&quot;opt-in built-in traits&quot;).</p>
+<p>As of November 2020, the language team feels that new auto traits are unlikely
+to be added or stabilized. See <a href="https://zulip-archive.rust-lang.org/213817tlang/73585Freezestabilizationandautotraitbackcompat.html">discussion</a> on the addition of <code>Freeze</code> for
+context. There is a fairly high burden to doing so on the ecosystem, as it
+becomes a concern of every library author whether to implement the trait or not.</p>
+<p>Each auto trait represents a semver compatibility hazard for Rust libraries, as
+adding private fields can remove the auto trait unintentionally from a type.</p>
+<p>Stabilizing the ability to define auto traits also allows &quot;testing&quot; for the
+absence of a specific type:</p>
+<pre><code class="language-ignore">auto trait NoString {}
+impl !NoString for String {}
+</code></pre>
+<p>This is not something we generally want to allow, as it makes almost any change
+to types semver breaking. That means that stabilizing defining new auto traits is
+currently unlikely.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="eager-drop-design-note"><a class="header" href="#eager-drop-design-note">Eager drop design note</a></h1>
+<ul>
+<li>Project proposal <a href="https://github.com/rust-lang/lang-team/issues/86">rust-lang/lang-team#86</a></li>
+</ul>
+<h2 id="observations"><a class="header" href="#observations">Observations</a></h2>
+<h3 id="any-attempt-to-make-drop-run-more-eagerly-will-have-to-take-borrows-into-account"><a class="header" href="#any-attempt-to-make-drop-run-more-eagerly-will-have-to-take-borrows-into-account">Any attempt to make drop run more eagerly will have to take borrows into account</a></h3>
+<p>The original proposal was to use &quot;CFG dead&quot; as a criteria, but it's pretty clear that this will not work well. Example:</p>
+<pre><pre class="playground"><code class="language-rust=">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>{
+    let x = String::new();
+    let y = &amp;x;
+    // last use of x is here
+    println!(&quot;{}&quot;, y);
+    // but we use y here
+    ...
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Here, the fact that <code>y</code> (indirectly) uses <code>x</code> feels like an important thing to take into account.</p>
+<h3 id="some-destructors-can-be-run-at-any-time"><a class="header" href="#some-destructors-can-be-run-at-any-time">Some destructors can be run &quot;at any time&quot;...</a></h3>
+<p>Some destructors have very significant side-effects. The most notable example is dropping a lock guard.</p>
+<p>Others correspond solely to &quot;releasing resources&quot;: freeing memory is the most common example, but another might be replacing an entry in a table because you are done using it.</p>
+<h3 id="but-sometimes-that-significance-is-only-known-at-the-call-site"><a class="header" href="#but-sometimes-that-significance-is-only-known-at-the-call-site">...but sometimes that significance is only known at the call site</a></h3>
+<p>However, it can be hard to know what is significant. For a lock guard, for example, if the lock is just being used to guard the data, then moving the lock release early is actually <em>desirable</em>, because you want to release the lock as soon as you are doing changing the data. But sometimes you have a <code>Mutex&lt;()&gt;</code>, in which case the lock has extra semantics. It's hard to know for sure.</p>
+<h3 id="smarter-drop-placement-will-mean-that-adding-uses-of-a-variable-changes-when-its-destructor-runs"><a class="header" href="#smarter-drop-placement-will-mean-that-adding-uses-of-a-variable-changes-when-its-destructor-runs">Smarter drop placement will mean that adding uses of a variable changes when its destructor runs</a></h3>
+<p>This is not necesarily a problem, but it's an obvious implication: right now, the drop always runs when we exit the scope, so adding further uses to a variable has no effect, but that would have to change. That could be surprising (e.g., adding a debug printout changes the time when a lock is released).</p>
+<p>In contrast, if you add an early drop <code>drop(foo)</code> today, you get helpful error messages when you try to use it again.</p>
+<p>In other words, it's useful to have the <em>destructor</em> occurring at a known time (sometimes...).</p>
+<h3 id="todays-drop-rules-are-however-a-source-of-confusion"><a class="header" href="#todays-drop-rules-are-however-a-source-of-confusion">Today's drop rules are, however, a source of confusion</a></h3>
+<p>The semantics of <code>let _ = &lt;expr&gt;</code> have been known to caught a lot of confusion, particularly given the interaction of place expressions and value expresssions:</p>
+<ul>
+<li><code>let _ = foo</code> -- no effect</li>
+<li><code>let _ = foo()</code> -- immediately drops the result of invoking <code>foo()</code></li>
+<li><code>let _guard = foo</code> -- moves <code>foo</code> into <code>_guard</code> and drops at the end of the block</li>
+<li><code>let _guard = foo()</code> -- moves <code>foo()</code> into <code>_guard</code> and drops at the end of the block</li>
+</ul>
+<p>Another common source of confusion is the lifetimes of temporaries in <code>match</code> statements and the like:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>match foo.lock().data.copy_out() {
+    ...
+} // lock released here!
+<span class="boring">}
+</span></code></pre></pre>
+<p><code>let guard = foo; ...; drop(guard);</code> has the advantage of explicitness, so does something like <code>foo.with(|guard| ...)</code></p>
+<h3 id="clarity-for-unsafe-code-can-be-quite-important"><a class="header" href="#clarity-for-unsafe-code-can-be-quite-important">Clarity for unsafe code can be quite important</a></h3>
+<p>There are known footguns today with the timing of destructors and unsafe code. For example, <code>CString::new().as_ptr()</code> is a common thing people try to do that does not work. Eager destructors would enable more motion, which might exacerbate the problem.</p>
+<p>In addition, unsafe code means we might not be able to know the semantics associated with a destructor, such as what precisely a <code>Mutex&lt;()&gt;</code> guards, and moving a drop earlier <em>will</em> break some unsafe code in hard-to-detect ways.</p>
+<h2 id="alternatives"><a class="header" href="#alternatives">Alternatives</a></h2>
+<ul>
+<li>Scoped methods</li>
+<li>let blocks</li>
+<li>&quot;Defer&quot; type constructs or scoped guard type constructs from other languages
+<ul>
+<li>Go</li>
+<li>D</li>
+<li>Python</li>
+</ul>
+</li>
+<li>Built-in macros or RAII/closure-based helpers in the standard library.
+<ul>
+<li>Note that the <a href="https://crates.io/crates/scopeguard">scopeguard</a> crate offers macros like <code>defer!</code> that inject a let into the block.</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+                <script type="text/javascript" src="mermaid.min.js"></script>
+                <script type="text/javascript" src="mermaid-init.js"></script>
+        
+                        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+                
+    </body>
+</html>

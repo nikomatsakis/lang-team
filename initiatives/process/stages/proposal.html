@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Proposal - The Rust Language Design Team</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../../../favicon.svg">
+                        <link rel="shortcut icon" href="../../../favicon.png">
+                <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+                <link rel="stylesheet" href="../../../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../../../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../../welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item expanded "><a href="../../../initiatives.html"><strong aria-hidden="true">2.</strong> Initiatives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../initiatives/priorities.html"><strong aria-hidden="true">2.1.</strong> Current priorities</a></li><li class="chapter-item expanded "><a href="../../../initiatives/process.html"><strong aria-hidden="true">2.2.</strong> Process</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../initiatives/process/roles.html"><strong aria-hidden="true">2.2.1.</strong> Roles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../initiatives/process/roles/owner.html"><strong aria-hidden="true">2.2.1.1.</strong> Owner</a></li><li class="chapter-item "><a href="../../../initiatives/process/roles/liaison.html"><strong aria-hidden="true">2.2.1.2.</strong> Liaison</a></li></ol></li><li class="chapter-item expanded "><a href="../../../initiatives/process/stages.html"><strong aria-hidden="true">2.2.2.</strong> Stages</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../initiatives/process/stages/proposal.html" class="active"><strong aria-hidden="true">2.2.2.1.</strong> Proposal</a></li><li class="chapter-item "><a href="../../../initiatives/process/stages/experimental.html"><strong aria-hidden="true">2.2.2.2.</strong> Experimental</a></li><li class="chapter-item "><a href="../../../initiatives/process/stages/development.html"><strong aria-hidden="true">2.2.2.3.</strong> Development</a></li><li class="chapter-item "><a href="../../../initiatives/process/stages/feature_complete.html"><strong aria-hidden="true">2.2.2.4.</strong> Feature complete</a></li><li class="chapter-item "><a href="../../../initiatives/process/stages/stabilized.html"><strong aria-hidden="true">2.2.2.5.</strong> Stabilized</a></li><li class="chapter-item "><a href="../../../initiatives/process/stages/inactive.html"><strong aria-hidden="true">2.2.2.6.</strong> Inactive</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../initiatives/faq.html"><strong aria-hidden="true">2.3.</strong> FAQ</a></li></ol></li><li class="chapter-item "><a href="../../../how_to.html"><strong aria-hidden="true">3.</strong> Lang team &quot;how to&quot; guide</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../how_to/nominate.html"><strong aria-hidden="true">3.1.</strong> Nominate an issue</a></li><li class="chapter-item "><a href="../../../how_to/propose.html"><strong aria-hidden="true">3.2.</strong> Propose an initiative</a></li><li class="chapter-item "><a href="../../../how_to/design_meeting.html"><strong aria-hidden="true">3.3.</strong> Request a design meeting</a></li></ol></li><li class="chapter-item "><a href="../../../chat_platform.html"><strong aria-hidden="true">4.</strong> Chat platform</a></li><li class="chapter-item "><a href="../../../calendar.html"><strong aria-hidden="true">5.</strong> Calendar</a></li><li class="chapter-item "><a href="../../../meetings.html"><strong aria-hidden="true">6.</strong> Meetings</a></li><li class="chapter-item "><a href="../../../design_notes.html"><strong aria-hidden="true">7.</strong> Design notes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../design_notes/int_literal_as_float.html"><strong aria-hidden="true">7.1.</strong> Allowing integer literals like 1 to be inferred to floating point</a></li><li class="chapter-item "><a href="../../../design_notes/general_coroutines.html"><strong aria-hidden="true">7.2.</strong> Generalizing coroutines</a></li><li class="chapter-item "><a href="../../../design_notes/fn_type_trait_impls.html"><strong aria-hidden="true">7.3.</strong> Extending the capabilities of compiler-generated function types</a></li><li class="chapter-item "><a href="../../../design_notes/auto_traits.html"><strong aria-hidden="true">7.4.</strong> Auto traits</a></li><li class="chapter-item "><a href="../../../design_notes/eager_drop.html"><strong aria-hidden="true">7.5.</strong> Eager drop</a></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">The Rust Language Design Team</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="stage-1-proposal"><a class="header" href="#stage-1-proposal">Stage 1: Proposal</a></h1>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>The proposal stage is where specific ideas start. A <em>proposal</em> is, like today, an issue on the lang-team repository. It should include:</p>
+<ul>
+<li>Motivation and general idea</li>
+<li>Any relevant background links</li>
+<li>Enough detail to understand the problem and some sense of how it might be solved</li>
+<li>Someone interested in being the <a href="../roles/owner.html">owner</a> for the initiative, if any.</li>
+</ul>
+<p>Proposals are meant to be raised early. The idea should have undergone some amount of iteration, perhaps on internals or elsewhere, but it doesn't have to be -- and ideally is not -- a fully formed, concrete proposal. It can be a sketch of &quot;here is a problem and here are a few general ideas for how to address it&quot;.</p>
+<p>Once a proposal is opened, it can be discussed asynchronously by lang team members. If some member likes the idea, they first check with the team leads. If the leads agree, the member can <strong>second</strong> it, which means the member agrees to serve as the lang team <a href="../roles/liaison.html">liaison</a>.</p>
+<ul>
+<li>Proposal does not have to include:
+<ul>
+<li>Specific details or a known plan, uncertainty is expected</li>
+</ul>
+</li>
+<li>Lang team members will review, consider, and discuss</li>
+</ul>
+<p>While a proposal is open, it can undergo refinements simply by editing the issue text. Discussions typically take place on Zulip, but it is expected that regular summaries will be posted.</p>
+<h2 id="timeframe"><a class="header" href="#timeframe">Timeframe</a></h2>
+<p>Proposals represent pending decisions and are not meant to stay open. The decision about whether to accept a proposal or not is typically made within 1-2 weeks and is meant to decided within one month. In some cases, we may close a proposal but continue discussing and decide to open a fresh proposal shortly thereafter.</p>
+<h2 id="exit-seconding-a-proposal"><a class="header" href="#exit-seconding-a-proposal">Exit: Seconding a proposal</a></h2>
+<p>Any team member can <strong>second</strong> a proposal: this means that they volunteer to serve as initiative <a href="../roles/liaison.html">liaison</a>. Before seconding a proposal:</p>
+<ul>
+<li>The proposed owner should ensure that all relevant conversation from the Zulip threads, internals forum, and other forums is summarized in the issue.
+<ul>
+<li>If they are not willing/able to do this, they are likely not a good choice to act as owner.</li>
+</ul>
+</li>
+<li>The liaison should check with the team lead(s).
+<ul>
+<li>This gives the leads a chance to discuss whether the initiative seems like a good fit and whether the proposed initiative owner/liaison is a good choice (and, if not, why not).</li>
+<li>Team lead(s) should check with the moderation team to see if the proposed owner (or prominent likely members) has any prior history that may not be known to them. The leads do this to keep this info on a narrow basis.</li>
+<li>It's better to have those kind of sensitive discussions before things have been said publicly.</li>
+</ul>
+</li>
+</ul>
+<p>After this is done, members may second the proposal by writing <code>@rustbot second</code> in the issue thread along with a short comment identifying the owner. Seconding a proposal will cause it enter an FCP period. Team members may opt to suspend the FCP period by issuing <code>@rustbot pause</code>, this will cause the FCP to suspend. This is typically done to raise a concern which can then be discussed. The FCP can be resumed by any member saying <code>@rustbot resume</code> (to re-enter FCP) or <code>@rustbot cancel</code> (to cancel FCP).</p>
+<p>Once a proposal is seconded, the next step depends on its complexity:</p>
+<ul>
+<li>Most initiatives proceed to <a href="./experimental.html">Stage 2 (Experimental)</a>, which is focused on authoring an RFC.</li>
+<li>However, simple initiatives can skip directly to <a href="./development.html">Stage 3 (Development)</a>.
+<ul>
+<li>This indicates that the design is well understood and there aren't any complex tradeoffs to explore and document.</li>
+<li>A common example of this is for new lints.</li>
+</ul>
+</li>
+</ul>
+<p>Types of objections that make sense at this period:</p>
+<ul>
+<li>Technical concerns:
+<ul>
+<li>These are typically managed by adding the scenario or concern to a list of constraints to be taken under consideration and addressed.</li>
+<li>It is absolutely not necessary to have answers to all the technical problems before seconding a proposal!</li>
+</ul>
+</li>
+<li>Overload concerns:
+<ul>
+<li>A single owner or liaison should not be involved in too many things.</li>
+</ul>
+</li>
+<li>Prioritization concerns:
+<ul>
+<li>This idea might seem premature or like a poor choice of resources.</li>
+</ul>
+</li>
+<li>People concerns:
+<ul>
+<li>Concerns about the people involved are best raised by taking directly to the leads first.</li>
+</ul>
+</li>
+</ul>
+<h2 id="exit-proposal-is-not-accepted"><a class="header" href="#exit-proposal-is-not-accepted">Exit: Proposal is not accepted</a></h2>
+<p>In some cases, proposals will not be accepted. This could happen because there is nobody who wants to second it at this time. It could also happen because the lang team leads decide that the proposal doesn't it the current priorities of the team, or because the lang team leads feel that the task is not a good fit for the proposed owner or liaison (for example, the task may require specialized skills or more time than they have available). In these cases, the proposal will be closed.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../../../initiatives/process/stages.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../../../initiatives/process/stages/experimental.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../../../initiatives/process/stages.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../../../initiatives/process/stages/experimental.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+                <script type="text/javascript" src="../../../mermaid.min.js"></script>
+                <script type="text/javascript" src="../../../mermaid-init.js"></script>
+        
+        
+    </body>
+</html>

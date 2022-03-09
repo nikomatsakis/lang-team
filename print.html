@@ -4,36 +4,29 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>The Rust Language Design Team</title>
-                <meta name="robots" content="noindex" />
-                
-
+        <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
-        
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-                <link rel="icon" href="favicon.svg">
-                        <link rel="shortcut icon" href="favicon.png">
-                <link rel="stylesheet" href="css/variables.css">
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-                <link rel="stylesheet" href="css/print.css" media="print">
-        
+        <link rel="stylesheet" href="css/print.css" media="print">
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-                <link rel="stylesheet" href="fonts/fonts.css">
-        
+        <link rel="stylesheet" href="fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-            </head>
+    </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
@@ -83,14 +76,14 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item "><a href="initiatives.html"><strong aria-hidden="true">2.</strong> Initiatives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/priorities.html"><strong aria-hidden="true">2.1.</strong> Current priorities</a></li><li class="chapter-item "><a href="initiatives/process.html"><strong aria-hidden="true">2.2.</strong> Process</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/process/roles.html"><strong aria-hidden="true">2.2.1.</strong> Roles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/process/roles/owner.html"><strong aria-hidden="true">2.2.1.1.</strong> Owner</a></li><li class="chapter-item "><a href="initiatives/process/roles/liaison.html"><strong aria-hidden="true">2.2.1.2.</strong> Liaison</a></li></ol></li><li class="chapter-item "><a href="initiatives/process/stages.html"><strong aria-hidden="true">2.2.2.</strong> Stages</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/process/stages/proposal.html"><strong aria-hidden="true">2.2.2.1.</strong> Proposal</a></li><li class="chapter-item "><a href="initiatives/process/stages/experimental.html"><strong aria-hidden="true">2.2.2.2.</strong> Experimental</a></li><li class="chapter-item "><a href="initiatives/process/stages/development.html"><strong aria-hidden="true">2.2.2.3.</strong> Development</a></li><li class="chapter-item "><a href="initiatives/process/stages/feature_complete.html"><strong aria-hidden="true">2.2.2.4.</strong> Feature complete</a></li><li class="chapter-item "><a href="initiatives/process/stages/stabilized.html"><strong aria-hidden="true">2.2.2.5.</strong> Stabilized</a></li><li class="chapter-item "><a href="initiatives/process/stages/inactive.html"><strong aria-hidden="true">2.2.2.6.</strong> Inactive</a></li></ol></li></ol></li><li class="chapter-item "><a href="initiatives/faq.html"><strong aria-hidden="true">2.3.</strong> FAQ</a></li></ol></li><li class="chapter-item "><a href="how_to.html"><strong aria-hidden="true">3.</strong> Lang team &quot;how to&quot; guide</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="how_to/nominate.html"><strong aria-hidden="true">3.1.</strong> Nominate an issue</a></li><li class="chapter-item "><a href="how_to/propose.html"><strong aria-hidden="true">3.2.</strong> Propose an initiative</a></li><li class="chapter-item "><a href="how_to/design_meeting.html"><strong aria-hidden="true">3.3.</strong> Request a design meeting</a></li></ol></li><li class="chapter-item "><a href="chat_platform.html"><strong aria-hidden="true">4.</strong> Chat platform</a></li><li class="chapter-item "><a href="calendar.html"><strong aria-hidden="true">5.</strong> Calendar</a></li><li class="chapter-item "><a href="meetings.html"><strong aria-hidden="true">6.</strong> Meetings</a></li><li class="chapter-item "><a href="design_notes.html"><strong aria-hidden="true">7.</strong> Design notes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="design_notes/int_literal_as_float.html"><strong aria-hidden="true">7.1.</strong> Allowing integer literals like 1 to be inferred to floating point</a></li><li class="chapter-item "><a href="design_notes/general_coroutines.html"><strong aria-hidden="true">7.2.</strong> Generalizing coroutines</a></li><li class="chapter-item "><a href="design_notes/fn_type_trait_impls.html"><strong aria-hidden="true">7.3.</strong> Extending the capabilities of compiler-generated function types</a></li><li class="chapter-item "><a href="design_notes/auto_traits.html"><strong aria-hidden="true">7.4.</strong> Auto traits</a></li><li class="chapter-item "><a href="design_notes/eager_drop.html"><strong aria-hidden="true">7.5.</strong> Eager drop</a></li></ol></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item "><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item "><a href="initiatives.html"><strong aria-hidden="true">2.</strong> Initiatives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/priorities.html"><strong aria-hidden="true">2.1.</strong> Current priorities</a></li><li class="chapter-item "><a href="initiatives/stable.html"><strong aria-hidden="true">2.2.</strong> Stabilized initiatives</a></li><li class="chapter-item "><a href="initiatives/process.html"><strong aria-hidden="true">2.3.</strong> Process</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/process/roles.html"><strong aria-hidden="true">2.3.1.</strong> Roles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/process/roles/owner.html"><strong aria-hidden="true">2.3.1.1.</strong> Owner</a></li><li class="chapter-item "><a href="initiatives/process/roles/liaison.html"><strong aria-hidden="true">2.3.1.2.</strong> Liaison</a></li></ol></li><li class="chapter-item "><a href="initiatives/process/stages.html"><strong aria-hidden="true">2.3.2.</strong> Stages</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="initiatives/process/stages/proposal.html"><strong aria-hidden="true">2.3.2.1.</strong> Proposal</a></li><li class="chapter-item "><a href="initiatives/process/stages/experimental.html"><strong aria-hidden="true">2.3.2.2.</strong> Experimental</a></li><li class="chapter-item "><a href="initiatives/process/stages/development.html"><strong aria-hidden="true">2.3.2.3.</strong> Development</a></li><li class="chapter-item "><a href="initiatives/process/stages/feature_complete.html"><strong aria-hidden="true">2.3.2.4.</strong> Feature complete</a></li><li class="chapter-item "><a href="initiatives/process/stages/stabilized.html"><strong aria-hidden="true">2.3.2.5.</strong> Stabilized</a></li><li class="chapter-item "><a href="initiatives/process/stages/inactive.html"><strong aria-hidden="true">2.3.2.6.</strong> Inactive</a></li></ol></li><li class="chapter-item "><a href="initiatives/process/checklists.html"><strong aria-hidden="true">2.3.3.</strong> Checklists</a></li></ol></li><li class="chapter-item "><a href="initiatives/faq.html"><strong aria-hidden="true">2.4.</strong> FAQ</a></li></ol></li><li class="chapter-item "><a href="decision_process.html"><strong aria-hidden="true">3.</strong> Decision process and principles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="decision_process/examples.html"><strong aria-hidden="true">3.1.</strong> Decision process examples</a></li><li class="chapter-item "><a href="decision_process/reference.html"><strong aria-hidden="true">3.2.</strong> Decision process reference</a></li></ol></li><li class="chapter-item "><a href="how_to.html"><strong aria-hidden="true">4.</strong> Lang team &quot;how to&quot; guide</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="how_to/nominate.html"><strong aria-hidden="true">4.1.</strong> Nominate an issue</a></li><li class="chapter-item "><a href="how_to/propose.html"><strong aria-hidden="true">4.2.</strong> Propose an initiative</a></li><li class="chapter-item "><a href="how_to/design_meeting.html"><strong aria-hidden="true">4.3.</strong> Request a design meeting</a></li></ol></li><li class="chapter-item "><a href="chat_platform.html"><strong aria-hidden="true">5.</strong> Chat platform</a></li><li class="chapter-item "><a href="calendar.html"><strong aria-hidden="true">6.</strong> Calendar</a></li><li class="chapter-item "><a href="meetings.html"><strong aria-hidden="true">7.</strong> Meetings</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="meetings/triage.html"><strong aria-hidden="true">7.1.</strong> Triage meeting</a></li><li class="chapter-item "><a href="meetings/design.html"><strong aria-hidden="true">7.2.</strong> Planning and design meetings</a></li><li class="chapter-item "><a href="meetings/backlog-bonanza.html"><strong aria-hidden="true">7.3.</strong> Backlog bonanza</a></li></ol></li><li class="chapter-item "><a href="design_notes.html"><strong aria-hidden="true">8.</strong> Design notes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="design_notes/int_literal_as_float.html"><strong aria-hidden="true">8.1.</strong> Allowing integer literals like 1 to be inferred to floating point</a></li><li class="chapter-item "><a href="design_notes/general_coroutines.html"><strong aria-hidden="true">8.2.</strong> Generalizing coroutines</a></li><li class="chapter-item "><a href="design_notes/fn_type_trait_impls.html"><strong aria-hidden="true">8.3.</strong> Extending the capabilities of compiler-generated function types</a></li><li class="chapter-item "><a href="design_notes/auto_traits.html"><strong aria-hidden="true">8.4.</strong> Auto traits</a></li><li class="chapter-item "><a href="design_notes/eager_drop.html"><strong aria-hidden="true">8.5.</strong> Eager drop</a></li><li class="chapter-item "><a href="design_notes/autoref_ops.html"><strong aria-hidden="true">8.6.</strong> Autoderef and autoref in operators</a></li><li class="chapter-item "><a href="design_notes/copy_ergonomics.html"><strong aria-hidden="true">8.7.</strong> Copy type ergonomics</a></li></ol></li></ol>
+            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -107,22 +100,21 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                                            </div>
+                    </div>
 
                     <h1 class="menu-title">The Rust Language Design Team</h1>
 
                     <div class="right-buttons">
-                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                                                                        
                     </div>
                 </div>
 
-                                <div id="search-wrapper" class="hidden">
+                <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
                         <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
@@ -132,7 +124,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -147,25 +138,50 @@
                         <h1 id="welcome"><a class="header" href="#welcome">Welcome</a></h1>
 <p>Welcome to the repository for the Rust Language Design Team.  This
 page stores our administrative information, meeting minutes, as well
-as some amount of design constraints. It's also still a
+as some amount of design constraints. It's always a
 work-in-progress (insert omnipresent mid 90s logo for under
 construction here).</p>
+<p>Key links:</p>
+<ul>
+<li><a href="https://github.com/orgs/rust-lang/projects/16/">Active initiatives project board</a>
+<ul>
+<li>Shows you the things that are currently under development (or exploration) within Rust.</li>
+<li>You can <a href="./initiatives.html">read more about initiatives here</a>.</li>
+</ul>
+</li>
+<li><a href="./calendar.html">Meeting calendar</a>, <a href="https://github.com/rust-lang/lang-team/tree/master/minutes">triage meeting minutes</a>, <a href="https://github.com/rust-lang/lang-team/tree/master/design-meeting-minutes">design meeting minutes</a>
+<ul>
+<li>You can <a href="./meetings.html">read more about our meetings here.</a>.</li>
+</ul>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="initiatives"><a class="header" href="#initiatives">Initiatives</a></h1>
 <p>A lang team <strong>initiative</strong> is some active effort with a clear goal or deliverable.
 Typically initiatives are changes to the language, but they could also be documentation, specifications, or something internal to the lang team.</p>
-<h2 id="proposed-initiatives"><a class="header" href="#proposed-initiatives">Proposed initiatives</a></h2>
-<p>You can see the <a href="https://github.com/rust-lang/lang-team/issues?q=is%3Aissue+is%3Aopen+label%3Amajor-change">currently proposed initiatives</a> on Github.</p>
-<h2 id="active-initiatives"><a class="header" href="#active-initiatives">Active initiatives</a></h2>
-<p>You can see the active initiatives, and their state, on the lang team <a href="https://github.com/rust-lang/lang-team/projects/2">project board</a>.</p>
-<h3 id="learning-more-about-an-active-initiative"><a class="header" href="#learning-more-about-an-active-initiative">Learning more about an active initiative</a></h3>
-<p>Each initiative has a tracking issue that describes its state in more detail along with regular updates. The tracking issue also identifies two key people for the intiative:</p>
+<h2 id="active-initiatives"><a class="header" href="#active-initiatives"><a href="https://github.com/orgs/rust-lang/projects/16/">Active initiatives</a></a></h2>
+<p>Active initiatives are initiatives that have been assigned a lang-team <a href="./initiaives/roles/liaison.html">liaison</a> and which are actively underway. A complete list can be found in <a href="https://github.com/orgs/rust-lang/projects/16/">this GitHub project board</a>. Note that this list doesn't represent all unstable features; older features in particular were added without active initiatives.</p>
+<p>Each initiative on the project board is linked to a tracking issue and has a status:</p>
 <ul>
-<li>The <a href="initiatives/roles/owner.html">owner</a>, who drives the design.</li>
-<li>The <a href="initiatives/roles/liaison.html">liaison</a>, who synchronizes with the lang team and helps resolve thorny questions.</li>
+<li>The <a href="./initiaives/roles/owner.html">owner</a> and <a href="./initiaives/roles/liaison.html">liaison</a> are assigned to the issue.</li>
+<li>If the initiative has a dedicated repository, the issue is created on that repository (some initiatives don't require their own repos; they are found on rust-lang/rust or rust-lang/lang-team).</li>
+<li>The <a href="./initiaives/process/stages.html">stage</a> of the initiative:
+<ul>
+<li><a href="./initiatives/process/stages/experimental.html">Experimental</a> -- Drafting RFC; implementation work may begin on nightly as well</li>
+<li><a href="./initiatives/process/stages/development.html">Development</a> -- Approved RFC; implementation is in progress on nightly</li>
+<li><a href="./initiatives/process/stages/feature_complete.html">Feature complete</a> -- Implementation is complete on nightly and ready for widespread testing</li>
+<li><a href="./initiatives/process/stages/stabilized.html">Stabilized</a> -- Implementation is complete and available on stable
+<ul>
+<li>To be stabilized, there must be a pending PR adding the feature to the Rust reference, but this PR may not yet have landed.</li>
+<li>Other forms of integration, such as rustfmt, often take place after stabilization as well.</li>
 </ul>
-<p>If you have questions, the issue also identifies the <a href="./chat_platform.html">Zulip</a> stream where conversation is taking place. If you look at the comments of the issue, you may also find requests for help or other forms of participation.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="proposed-initiatives"><a class="header" href="#proposed-initiatives">Proposed initiatives</a></h2>
+<p>You can see the <a href="https://github.com/rust-lang/lang-team/issues?q=is%3Aissue+is%3Aopen+label%3Amajor-change">currently proposed initiatives</a> on Github. We review this list during <a href="./meetings.html">triage meetings</a> and decide whether to assign a liaison or close the proposal. If initiatives haven't received a liaison after 6 weeks of activity, we take that as a sign that there is no enthusiasm to pursue this and close the issue, but you are welcome to re-open the issue if you believe someone would be willing to liaison.</p>
 <h2 id="how-does-one-propose-a-new-initiative"><a class="header" href="#how-does-one-propose-a-new-initiative">How does one propose a new initiative?</a></h2>
-<p>Read more in the <a href="./initiatives/process.html">process</a> page!</p>
+<p>It's easy! You just open a short issue describing your idea. Read more in the <a href="./initiatives/process.html">process</a> page!</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="priorities"><a class="header" href="#priorities">Priorities</a></h1>
 <p>This page describes the current lang team priorities and explains
 their motivations. This page is typically updated as part of the
@@ -244,6 +260,11 @@ might reach out to if you wish to discuss a project proposal.</p>
 </ul>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stabilized-initiatives"><a class="header" href="#stabilized-initiatives">Stabilized initiatives</a></h1>
+<p>This table lists past initiatives which were stabilized.</p>
+<table><thead><tr><th>Initiative</th><th></th><th><a href="initiatives/./initiaives/process/stages.html">Stage</a></th><th><a href="initiatives/./initiaives/roles/owner.html">Owner</a></th><th><a href="initiatives/./initiaives/roles/liaison.html">Liaison</a></th></tr></thead><tbody>
+<tr><td><a href="https://github.com/rust-lang/project-rfc-2229/">Disjoint closure capture</a></td><td>✅</td><td><a href="initiatives/./initiatives/process/stages/stabilized.html">▰▰▰▰▰</a></td><td>nikomatsakis</td><td></td></tr>
+</tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="process"><a class="header" href="#process">Process</a></h1>
 <p>This page describes how lang team initiatives work. This is the process to use if you have an idea for a change you would like to make in the language.</p>
 <h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
@@ -428,7 +449,7 @@ might reach out to if you wish to discuss a project proposal.</p>
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="stage-1-proposal"><a class="header" href="#stage-1-proposal">Stage 1: Proposal</a></h1>
 <h2 id="summary-1"><a class="header" href="#summary-1">Summary</a></h2>
-<p>The proposal stage is where specific ideas start. A <em>proposal</em> is, like today, an issue on the lang-team repository. It should include:</p>
+<p>The proposal stage is where specific ideas start. To make a new proposal, <a href="https://github.com/rust-lang/lang-team/issues/new/choose">open an &quot;Initiative Proposal&quot; issue on the lang-team repository</a>. It should include:</p>
 <ul>
 <li>Motivation and general idea</li>
 <li>Any relevant background links</li>
@@ -480,7 +501,7 @@ might reach out to if you wish to discuss a project proposal.</p>
 <li>Technical concerns:
 <ul>
 <li>These are typically managed by adding the scenario or concern to a list of constraints to be taken under consideration and addressed.</li>
-<li>It is absolutely not necessary to have answers to all the technical problems before seconding a proposal!</li>
+<li><strong>It is absolutely not necessary to have answers to all the technical problems before seconding a proposal!</strong></li>
 </ul>
 </li>
 <li>Overload concerns:
@@ -501,6 +522,7 @@ might reach out to if you wish to discuss a project proposal.</p>
 </ul>
 <h2 id="exit-proposal-is-not-accepted"><a class="header" href="#exit-proposal-is-not-accepted">Exit: Proposal is not accepted</a></h2>
 <p>In some cases, proposals will not be accepted. This could happen because there is nobody who wants to second it at this time. It could also happen because the lang team leads decide that the proposal doesn't it the current priorities of the team, or because the lang team leads feel that the task is not a good fit for the proposed owner or liaison (for example, the task may require specialized skills or more time than they have available). In these cases, the proposal will be closed.</p>
+<p>We typically do not close proposals just because lang team members have technical objections: instead, those objections can be logged and resolved through the experimentation period. However, if it is clear that the proposal has no pathway to being accepted, we would try to take that into account.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="stage-2-experimental-optional"><a class="header" href="#stage-2-experimental-optional">Stage 2: Experimental (optional)</a></h1>
 <p>If an initiative is sufficiently complex as to warrant an RFC, then, after being seconded, the initiative enters the &quot;experimental&quot; state. The goal at this stage is to iterate on exploring and documenting the design space and preparing an RFC, or even multiple RFCs. These initiatives have their own Zulip stream and can land code in the compiler.</p>
 <p>Being in the experimental stage does not represent a commitment to land the code. There may well be team members with very live concerns about the feature and it may well get removed if those concerns cannot be resolved.</p>
@@ -522,7 +544,7 @@ might reach out to if you wish to discuss a project proposal.</p>
 <h3 id="during-this-stage-updates-to-the-team"><a class="header" href="#during-this-stage-updates-to-the-team">During this stage: updates to the team</a></h3>
 <p>During this stage, the owner and the liaison should meet on a regular basis. The owner should update the liaison about major design directions and seek their guidance on complex issues (particularly if the owner is not a member of the team). The liaison is responsible for documenting these updates and preparing a monthly update to the team as a whole. They are also responsible for deciding when an issue should be escalated to a lang team design meeting. Sometimes it makes sense to have a design meeting even if there isn't a decision to be made, just to update the team about the overall progress.</p>
 <h3 id="exit-rfc-approval"><a class="header" href="#exit-rfc-approval">Exit: RFC approval</a></h3>
-<p>To exit the Experimental stage, you need to prepare an RFC on the rust-lang/rfcs repository. This RFC needs to be approved by the lang team. The RFC can include &quot;unresolved questions&quot; to be resolved during the &quot;development&quot; phase.</p>
+<p>To exit the Experimental stage, you typically need to prepare an RFC on the rust-lang/rfcs repository. This RFC needs to be approved by the lang team. The RFC can include &quot;unresolved questions&quot; to be resolved during the &quot;development&quot; phase.</p>
 <h3 id="exit-go-inactive"><a class="header" href="#exit-go-inactive">Exit: Go inactive</a></h3>
 <p>It often happens that initiatives &quot;stall out&quot;. This could be because some of the problems seem insurmountable, because the people involved wind up not having enough time to continue, or because other things take priority. At any point, the owner can decide to step back, at which point the initiative becomes <a href="initiatives/process/stages/./inactive.html">inactive</a>. If an initiative has not made progress in several months, the team may also opt to move it to inactive status.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="stage-3-development"><a class="header" href="#stage-3-development">Stage 3: Development</a></h1>
@@ -571,6 +593,66 @@ might reach out to if you wish to discuss a project proposal.</p>
 <p>After stabilization, the owner and liaison should meet to do a final retrospective on how everything went and what could have been improved. This should be done within a few weeks of stabilization, while the memories are fresh.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="inactive-groups"><a class="header" href="#inactive-groups">Inactive groups</a></h1>
 <p>As an alternative to stabilization, initiatives may become <em>inactive</em>. This could be because we decided the idea doesn't work, but it could also be that people just no longer had time to work on it and so the idea was paused until somebody else shows up with time and energy. When marking an initiative as inactive, we try to do a final retrospective that judges how well the experience went. We also try to prepare a summary of the final state in case someone wants to start working on the design again (or perhaps a small piece of it; a common failing for initiatives is trying to tackle too big of a problem). These technical summaries can be placed in the <a href="initiatives/process/stages//design_notes.html">design notes</a> section of this website.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="checklists"><a class="header" href="#checklists">Checklists</a></h1>
+<p>Here are some checklists of the exact procedural steps to take.</p>
+<h2 id="open-a-proposal"><a class="header" href="#open-a-proposal">Open a proposal</a></h2>
+<ul>
+<li><a href="initiatives/process/./initiaives/roles/owner.html">Owner</a> should <a href="https://github.com/rust-lang/lang-team/issues/new/choose">open an &quot;Initiative Proposal&quot; issue on the lang-team repository</a>.</li>
+</ul>
+<h2 id="second-a-proposal"><a class="header" href="#second-a-proposal">Second a proposal</a></h2>
+<ul>
+<li>If there has been significant conversation, <a href="initiatives/process/./initiaives/roles/liaison.html">liaison</a> should ask <a href="initiatives/process/./initiaives/roles/owner.html">owner</a> to summarize that on the issue.</li>
+<li><a href="initiatives/process/./initiaives/roles/liaison.html">Liaison</a> should write <code>@rustbot second</code> which will trigger the start of the 10-day Final Comment Period (FCP).</li>
+<li>Any lang team member who has concerns should leave them in Zulip and on the issue during the final comment period.
+<ul>
+<li>Owner and liaison are responsible to describe how they expect to resolve the concern. This can be something simple, like &quot;we will do a write-up and a design meeting on this point&quot;.</li>
+</ul>
+</li>
+</ul>
+<h2 id="approve-a-proposal"><a class="header" href="#approve-a-proposal">Approve a proposal</a></h2>
+<p>Once a proposal has been seconded and the FCP has expired:</p>
+<ul>
+<li>If the initiative wants its own repository, then open an issue on the <a href="https://github.com/rust-lang/infra-team/">infra-team repository</a> and request that the infra team clone the <a href="https://github.com/rust-lang/initiative-template">initiative-template repository</a> with whatever name you need (<code>your-initiative-here</code>).</li>
+<li>Create a tracking issue to track the initiative:
+<ul>
+<li>If should be on <code>rust-lang/your-initiative-here</code> if you have a repository</li>
+<li>Otherwise it should be <code>rust-lang/rust</code> or <code>rust-lang/lang-team</code></li>
+<li>Tag it with <code>C-tracking-issue</code> and <code>T-lang</code></li>
+</ul>
+</li>
+<li>Add the tracking issue to the <a href="https://github.com/orgs/rust-lang/projects/16/">project board</a>:
+<ul>
+<li>Set the status appropriately (typically &quot;experimental&quot;).</li>
+</ul>
+</li>
+<li>If necessary, add a feature-gate to the compiler and tag it as &quot;experimental&quot;.</li>
+<li>Close the proposal issue with a link to the tracking issue.</li>
+</ul>
+<h2 id="close-a-proposal"><a class="header" href="#close-a-proposal">Close a proposal</a></h2>
+<ul>
+<li>After 4 weeks without a second, rustbot will post (not yet implemented) and add &quot;disposition-close&quot; and &quot;final-comment-period&quot;:
+<ul>
+<li>&quot;Hi there @rust-lang/lang and @author! It has been 4 weeks and this initiative has not been seconded. Initiatives that are not seconded after 6 weeks are automatically suggested for closure. Members of @rust-lang/lang, please take a look and see if you want to second this! -- your friendly neighborhood rustbot&quot;</li>
+</ul>
+</li>
+<li>After 6 weeks without a second, rustbot will post the following and add &quot;timer-elapsed&quot;
+<ul>
+<li>&quot;Hi there @rust-lang/lang and @author! It has been 6 weeks and this initiative has not been seconded. It seems that there isn't bandwidth to take up this proposal right now. I am tagging this issue to be closed at the next triage meeting. Please feel free to reopen it in the future when more bandwidth is available, especially if you are able to find a lang team member who says they will second it. -- your friendly neighborhood rustbot&quot;</li>
+</ul>
+</li>
+<li>Human can then close the issue from the triage meeting with comment sort of like:
+<ul>
+<li>&quot;Thanks for the proposal @author. Unfortunately there wasn't a second at this time and so I am going to close the issue.&quot;</li>
+</ul>
+</li>
+</ul>
+<h2 id="exit-the-experimental-stage-and-enter-development-stage"><a class="header" href="#exit-the-experimental-stage-and-enter-development-stage">Exit the <a href="initiatives/process/./initiatives/process/stages/experimental.html">experimental</a> stage and enter <a href="initiatives/process/./initiatives/process/stages/development.html">development</a> stage</a></h2>
+<ul>
+<li>Write an RFC</li>
+<li>Get the RFC approved</li>
+<li>xxx fill this in</li>
+</ul>
+<h2 id=""><a class="header" href="#"></a></h2>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="frequently-asked-questions-about-initiatives"><a class="header" href="#frequently-asked-questions-about-initiatives">&quot;Frequently asked questions&quot; about initiatives</a></h1>
 <h2 id="does-the-initiative-owner-make-decisions"><a class="header" href="#does-the-initiative-owner-make-decisions">Does the initiative owner make decisions?</a></h2>
 <p>The initiative owner drafts the proposed design and takes feedback from the liaison and team about what direction to take. This feedback can take the form of &quot;you need to do X&quot;, but typically it is more about &quot;you need to address this scenario&quot;. Or, put another way, if the initiative owner doesn't like the proposed direction, it's up to them to find an alternative that they do like which meets those same constraints, or to argue why the constraints are not necessary.</p>
@@ -583,6 +665,539 @@ might reach out to if you wish to discuss a project proposal.</p>
 <p>Sometimes, in the course of trying to design a initiative, we decide it was the wrong direction. That's ok! At any point the liaison can decide that the initiative isn't working out and close it. However, in doing so, they should document WHY they feel it did not work out -- and identify potential conditions where the idea may make sense later on. This documentation will typically take the form of a <a href="initiatives/../design_notes.html">design note</a> in the lang-team repository.</p>
 <p>If there are concerns about this, those concerns can be raised with the lang team leads.</p>
 <p>Closed initiatives will be removed from the project board and the code for them will be removed from the compiler.</p>
+<div style="break-before: page; page-break-before: always;"></div><p>This section documents the work-in-progress Rust language team decision
+process. This process, and the <code>rustbot</code> tooling to support it, does not yet
+have a finished implementation. This document serves to explain the intended
+process, for the purposes of ongoing implementation.</p>
+<h2 id="prioritized-principles-of-rust-team-consensus-decision-making"><a class="header" href="#prioritized-principles-of-rust-team-consensus-decision-making">Prioritized principles of Rust team consensus decision-making</a></h2>
+<p>These are in order of priority. They're intended to be general enough that they
+could apply to any Rust governance team, not just the language team.</p>
+<ul>
+<li><strong>Treasure dissent.</strong> When someone raises a concern, that's a chance to
+improve the design, and to discover and explore underlying values. Dissent
+should be an amicable, cooperative process.</li>
+<li><strong>Understand and cooperatively resolve concerns.</strong> We cannot resolve a
+concern without first understanding it, including the underlying values
+motivating it. We should demonstrate that understanding by documenting the
+concern. We should consider the tradeoffs and the impacts on users, through
+the Rust design principles. We should seek out and favor satisfying solutions
+(those that satisfy everyone's values) over
+<a href="https://en.wikipedia.org/wiki/Satisficing">satisficing</a> solutions (those
+that are just good enough for people to accept them as a compromise among
+conflicting values, without actually being happy with the outcome).</li>
+<li><strong>Don't force an irreversible decision.</strong> We should make decisions
+reversible whenever we can. When making a necessarily irreversible decision
+(e.g. stabilizing a feature), we should pay close attention to dissent, and
+hesitate before overriding objections. If possible, we should seek a better
+alternative, or seek common ground we can find consensus on, or seek an
+intermediate step that addresses the same use case and supports evaluation
+for a more informed decision in the future. If none of those are possible,
+consider the null alternative; not making a change should always be the
+easier path, and the burden of proof to override a concern on an irreversible
+decision should be high.</li>
+<li><strong>Value expertise.</strong> When cooperatively resolving a concern, or when
+considering overriding a concern, carefully weigh the advice and
+recommendations of experts. This includes team advisors, domain experts, and
+the owners or members of relevant initiatives.</li>
+<li><strong>Recording reasoning helps ensure good, consistent decisions over time.</strong>
+Even if we decide not to sustain an objection, we should always record the
+objection and the reasons for our decision as a &quot;dissent&quot;, as well as any
+unresolved questions for evaluation later in the process. The team member who
+raised the objection has the perogative to author that dissent and frame the
+unresolved questions (within reason).</li>
+<li><strong>Consensus doesn't mean unanimity.</strong> Consensus means everyone is heard and
+understood, and all concerns are addressed (even those not treated as
+blocking), and the team finds the outcome reasonable. Consensus does not mean
+everyone agrees completely.</li>
+</ul>
+<h2 id="consensus-decision-making-process"><a class="header" href="#consensus-decision-making-process">Consensus decision-making process</a></h2>
+<p>First, see <a href="./decision_process/examples.html">some examples of the decision-making process in
+action</a>. Then, read the <a href="./decision_process/reference.html">decision process
+reference</a> for the full process and the
+<code>rustbot</code> tooling to support it.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="examples-of-the-decision-making-process-in-action"><a class="header" href="#examples-of-the-decision-making-process-in-action">Examples of the decision-making process in action</a></h1>
+<h2 id="reversible-decision-merging-a-proposal"><a class="header" href="#reversible-decision-merging-a-proposal">Reversible decision: merging a proposal</a></h2>
+<p>The process is best described by example. Suppose that there is a pending lang
+team proposal, and a lang team member would like to serve as the liaison. They
+contact the team leads and receive the go-ahead. They can then write:</p>
+<blockquote>
+<p>@rustbot merge</p>
+<p>I propose to merge this proposal. I think it will be a great addition to
+Rust!</p>
+</blockquote>
+<p>This indicates that they would like to merge the proposal. At the moment, there
+is no decision pending, so rustbot would add a comment that looks like the
+following:</p>
+<blockquote>
+<p>Hello! @Alan has proposed to merge this. This is a <strong>reversible decision</strong>,
+which means that it will be affirmed once the &quot;final comment period&quot; of 10
+days have passed, unless a team member places a &quot;hold&quot; on the decision (or
+cancels it).</p>
+<table><thead><tr><th>Team member</th><th>State</th></tr></thead><tbody>
+<tr><td>@Alan</td><td><strong>merge</strong></td></tr>
+<tr><td>@Barbara</td><td></td></tr>
+<tr><td>@Grace</td><td></td></tr>
+<tr><td>@Niklaus</td><td></td></tr>
+</tbody></table>
+</blockquote>
+<p>As the comment says, the PR is now in &quot;pending decision&quot; state, with Alan
+having kicked off the process with a proposal to merge. Alan's status of
+<strong>merge</strong> will link to his comment.</p>
+<p>Now, for this particular proposal, Barbara has a concern. She thinks that the
+proposal has overlooked an important consideration. She writes a comment:</p>
+<blockquote>
+<p>@rustbot hold</p>
+<p>Did you consider reversing the polarity? Or the impact on the flux capacitor?</p>
+</blockquote>
+<p>At this point, rustbot updates the state; Barbara's status of
+<strong>hold</strong> will link to her comment:</p>
+<blockquote>
+<p>Hello! @Alan has proposed to merge this. This is a <strong>reversible decision</strong>,
+which means that it will be affirmed once the &quot;final comment period&quot; of 10
+days have passed, unless a team member places a &quot;hold&quot; on the decision (or cancels it).</p>
+<table><thead><tr><th>Team member</th><th>State</th></tr></thead><tbody>
+<tr><td>@Alan</td><td><strong>merge</strong></td></tr>
+<tr><td>@Barbara</td><td><strong>hold</strong></td></tr>
+<tr><td>@Grace</td><td></td></tr>
+<tr><td>@Niklaus</td><td></td></tr>
+</tbody></table>
+</blockquote>
+<p>Alan is currently busy at work, though, so by the time that he and Barbara
+get a chance to talk, 11 days have passed. (Alan and Barbara receive a ping
+from rustbot after a week or so.) Once they get a chance to talk, Alan
+fully addresses Barbara's concern, so Barbara posts:</p>
+<blockquote>
+<p>@rustbot merge</p>
+</blockquote>
+<p>The comment is updated:</p>
+<blockquote>
+<p>Hello! @Alan has proposed to merge this. This is a <strong>reversible decision</strong>,
+which means that it will be affirmed once the &quot;final comment period&quot; of 10
+days have passed, unless a team member places a &quot;hold&quot; on the decision (or cancels it).</p>
+<table><thead><tr><th>Team member</th><th>State</th></tr></thead><tbody>
+<tr><td>@Alan</td><td><strong>merge</strong></td></tr>
+<tr><td>@Barbara</td><td><del>hold</del> <strong>merge</strong></td></tr>
+<tr><td>@Grace</td><td></td></tr>
+<tr><td>@Niklaus</td><td></td></tr>
+</tbody></table>
+</blockquote>
+<p>Barbara's previous <del>hold</del> status links to her previous comment setting her
+status to <code>hold</code>, and her current <strong>merge</strong> status links to her more recent
+comment setting her status to <code>merge</code>.</p>
+<p>At this point, all the statuses are either empty or <strong>merge</strong>, and more than 10
+days have passed since the FCP started. Therefore, it completes immediately.</p>
+<h2 id="authoring-an-rfc-illustration-of-rustbot-restart"><a class="header" href="#authoring-an-rfc-illustration-of-rustbot-restart">Authoring an RFC (illustration of <code>rustbot restart</code>)</a></h2>
+<p>After some time, the proposal is completed and an RFC is proposed. This is a
+reversible decision. Alan, as the liaison, proposes to merge the RFC with
+<code>@rustbot merge</code>, and the decision making process proceeds as above.</p>
+<p>This time, Niklaus has a concern:</p>
+<blockquote>
+<p>@rustbot hold</p>
+<p>I have not had time to read this yet! Give me a bit of time to write it up.</p>
+</blockquote>
+<p>After 7 days have passed, rustbot writes to him:</p>
+<blockquote>
+<p>@Niklaus, I see you have placed a hold but 7 days have passed. Are you any
+closer to reaching a decision? (cc @Alan)</p>
+</blockquote>
+<p>This continues for a week or two while Alan and Niklaus play &quot;email tag&quot;. In
+the interim, Barbara decides she agrees with the RFC, so she uses <code>@rustbot merge</code> as well. The status now looks like this:</p>
+<blockquote>
+<p>Hello! @Alan has proposed to merge this PR. This is a <strong>reversible
+decision</strong>, which means that it will be affirmed once the &quot;final comment
+period&quot; of 10 days have passed, unless a team member places a &quot;hold&quot; on the decision (or cancels it).
+decision.</p>
+<table><thead><tr><th>Team member</th><th>State</th></tr></thead><tbody>
+<tr><td>@Alan</td><td><strong>merge</strong></td></tr>
+<tr><td>@Barbara</td><td><strong>merge</strong></td></tr>
+<tr><td>@Grace</td><td></td></tr>
+<tr><td>@Niklaus</td><td><strong>hold</strong></td></tr>
+</tbody></table>
+</blockquote>
+<p>Eventually, Alan and Niklaus find a time to discuss, and Alan agrees that
+Niklaus's concerns are valid, so he makes some major edits to the RFC. Given
+that the RFC is completely different, he decides to restart the clock and
+writes:</p>
+<blockquote>
+<p>@rustbot restart</p>
+</blockquote>
+<p>This strikes through the state of all team members (setting their current
+status to blank, while preserving the history) and begins the clock anew.
+rustbot also pings the relevant team members:</p>
+<blockquote>
+<p>Dear @rust-lang/team, @Alan has restarted the clock!</p>
+</blockquote>
+<p>The status now looks like this:</p>
+<blockquote>
+<p>Hello! @Alan has proposed to merge this. This is a <strong>reversible decision</strong>,
+which means that it will be affirmed once the &quot;final comment period&quot; of 10
+days have passed, unless a team member places a &quot;hold&quot; on the decision (or cancels it).</p>
+<table><thead><tr><th>Team member</th><th>State</th></tr></thead><tbody>
+<tr><td>@Alan</td><td><strong>merge</strong></td></tr>
+<tr><td>@Barbara</td><td><del>merge</del></td></tr>
+<tr><td>@Grace</td><td></td></tr>
+<tr><td>@Niklaus</td><td><del>hold</del></td></tr>
+</tbody></table>
+</blockquote>
+<p>Barbara can use <code>@rustbot merge</code> to re-affirm her <strong>merge</strong> status, and Niklaus
+can use <code>@rustbot merge</code> to set his own status to <strong>merge</strong> since he agrees
+with the resolution of his concern.</p>
+<h2 id="authoring-an-rfc-continued-overriding-a-concern"><a class="header" href="#authoring-an-rfc-continued-overriding-a-concern">Authoring an RFC continued (Overriding a concern)</a></h2>
+<p>At this point, Grace has a concern, and explains that concern in detail:</p>
+<blockquote>
+<p>@rustbot hold</p>
+<p>I've thought about this a lot, and I don't think we should do this. Now that
+I see the syntax used in practice, I feel like if we do this it'll have an
+adverse effect on the ecosystem...</p>
+</blockquote>
+<p>The status now looks like this:</p>
+<blockquote>
+<p>Hello! @Alan has proposed to merge this. This is a <strong>reversible decision</strong>,
+which means that it will be affirmed once the &quot;final comment period&quot; of 10
+days have passed, unless a team member places a &quot;hold&quot; on the decision (or cancels it).</p>
+<table><thead><tr><th>Team member</th><th>State</th></tr></thead><tbody>
+<tr><td>@Alan</td><td><strong>merge</strong></td></tr>
+<tr><td>@Barbara</td><td><del>merge</del> <strong>merge</strong></td></tr>
+<tr><td>@Grace</td><td><strong>hold</strong></td></tr>
+<tr><td>@Niklaus</td><td><del>hold</del> <strong>merge</strong></td></tr>
+</tbody></table>
+</blockquote>
+<p>Niklaus reads this message. He feels he understands the concern well, and
+agrees that this point hasn't yet been considered:</p>
+<blockquote>
+<p>@rustbot hold</p>
+<p>I agree. I think we should take more time to evaluate alternative syntaxes.
+What about...</p>
+</blockquote>
+<p>Over the course of a few subsequent meetings and side conversations, Grace and
+other team members discuss the concern further; the initiative owner also
+considers the concern, and raises it with others working on the initiative.</p>
+<p>The owner of the initiative updates the RFC to include a discussion of a couple
+of alternative syntax proposals. The owner recommends a slightly modified
+version of the originally proposed syntax, and outlines criteria that they feel
+the syntax should meet in order to support the use case.</p>
+<p>Grace agrees that her concern has been understood, but does not agree with the
+proposed syntax. Grace feels the new proposal is an improvement, but her
+concern remains.</p>
+<p>Niklaus feels that the team has understood Grace's concern, and furthermore,
+that the updated proposal addresses Grace's concern:</p>
+<blockquote>
+<p>@rustbot merge</p>
+<p>I appreciate the potential impact this may have on the ecosystem. However, I
+feel that as now described in section XYZ of the RFC, the value of A
+outweighs the risk of B, and I think C mitigates the potential risk by...</p>
+</blockquote>
+<p>(Notice that while Niklaus feels that the team has understood Grace's concern,
+he does not speak for the entire team or imply that his summary represents the
+entire team. Niklaus is just withdrawing his own support for the concern.)</p>
+<p>At this point, the entire team other than Grace agrees that the proposal should
+move forward:</p>
+<blockquote>
+<p>Hello! @Alan has proposed to merge this. This is a <strong>reversible decision</strong>,
+which means that it will be affirmed once the &quot;final comment period&quot; of 10
+days have passed, unless a team member places a &quot;hold&quot; on the decision (or cancels it).</p>
+<table><thead><tr><th>Team member</th><th>State</th></tr></thead><tbody>
+<tr><td>@Alan</td><td><strong>merge</strong></td></tr>
+<tr><td>@Barbara</td><td><del>merge</del> <strong>merge</strong></td></tr>
+<tr><td>@Grace</td><td><strong>hold</strong></td></tr>
+<tr><td>@Niklaus</td><td><del>hold</del> <del>merge</del> <del>hold</del> <strong>merge</strong></td></tr>
+</tbody></table>
+</blockquote>
+<p>(We'll assume, for this example, that Grace does not manage to convince anyone
+else.)</p>
+<p>Grace takes some time, working with the RFC author, to add a dissent, including
+a specific unresolved question.</p>
+<p>Grace then writes a comment containing <code>@rustbot dissent</code>. (If necessary, or if
+Grace would prefer, another team member may issue <code>@rustbot @grace dissent</code> on
+her behalf.) The status now looks like this:</p>
+<blockquote>
+<p>Hello! @Alan has proposed to merge this. This is a <strong>reversible decision</strong>,
+which means that it will be affirmed once the &quot;final comment period&quot; of 10
+days have passed, unless a team member places a &quot;hold&quot; on the decision (or cancels it).</p>
+<table><thead><tr><th>Team member</th><th>State</th></tr></thead><tbody>
+<tr><td>@Alan</td><td><strong>merge</strong></td></tr>
+<tr><td>@Barbara</td><td><del>merge</del> <strong>merge</strong></td></tr>
+<tr><td>@Grace</td><td><del>hold</del> <strong>dissent</strong></td></tr>
+<tr><td>@Niklaus</td><td><del>hold</del> <del>merge</del> <del>hold</del> <strong>merge</strong></td></tr>
+</tbody></table>
+</blockquote>
+<p>Since all statuses are now either <strong>merge</strong> or <strong>dissent</strong> rustbot also posts a
+comment:</p>
+<blockquote>
+<p>The final comment period has resolved, with a decision to <strong>merge</strong>.</p>
+<p>Note that this decision has dissents; please ensure these dissents have been
+recorded for subsequent consideration.</p>
+</blockquote>
+<h2 id="stabilizing-a-feature"><a class="header" href="#stabilizing-a-feature">Stabilizing a feature</a></h2>
+<p>The feature has been implemented and is now eligible for stabilization. Alan
+writes a stabilization report and posts it, and then issues the command</p>
+<blockquote>
+<p>@rustbot stabilize</p>
+</blockquote>
+<p>Rustbot recognizes that a &quot;stabilization&quot; decision is irreversible, so the
+template is a bit different:</p>
+<blockquote>
+<p>Hello! @Alan has proposed to stabilize this. This is a <strong>irreversible
+decision</strong>, which means that it will be affirmed once all members come to a
+consensus and the &quot;final comment period&quot; of 10 days has passed.</p>
+<table><thead><tr><th>Team member</th><th>State</th></tr></thead><tbody>
+<tr><td>@Alan</td><td>stabilize</td></tr>
+<tr><td>@Barbara</td><td></td></tr>
+<tr><td>@Grace</td><td></td></tr>
+<tr><td>@Niklaus</td><td></td></tr>
+</tbody></table>
+</blockquote>
+<p>This time, Barbara, Grace, and Niklaus must all explicitly provide a status
+before the decision can proceed. One by one, they join the PR. They must
+individually set their state using one of the rustbot commands.</p>
+<p>Niklaus reads this and comments with <code>@rustbot merge</code>. But then, Niklaus uses
+the feature and discovers a crucial flaw. He posts a comment:</p>
+<blockquote>
+<p>@rustbot close</p>
+<p>After more testing, I believe this is not ready for stabilization. I have
+found that it doesn't work at all like the specification in the case of foo!
+This seems closely related to Grace's concern on the RFC; I think if we
+stabilize at this point we may indeed harm the ecosystem...</p>
+</blockquote>
+<p>Other team members test as well, and find that Niklaus is right. Alan changes
+his status using <code>@rustbot close</code>, and Grace (with some relief) sets the same
+status.</p>
+<p>Once everyone has changed their status, rustbot posts a comment:</p>
+<blockquote>
+<p>The final comment period has resolved, with a decision to <strong>close</strong>.</p>
+</blockquote>
+<p>(Note: Since <code>close</code> is an inherently reversible status (a PR can always be
+reopened), rustbot can observe that everyone has set a reversible status, and
+will start treating the decision as reversible; this means the final comment
+period can end even if Barbara hasn't responded yet.)</p>
+<p>This may not be the end of this feature's consideration, and the concern might
+get resolved in many different ways. The initiative owner might need to do some
+additional design work on how to solve the original use case and address the
+concern; implementers may find a way to address the concern by improving the
+implementation; or the team may change their mind.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="decision-making-process-detailed-description"><a class="header" href="#decision-making-process-detailed-description">Decision-making process, detailed description</a></h1>
+<ul>
+<li>Entering a &quot;decision period&quot; can be done by having a team member tell rustbot
+an initial status (<code>merge</code>, <code>stabilize</code>, or <code>close</code>; or, <code>reversible</code> or
+<code>irreversible</code> with a custom identifier).
+<ul>
+<li>All other team members have no initial status set.</li>
+<li>During a reversible decision period, if later commenters indicate the
+decision is irreversible, the decision changes to irreversible.</li>
+<li>During an irreversible decision period, if all commenters change their
+status to a reversible status (most commonly <code>close</code>), the decision becomes
+reversible.</li>
+<li>Bot commands accept <code>mut</code>/<code>mutable</code>/<code>rev</code> as synonyms for <code>reversible</code>, and
+<code>immut</code>/<code>immutable</code>/<code>irrev</code> as synonyms for <code>irreversible</code>.</li>
+</ul>
+</li>
+<li>Once the &quot;decision period&quot; has begun, a clock of 10 days starts. The clock is
+never paused unless an explicit <code>@rustbot restart</code> command is given.</li>
+<li>The <code>restart</code> command sets the decision period back to its initial state
+(members' current statuses are also set back to blank, though the history of
+their previous statuses is preserved as with any other status change).</li>
+<li>A decision is reached when the following conditions are met:
+<ul>
+<li>At least 10 days have elapsed since the decision period began (or when it
+was last <code>restart</code>ed).</li>
+<li>Everyone is set to the same status, or to <code>abstain</code>, or to <code>dissent</code> (with
+at most one <code>dissent</code> status), or (for a reversible decision only) blank.</li>
+</ul>
+</li>
+<li>Member may place a <em>hold</em> (raise a concern) at any phase of the process:
+proposal, experimentation, testing, stabilization. Ideally, concerns should
+be raised as early as possible.
+<ul>
+<li>In general, one of the liaison's jobs is to anticipate concerns that may
+arise and reach out proactively to the members of the team. If we find that
+team members regularly need to place serious holds for similar reasons,
+that may indicate we need to work harder at team calibration.</li>
+</ul>
+</li>
+<li>&quot;Holding&quot; a decision is simple. If you have a potential concern that you
+haven't had a chance to fully articulate yet, you get periodic pings.</li>
+<li>In order to proceed after a concern is raised, whether sustaining the concern
+or overriding the concern, the team must understand the concern. This
+understanding should be expressed in writing rather than just verbally.
+Commonly, the owner of an initiative/proposal may incorporate the concern
+into the proposal and address it there (whether via their own words or those
+of a team member).
+<ul>
+<li>Ideally, a concern is only considered &quot;understood&quot; if the objector agrees
+it has been. If that is not possible, then everyone on the team other than
+the objector must unanimously agree that there is no further understanding
+to be gained. (In practice, this agreement is determined by whether anyone
+on the team is willing to support the objection.)</li>
+</ul>
+</li>
+<li>If the owner feels that the concern has been adequately addressed, they can
+produce a write-up that describes the concern and request a poll of the team
+members to see where everyone stands.
+<ul>
+<li>Sustaining an objection requires one team member other than the objector. A
+team member should sustain an objection if either they believe the
+objection has been understood and they agree that it must be addressed, or
+if they believe the objection has not been fully understood (whether they
+personally agree with it or not).</li>
+<li>If everyone else agrees that the concern has been understood <em>and</em> that the
+current design is sufficient, then the concern is <em>overridden</em>.</li>
+<li>Team members are encouraged to regularly sustain objections they don't
+personally agree with, if they believe the objection has not yet been fully
+understood; this is a normal and valuable part of the process.</li>
+</ul>
+</li>
+<li>Whenever a concern is overridden, team members are encouraged to add a
+<strong>dissent</strong> into the document to describe their concern and why they don't
+agree with the decision. They (or another team member) should then set their
+status to <code>dissent</code>.</li>
+</ul>
+<h1 id="rustbot-commands"><a class="header" href="#rustbot-commands">Rustbot commands</a></h1>
+<p>The following commands are accepted by rustbot. (Commands written below omit
+the required <code>@</code> on rustbot to avoid invoking rustbot when quoting the
+documentation.) A number of comments take one or more optional <code>@member</code>
+arguments, denoted <code>@member*</code>; if supplied, the command is issued on behalf of
+those member(s), instead of the person writing the command. (The <code>@</code> for each
+member is required.) It is also permitted to write <code>@rust-lang/team</code> to select
+all members of the team. rustbot will always link from each member's row in the
+table to each comment changing their status.</p>
+<ul>
+<li><code>rustbot @member* reversible ident</code> or <code>rustbot @member* mutable ident</code>
+(unambiguous prefixes such as <code>mut</code> or <code>rev</code> also work)
+<ul>
+<li>If not in a decision period: begin a reversible (&quot;mutable&quot;) decision,
+proposing the outcome <code>ident</code>; all other members are set to a blank status.</li>
+<li>If in a decision period: set yourself to <code>ident</code>. (Decisions do not proceed
+unless all members have the same status or <code>abstain</code>.)</li>
+</ul>
+</li>
+<li><code>rustbot @member* irreversible ident</code> or <code>rustbot @member* immutable ident</code>
+(unambiguous prefixes such as <code>immut</code> or <code>irrev</code> also work)
+<ul>
+<li>If not in a decision period: begin an irreversible (&quot;immutable&quot;) decision,
+proposing the outcome <code>ident</code>; all other members are set to a blank status.</li>
+<li>If in a decision period: set yourself to <code>ident</code>. If the decision was
+previously considered reversible, change it to irreversible. The decision
+now requires full team consensus. (Members may set a status of <code>abstain</code> on
+the decision if they wish.)</li>
+</ul>
+</li>
+<li><code>rustbot @member* merge</code>
+<ul>
+<li>Alias for <code>rustbot @member* reversible merge</code> - a reversible decision with
+the proposed outcome <code>merge</code>.</li>
+</ul>
+</li>
+<li><code>rustbot @member* close</code>
+<ul>
+<li>Alias for <code>rustbot @member* reversible close</code> - a reversible decision with
+the proposed outcome <code>close</code>.</li>
+</ul>
+</li>
+<li><code>rustbot @member* stabilize</code>
+<ul>
+<li>Alias for <code>rustbot @member* irreversible stabilize</code> - an irreversible
+decision with the proposed outcome <code>stabilize</code>.</li>
+</ul>
+</li>
+<li><code>rustbot @member* abstain</code>
+<ul>
+<li>If not in a decision period: error</li>
+<li>If in a decision period: set your status to <code>abstain</code>. This status does not
+block a decision.</li>
+</ul>
+</li>
+<li><code>rustbot @member* hold</code>
+<ul>
+<li>If not in a decision period: error</li>
+<li>If in a decision period: set your status to <code>hold</code>
+<ul>
+<li>Every N days while a hold persists, rustbot will ping all members who
+have status <code>hold</code> (and potentially other involved team members as well)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>rustbot @member* dissent</code>
+<ul>
+<li>Equivalent to <code>abstain</code>, except that it sets a status of <code>dissent</code>. This
+status on one team member does not block a decision. A status of <code>dissent</code>
+on two or more team members will block a decision.</li>
+<li>Note that <code>dissent</code> should not be set when first raising a concern, only
+after attempts to resolve the concern have been unsuccessful.</li>
+</ul>
+</li>
+<li><code>rustbot restart</code>
+<ul>
+<li>If not in a decision period: error</li>
+<li>If in a decision period: set all members other than the one issuing the
+command to have a blank status. Preserve the last set status of the person
+issuing the <code>restart</code>.</li>
+<li>Note: if the last set status of any team members were irreversible, the
+decision will continue to be treated as irreversible until all such members
+set an explicit status otherwise.</li>
+</ul>
+</li>
+<li><code>rustbot cancel</code>
+<ul>
+<li>If not in a decision period: error</li>
+<li>If in a decision period: cancel the decision period.</li>
+<li>Note that if a subsequent decision is started in the same issue, rustbot
+should link to the previous decision summary table.</li>
+</ul>
+</li>
+</ul>
+<h1 id="frequently-asked-questions"><a class="header" href="#frequently-asked-questions">Frequently asked questions</a></h1>
+<h2 id="why-can-members-override-other-members-positions"><a class="header" href="#why-can-members-override-other-members-positions">Why can members override other members positions?</a></h2>
+<p>It's quite common to want to check boxes and similar on behalf of all the
+people in a meeting. It's also annoying to have to restart a decision process
+(e.g. closing and reopening with rfcbot) just to be able to close concerns on
+someone else's behalf (e.g. people who have left the team, or people who raised
+a concern on behalf of someone else not on the team, or similar). We can trust
+each other on the team. If people abuse <code>rustbot</code> to disrupt the process, that
+isn't a problem to be solved with tooling.</p>
+<h2 id="do-we-want-to-require-all-but-n-people-to-affirm-a-decision-as-rfcbot-does"><a class="header" href="#do-we-want-to-require-all-but-n-people-to-affirm-a-decision-as-rfcbot-does">Do we want to require &quot;all but N&quot; people to affirm a decision, as <code>rfcbot</code> does?</a></h2>
+<p>We opted to require 100% participation on irreversible decisions such as
+stabilization, but not on very lightweight reversible decisions such as
+starting an initiative. We believe that lang team members can be expected to at
+least leave a comment (even if just <code>rustbot abstain</code>), but in the limit we
+also have the option to set a status on another member's behalf.</p>
+<h2 id="why-does-the-timer-start-when-the-decision-period-starts-and-not-when-a-consensus-is-reached"><a class="header" href="#why-does-the-timer-start-when-the-decision-period-starts-and-not-when-a-consensus-is-reached">Why does the timer start when the decision period <em>starts</em>, and not when a consensus is reached?</a></h2>
+<p>The current <code>rfcbot</code> starts the 10 day FCP timer once a consensus is reached.
+However, we have observed that, in practice, the &quot;holdouts&quot; on consensus are
+typically the lang team members. Further, this seems to assume a &quot;two-phased&quot;
+decision making model where folks outside the team are commenting only after
+the lang team has reached a consensus. In practice, both decision-making and
+commenting tend to be more fluid, and hence we would prefer not to have a long
+delay after we reach consensus.</p>
+<h2 id="why-not-use-checkboxes"><a class="header" href="#why-not-use-checkboxes">Why not use checkboxes?</a></h2>
+<p>This process recognizes that sometimes, in the flow of conversation, the
+decision to merge can transmute into a decision to close, or there may be
+multiple potential outcomes.</p>
+<p>The presentation of statuses also makes it easy for <code>rustbot</code> to present the
+history of status changes, with links to team members' messages.</p>
+<h2 id="why-is-close-always-reversible"><a class="header" href="#why-is-close-always-reversible">Why is <code>close</code> always reversible?</a></h2>
+<p>Because, well, it is! We can always re-open a PR or issue, after all.</p>
+<h2 id="what-about-postpone"><a class="header" href="#what-about-postpone">What about &quot;postpone&quot;?</a></h2>
+<p>Just write it in the comment for a <code>@rustbot close</code>. In practice, a &quot;close&quot;
+does not preclude reopening later, and a &quot;postpone&quot; does not guarantee
+reopening later.</p>
+<h2 id="is-dont-force-an-irreversible-decision-absolute"><a class="header" href="#is-dont-force-an-irreversible-decision-absolute">Is &quot;Don't force an irreversible decision?&quot; absolute?</a></h2>
+<p>No; it's a strongly held principle, but not an absolute one. Sometimes we may
+have to make an irreversible decision, even in the face of dissent. However, we
+should be <em>extraordinarily</em> careful when doing so, and in particular, we should
+consider very carefully whether we could make a reversible decision, or find a
+better consensus, or whether the consequences of <em>not</em> making the decision
+outweigh the consequences of making it. This should be an extremely rare event.</p>
+<p>The previous decision-making process based on <code>rfcbot</code> allowed indefinitely
+blocking concerns. This new process introduces a means of carefully resolving
+such concerns, and a very careful means of proceeding <em>despite</em> such concerns
+while ensuring those concerns are understood and recorded and considered.</p>
+<h2 id="what-purpose-does-restart-serve"><a class="header" href="#what-purpose-does-restart-serve">What purpose does <code>restart</code> serve?</a></h2>
+<p>Sometimes, a proposal has changed enough to warrant re-checking people's
+positions, but has not changed enough to warrant closing it and starting the
+process over. <code>restart</code> clears people's statuses to ensure that they have the
+opportunity to re-confirm (or raise a hold or concern) before the decision
+proceeds.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lang-team-how-to-guide"><a class="header" href="#lang-team-how-to-guide">Lang team &quot;how to&quot; guide</a></h1>
 <p>This section includes instructions on how to do various interactions with the lang team.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="nominate-an-issue"><a class="header" href="#nominate-an-issue">Nominate an issue</a></h1>
@@ -627,50 +1242,91 @@ interest.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="calendar"><a class="header" href="#calendar">Calendar</a></h1>
 <p>We have a lang-team calendar that shows the time for our various meetings.
 Meetings are generally open to anyone who wants to listen in. We also try to
-post <a href="./minutes.html">minutes and recordings</a> on a &quot;best-effort&quot; basis from our
+post <a href="./minutes.html">minutes</a> (and recordings, if any) on a &quot;best-effort&quot; basis from our
 meetings.</p>
 <ul>
 <li><a href="https://calendar.google.com/calendar/embed?src=recud4b9o8cmc0m5rmr033p5nk%40group.calendar.google.com">View calendar</a> -- use this to view the calendar online and add it to your Google Calendar</li>
 <li><a href="https://calendar.google.com/calendar/ical/recud4b9o8cmc0m5rmr033p5nk%40group.calendar.google.com/public/basic.ics">ICS file, for use outside from google calendar</a> -- you can use this to subscribe from other programs</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="meetings"><a class="header" href="#meetings">Meetings</a></h1>
-<p>The lang team has several standing meetings. The current timing for these
-can be found on the <a href="./calendar.html">lang team calendar</a>. We
-generally record our public meetings and post the recordings in our
-<a href="https://www.youtube.com/playlist?list=PL85XCvVPmGQg-gYy7R6a_Y91oQLdsbSpa">YouTube playlist</a> (along with automatically created subtitles). We
-also publish notes and minutes in written form in this github
-repository.</p>
-<h2 id="triage-meeting"><a class="header" href="#triage-meeting">Triage meeting</a></h2>
+<p>The lang team has several kinds of standing meetings.</p>
+<ul>
+<li><a href="./meetings/triage.html">Triage meetings</a></li>
+<li><a href="./meetings/design.html">Design and planning meetings</a></li>
+<li><a href="./meetings/backlog-bonanza.html">Backlog bonanza</a></li>
+</ul>
+<p>Unless otherwise noted, all of our meetings are open to the public for anyone to attend. You will find the timing and event details on our <a href="./calendar.html">lang team calendar</a>. We publish notes and minutes in written form in this github repository.</p>
+<h2 id="recording-policy"><a class="header" href="#recording-policy">Recording policy</a></h2>
+<p>Dy default, our triage and design meetings are <strong>not recorded</strong>, in order to encourage engagement from a broad audience. We may record certain design meetings, evaluated on a case-by-case basis, and only with the agreement of all participants. Any intention to record a design meeting will be established at that time that meeting is scheduled during the monthly planning meeting and included in the blog post announcing the upcoming meetings.</p>
+<p>Our <a href="https://www.youtube.com/playlist?list=PL85XCvVPmGQg-gYy7R6a_Y91oQLdsbSpa">YouTube playlist</a> has recordings of some of our past meetings (along with automatically created subtitles).</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="triage-meeting"><a class="header" href="#triage-meeting">Triage meeting</a></h1>
 <p>The weekly triage meeting is when we go over the newly filed project
 proposals along with issues that have been nominated for lang-team
 feedback. We also get regular updates from the active project groups
 so we can stay on top of what is going on.</p>
+<h2 id="can-i-attend"><a class="header" href="#can-i-attend">Can I attend?</a></h2>
+<p>Yes! The triage meeting is open to the public. You'll find the details
+on our <a href="meetings/./calendar.html">calendar</a>.</p>
+<h2 id="how-do-i-get-something-on-the-agenda"><a class="header" href="#how-do-i-get-something-on-the-agenda">How do I get something on the agenda?</a></h2>
+<p>The easiest way to get something on the agenda is to <a href="meetings/./how_to/nominate.html">nominate it</a>. The agenda is automatically built by triagebot from <a href="https://github.com/rust-lang/triagebot/blob/master/templates/lang_agenda.tt">this template</a>. We review pending <a href="meetings/./how_to/propose.html">initiative proposals</a>, <a href="meetings/./how_to/nominate.html">nominated</a> issues and PRs from a variety of repositories, as well as pending RFC requests. </p>
+<h2 id="can-i-generate-the-agenda-myself"><a class="header" href="#can-i-generate-the-agenda-myself">Can I generate the agenda myself?</a></h2>
+<p>Sure, clone the <a href="https://github.com/rust-lang/triagebot">triagebot</a> repo and run this</p>
+<pre><code class="language-bash">&gt; cargo run --bin lang agenda
+</code></pre>
+<p>If you install the <code>hackmd-cli</code>, you can do this:</p>
+<pre><code class="language-bash">cargo run --bin lang agenda | hackmd-cli import 
+</code></pre>
+<h2 id="where-can-i-find-the-minutes"><a class="header" href="#where-can-i-find-the-minutes">Where can I find the minutes?</a></h2>
 <p><a href="https://github.com/rust-lang/lang-team/tree/master/minutes">Triage meeting minutes are available in this directory.</a></p>
-<h3 id="nominating-an-issue-pr-rfc-etc-for-the-triage-meeting"><a class="header" href="#nominating-an-issue-pr-rfc-etc-for-the-triage-meeting">Nominating an issue, PR, RFC etc for the triage meeting</a></h3>
-<p>You can nominate an issue/PR/RFC etc for the triage meeting by adding
-the <code>T-lang</code> and <code>I-nominated</code> labels. When you do so, it's best if
-you leave a comment explaining what kind of feedback you would
-like. We try to go over all nominated issues and leave a comment
-of some kind in response.</p>
-<h2 id="planning-meeting"><a class="header" href="#planning-meeting">Planning meeting</a></h2>
-<p>We hold a monthly <strong>planning meeting</strong> in which we do two things:</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="design-meetings"><a class="header" href="#design-meetings">Design meetings</a></h1>
+<p>We reserve a weekly slot for our planning and design meetings. 
+A <strong>design meeting</strong> is a one-hour deep-dive discussion into some particular
+topic. Each meeting is centered around a document that is prepared for
+that meeting explaining the details of what is to be discussed; we begin by reading
+the document and then discussing its contents. These meetings are used for all kinds
+of purposes, such as brainstorming, getting feedback on an idea, or building
+consensus around a specific proposals.</p>
+<h2 id="how-are-design-meetings-scheduled"><a class="header" href="#how-are-design-meetings-scheduled">How are design meetings scheduled?</a></h2>
+<p>To schedule design meetings, we hold a special <strong>planning meeeting</strong> once per month.
+In that meeting, we choose what design meetings we will hold the rest of the month.</p>
+<h2 id="how-do-i-propose-a-design-meeting"><a class="header" href="#how-do-i-propose-a-design-meeting">How do I propose a design meeting?</a></h2>
+<p>You need to open an issue, <a href="meetings/./how_to/design_meeting.html">as described here</a>.</p>
+<h2 id="can-i-attend-1"><a class="header" href="#can-i-attend-1">Can I attend?</a></h2>
+<p>Yes! Design meetings are open to the public. You'll find the details on our <a href="meetings/./calendar.html">calendar</a>.</p>
+<h2 id="how-does-a-design-meeting-work"><a class="header" href="#how-does-a-design-meeting-work">How does a design meeting work?</a></h2>
+<p>Before the meeting starts, someone has to prepare a document -- we recommend using hackmd and using <a href="https://hackmd.io/VJrbVMeqT4uUDBRVncHyTw">this template</a>. </p>
+<p>When the meeting starts, send out the link to your document on Zulip (and on Zoom, if you like). Everyone will start to read it. <strong>There is no expectation that people will read the document in advance.</strong></p>
+<p>As they read, people will append questions to the end of the document -- the template has a space for this. We recommend making each question into a markdown section (e.g., <code>### Why is this document so great?</code>). People will append their question in that section.</p>
+<p>After everyone is done reading, whoever is driving the meeting will pick questions to discuss. Typically we go in linear order but that's not required, we can go in whatever order seems best.</p>
+<h2 id="where-can-i-find-the-minutes-1"><a class="header" href="#where-can-i-find-the-minutes-1">Where can I find the minutes?</a></h2>
+<p>The <a href="https://github.com/rust-lang/lang-team/tree/master/design-meeting-minutes">design-meeting-minutes directory</a> contains the document from each meeting along with any questions that were asked and the ensuing disceussion.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="backlog-bonanza"><a class="header" href="#backlog-bonanza">Backlog bonanza</a></h1>
+<p>Backlog bonanza is a particular kind of design meeting. We often schedule a backlog bonanza for those weeks where we don't have more specific things to discuss. The idea is to go through each tracking issue and &quot;disposition them&quot;. The goal is to identify what we ought to do with this particular unstable feature; e.g., what is blocking this from being stabilized? Do we still want this? Is it perma-unstable?</p>
+<h2 id="when-does-backlog-bonanza-take-place"><a class="header" href="#when-does-backlog-bonanza-take-place">When does backlog bonanza take place?</a></h2>
+<p>Backlog bonanza meetings are typically scheduled as <a href="meetings/./design.html">design meetings</a>.</p>
+<h2 id="can-i-attend-2"><a class="header" href="#can-i-attend-2">Can I attend?</a></h2>
+<p>Yes! Design meetings are open to the public. You'll find the details on our <a href="meetings/./calendar.html">calendar</a>.</p>
+<h2 id="what-labels-do-we-apply-to-issues"><a class="header" href="#what-labels-do-we-apply-to-issues">What labels do we apply to issues?</a></h2>
+<p>Here are the labels we apply during the process and their meaning:</p>
 <ul>
-<li>Updates from <a href="./initiatives.html">active initiatives</a>.</li>
-<li>Schedule design meetings for the remainder of the month.</li>
+<li>S-tracking-ready-to-stabilize: Needs a stabilization PR (good to go :train:)</li>
+<li>S-tracking-needs-to-bake: Needs time to bake (set a date? other criteria?)</li>
+<li>S-tracking-impl-incomplete: Not code complete or blocking bugs</li>
+<li>S-tracking-unimplemented: Implementation not begun</li>
+<li>S-tracking-design-concerns: Blocking design concerns
+<ul>
+<li>This might be &quot;doesn't quite seem to deliver value we hoped for&quot; or &quot;something doesn't feel right&quot;</li>
 </ul>
-<p>After each planning meeting, we post a blog post to the <a href="https://blog.rust-lang.org/inside-rust/">Inside Rust</a>
-blog announcing the upcoming meetings and any particularly interesting updates.
-Minutes from the planning meetings are posted in the <a href="https://github.com/rust-lang/lang-team/tree/master/design-meeting-minutes">design-meeting-minutes</a> directory.</p>
-<h2 id="design-meeting"><a class="header" href="#design-meeting">Design meeting</a></h2>
-<p>We reserve a weekly slot to hold <strong>design meetings</strong>. They are scheduled during
-the planning meeting and hence known in advance. Design
-meeting topics are used for in-depth discussions on a particular
-topic, typically in connection with an <a href="./initiatives.html">active initiative</a>.</p>
-<p>Every design meeting begins by reading a document and leaving comments. That document
-must be prepared 24 hours in advance of the design meeting and posted on the issue.
-During the meeting, we append notes and minutes to the end of the document, and
-that combination is posted in <a href="https://github.com/rust-lang/lang-team/tree/master/design-meeting-minutes">the design-meeting-minutes directory</a>.</p>
-<p><a href="./how_to/design_meeting.html">Instructions for proposing a design meeting are here.</a></p>
+</li>
+<li>S-tracking-perma-unstable
+<ul>
+<li>Internal implementation detail of rustc, stdlib</li>
+</ul>
+</li>
+<li>S-tracking-needs-investigation</li>
+</ul>
+<h2 id="where-can-i-find-the-minutes-2"><a class="header" href="#where-can-i-find-the-minutes-2">Where can I find the minutes?</a></h2>
+<p>Currently the minutes are tracked in the issues themselves, but we also create hackmd documents in the <a href="https://hackmd.io/team/rust-lang-team?nav=overview">Rust lang team</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><p>This section contains &quot;notes&quot; about the design of various proposals.
 These are often just links to conversations, along with a few key
 ideas and summaries. Sometimes it includes other information, such as
@@ -1787,49 +2443,189 @@ currently unlikely.</p>
 </ul>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="autorefautoderef-in-operators"><a class="header" href="#autorefautoderef-in-operators">Autoref/Autoderef in operators</a></h1>
+<p>Rust permits overriding most of the operators (e.g., <code>+</code>, <code>-</code>, <code>+=</code>). In part
+due to <code>Copy</code> types not auto-dereferencing, it is common to have <code>T + &amp;T</code>
+or <code>&amp;T + &amp;T</code>, with potentially many levels of indirection on either side of the
+operator.</p>
+<p>There is desire in general to avoid needing to both add impls for referenced
+versions of types because they:</p>
+<ul>
+<li>bloat documentation</li>
+<li>are never quite sufficient (always more references are possible)</li>
+<li>can cause inference regressions, as the compiler cannot in general know that
+<code>&amp;T + &amp;T</code> is essentially equivalent at runtime to <code>T + T</code>.</li>
+</ul>
+<p>The inference regressions are the primary target of historical discussions.</p>
+<p>The tradeoff to some feature like this may either mean that the exact impl
+executed at runtime is harder to determine, or that the compiler is
+synthetically generating new implementations for some subset of types,
+potentially adding confusion around which impls are actually present.</p>
+<p>However, generic code may want the impls on references because the generic code
+may not want to require <code>T: Copy</code>. One version of this could involve
+something like <code>default impl&lt;T:Copy&gt; Add&lt;&amp;T&gt; for &amp;T</code> so that people don't <em>need</em>
+to write special impls themselves. It's worth noting that this still would need
+some special support in the compiler to avoid the two possible impls leading to
+inference regressions.</p>
+<h2 id="history-2"><a class="header" href="#history-2">History</a></h2>
+<p>The standard library initially had just the basic impls of the operator traits
+(e.g., <code>impl Add&lt;u64&gt; for u64</code>) but has since gained <code>&amp;u64 + &amp;u64</code>, <code>u64 + &amp;u64</code>
+and <code>&amp;u64 + u64</code>. These impls usually cause some amount of inference breakage in
+practice.</p>
+<p>Especially with non-Copy types (for example bigints), forcing users to add references can be
+increasingly verbose: <code>&amp;u * &amp;(&amp;(&amp;u.square() + &amp;(&amp;a * &amp;u)) + &amp;one)</code>, for example.</p>
+<p>There have also been a number of discussions on RFCs and issues, including:</p>
+<ul>
+<li><a href="https://github.com/rust-lang/rust/issues/44762">Rust tracking issue #44762</a>
+<ul>
+<li>This includes some implementation/mentoring notes.</li>
+</ul>
+</li>
+<li><a href="https://github.com/rust-lang/rfcs/pull/2147">RFC 2147</a></li>
+<li><a href="https://github.com/rust-lang/rust/pull/41336">Trying to add T op= &amp;T</a>
+<ul>
+<li>Showcases dealing with inference breakage regressions when adding new
+reference-taking impls.</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="copy-type-ergonomics"><a class="header" href="#copy-type-ergonomics">Copy type ergonomics</a></h1>
+<h2 id="background-2"><a class="header" href="#background-2">Background</a></h2>
+<p>There are a number of pain points with <code>Copy</code> types that the lang team is
+interested in exploring, though active experimentation is not currently ongoing.</p>
+<p>Some key problems are:</p>
+<h2 id="copy-cannot-be-implemented-with-non-copy-members"><a class="header" href="#copy-cannot-be-implemented-with-non-copy-members"><code>Copy</code> cannot be implemented with non-<code>Copy</code> members</a></h2>
+<p>There are standard library types where the lack of a <code>Copy</code> impl is an
+active pain point, e.g., <a href="https://github.com/rust-lang/rust/issues/62835"><code>MaybeUninit</code></a>
+and <a href="https://github.com/rust-lang/rust/issues/25053"><code>UnsafeCell</code></a>, when the
+contained type is actually <code>Copy</code>.</p>
+<h3 id="history-3"><a class="header" href="#history-3">History</a></h3>
+<ul>
+<li><code>unsafe impl Copy for T</code> which avoids the requirement that T is recursively
+Copy, but is obviously unsafe.
+<ul>
+<li>https://github.com/rust-lang/rust/issues/25053#issuecomment-218610508</li>
+</ul>
+</li>
+<li><code>Copy</code> is dangerous on types like <code>UnsafeCell</code> where <code>&amp;UnsafeCell&lt;T&gt;</code>
+otherwise would not permit access to <code>T</code> in <a href="https://github.com/rust-lang/rust/issues/25053#issuecomment-98447164">safe
+code</a>.</li>
+</ul>
+<h2 id="copy-types-can-be-unintentionally-copied"><a class="header" href="#copy-types-can-be-unintentionally-copied"><code>Copy</code> types can be (unintentionally) copied</a></h2>
+<p>Even if a type is Copy (e.g., <code>[u8; 1024]</code>) it may not be a good idea to make
+use of that in practice, since copying large amounts of data is slow. This is
+primarily a performance concern, so the problem is usually that these copies are
+easy to miss. However, depending on the size of the buffer, it can also be a
+correctness concern as it may cause an unintended stack overflow with too many
+accidental copies.</p>
+<p>Should we want to lint on this code, deciding on a size threshold may be
+difficult. It's not generally possible for the compiler to know whether a
+particular copy operation is likely to lead to stack overflow or undesirable
+performance. We don't have examples yet of cases where there's desirable large
+copies (that should not be linted against) or concrete cases where the copies
+are accidental; collecting this information would be worthwhile.</p>
+<p>Implementations of <code>Copy</code> on closures and arrays are the prime example of Rust
+currently being overeager with the defaults in some contexts.</p>
+<p>This also comes up with <code>Copy</code> impls on <code>Range</code>, which would generally be
+desirable but is error-prone given the <code>Iterator/IntoIterator</code> impls on ranges.</p>
+<p>The example here does not compile today (since Range is not Copy), but would be
+unintuitive if it did.</p>
+<pre><pre class="playground"><code class="language-rust compile_fail">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut x = 0..10;
+let mut c = move || x.next();
+println!(&quot;{:?}&quot;, x.next()); // prints 0
+println!(&quot;{:?}&quot;, c()); // prints 0, because the captured x is implicitly copied.
+<span class="boring">}
+</span></code></pre></pre>
+<p>This example illustrates the range being copied into the closure, while the user
+may have expected the name &quot;x&quot; to refer to the same range in both cases.</p>
+<p>The move keyword here likely disambiguates this particular case for users, but
+in closures with more captures it may be not as obvious that the range type in
+particular was copied in.</p>
+<p>A lint has been <a href="https://github.com/rust-lang/rust/issues/45683">proposed</a> to
+permit Copy impls on types where Copy is likely not desirable with particular
+conditions (e.g., Copy of IntoIterator-implementing types after iteration).</p>
+<p>Note that &quot;large copies&quot; comes up with moves as well (which are copies, just
+taking ownership as well), so a size-based lint is plausibly desirable for both.</p>
+<h3 id="history-4"><a class="header" href="#history-4">History</a></h3>
+<ul>
+<li>Proposed lint: <a href="https://github.com/rust-lang/rust/issues/45683">#45683</a></li>
+</ul>
+<h2 id="references-to-copy-types"><a class="header" href="#references-to-copy-types">References to <code>Copy</code> types</a></h2>
+<p>Frequently when dealing with code generic over T you end up needing things like
+<code>[u8]::contains(&amp;5)</code> which is ugly and annoying. Iterators of copy types also
+produce <code>&amp;&amp;u64</code> and similar constructs which can produce unexpected type errors.</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>for x in &amp;vec![1, 2, 3, 4, 5, 6, 7] {
+    process(*x); // &lt;-- annoying that we need `*x`
+}
+
+fn process(x: i32) { }
+<span class="boring">}
+</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn sum_even(v: &amp;[u32]) -&gt; u32 {
+    // **v is annoying
+    v.iter().filter(|v| **v % 2 == 0).sum()
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Note that this means that you in most cases want to &quot;boil down&quot; to the inner
+type when dealing with references, i.e., <code>&amp;&amp;u32</code> you actually want <code>u32</code>, not
+<code>&amp;u32</code>. Notably, though, this may <em>not</em> be true if the Copy type is something
+more complex (e.g., a future Copy Cell), since then <code>&amp;Cell</code> is quite different
+from a <code>Cell</code>, the latter being likely useless for modification at least.</p>
+<p>There is also plausibly performance left on the table with types like <code>&amp;&amp;u64</code>.</p>
+<p>Note that this interacts with the unintentional copies (especially of large
+structures).</p>
+<p>This could plausibly be done with moved values as well, so long as the
+semantics match the syntax (e.g. <code>wants_ref(foo)</code> acts like <code>wants_ref(&amp;{foo})</code>)
+similar to how one can pass <code>&amp;mut</code> to something that only wants <code>&amp;</code>.
+This would be a tradeoff: in some cases people may want the type-checker to flag such cases and require explicitly taking a reference, while in other cases people may want the compiler to automatically make such code work. We would want to consider and evaluate this tradeoff, and whether we can usefully separate such cases.</p>
+<h3 id="history-5"><a class="header" href="#history-5">History</a></h3>
+<ul>
+<li><a href="https://github.com/rust-lang/rfcs/pull/2111">RFC 2111 (not merged)</a></li>
+<li><a href="https://github.com/rust-lang/rust/issues/44763">Rust tracking issue (closed)</a></li>
+<li>&quot;Allow owned values where references are expected&quot; in <a href="https://github.com/rust-lang/rust-roadmap-2017/issues/17">rust-roadmap-2017#17</a></li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
-                        
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-                            </nav>
+            </nav>
 
         </div>
 
-        
-        
-        
-                <script type="text/javascript">
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-        
-                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
         <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-                <script type="text/javascript" src="mermaid.min.js"></script>
-                <script type="text/javascript" src="mermaid-init.js"></script>
-        
-                        <script type="text/javascript">
+        <script type="text/javascript" src="mermaid.min.js"></script>
+        <script type="text/javascript" src="mermaid-init.js"></script>
+        <script type="text/javascript">
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
-                
     </body>
 </html>

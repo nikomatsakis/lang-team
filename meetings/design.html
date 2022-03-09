@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Planning and design meetings - The Rust Language Design Team</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item "><a href="../initiatives.html"><strong aria-hidden="true">2.</strong> Initiatives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../initiatives/priorities.html"><strong aria-hidden="true">2.1.</strong> Current priorities</a></li><li class="chapter-item "><a href="../initiatives/stable.html"><strong aria-hidden="true">2.2.</strong> Stabilized initiatives</a></li><li class="chapter-item "><a href="../initiatives/process.html"><strong aria-hidden="true">2.3.</strong> Process</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../initiatives/process/roles.html"><strong aria-hidden="true">2.3.1.</strong> Roles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../initiatives/process/roles/owner.html"><strong aria-hidden="true">2.3.1.1.</strong> Owner</a></li><li class="chapter-item "><a href="../initiatives/process/roles/liaison.html"><strong aria-hidden="true">2.3.1.2.</strong> Liaison</a></li></ol></li><li class="chapter-item "><a href="../initiatives/process/stages.html"><strong aria-hidden="true">2.3.2.</strong> Stages</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../initiatives/process/stages/proposal.html"><strong aria-hidden="true">2.3.2.1.</strong> Proposal</a></li><li class="chapter-item "><a href="../initiatives/process/stages/experimental.html"><strong aria-hidden="true">2.3.2.2.</strong> Experimental</a></li><li class="chapter-item "><a href="../initiatives/process/stages/development.html"><strong aria-hidden="true">2.3.2.3.</strong> Development</a></li><li class="chapter-item "><a href="../initiatives/process/stages/feature_complete.html"><strong aria-hidden="true">2.3.2.4.</strong> Feature complete</a></li><li class="chapter-item "><a href="../initiatives/process/stages/stabilized.html"><strong aria-hidden="true">2.3.2.5.</strong> Stabilized</a></li><li class="chapter-item "><a href="../initiatives/process/stages/inactive.html"><strong aria-hidden="true">2.3.2.6.</strong> Inactive</a></li></ol></li><li class="chapter-item "><a href="../initiatives/process/checklists.html"><strong aria-hidden="true">2.3.3.</strong> Checklists</a></li></ol></li><li class="chapter-item "><a href="../initiatives/faq.html"><strong aria-hidden="true">2.4.</strong> FAQ</a></li></ol></li><li class="chapter-item "><a href="../decision_process.html"><strong aria-hidden="true">3.</strong> Decision process and principles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../decision_process/examples.html"><strong aria-hidden="true">3.1.</strong> Decision process examples</a></li><li class="chapter-item "><a href="../decision_process/reference.html"><strong aria-hidden="true">3.2.</strong> Decision process reference</a></li></ol></li><li class="chapter-item "><a href="../how_to.html"><strong aria-hidden="true">4.</strong> Lang team &quot;how to&quot; guide</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../how_to/nominate.html"><strong aria-hidden="true">4.1.</strong> Nominate an issue</a></li><li class="chapter-item "><a href="../how_to/propose.html"><strong aria-hidden="true">4.2.</strong> Propose an initiative</a></li><li class="chapter-item "><a href="../how_to/design_meeting.html"><strong aria-hidden="true">4.3.</strong> Request a design meeting</a></li></ol></li><li class="chapter-item "><a href="../chat_platform.html"><strong aria-hidden="true">5.</strong> Chat platform</a></li><li class="chapter-item "><a href="../calendar.html"><strong aria-hidden="true">6.</strong> Calendar</a></li><li class="chapter-item expanded "><a href="../meetings.html"><strong aria-hidden="true">7.</strong> Meetings</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../meetings/triage.html"><strong aria-hidden="true">7.1.</strong> Triage meeting</a></li><li class="chapter-item expanded "><a href="../meetings/design.html" class="active"><strong aria-hidden="true">7.2.</strong> Planning and design meetings</a></li><li class="chapter-item "><a href="../meetings/backlog-bonanza.html"><strong aria-hidden="true">7.3.</strong> Backlog bonanza</a></li></ol></li><li class="chapter-item "><a href="../design_notes.html"><strong aria-hidden="true">8.</strong> Design notes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../design_notes/int_literal_as_float.html"><strong aria-hidden="true">8.1.</strong> Allowing integer literals like 1 to be inferred to floating point</a></li><li class="chapter-item "><a href="../design_notes/general_coroutines.html"><strong aria-hidden="true">8.2.</strong> Generalizing coroutines</a></li><li class="chapter-item "><a href="../design_notes/fn_type_trait_impls.html"><strong aria-hidden="true">8.3.</strong> Extending the capabilities of compiler-generated function types</a></li><li class="chapter-item "><a href="../design_notes/auto_traits.html"><strong aria-hidden="true">8.4.</strong> Auto traits</a></li><li class="chapter-item "><a href="../design_notes/eager_drop.html"><strong aria-hidden="true">8.5.</strong> Eager drop</a></li><li class="chapter-item "><a href="../design_notes/autoref_ops.html"><strong aria-hidden="true">8.6.</strong> Autoderef and autoref in operators</a></li><li class="chapter-item "><a href="../design_notes/copy_ergonomics.html"><strong aria-hidden="true">8.7.</strong> Copy type ergonomics</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Rust Language Design Team</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="design-meetings"><a class="header" href="#design-meetings">Design meetings</a></h1>
+<p>We reserve a weekly slot for our planning and design meetings. 
+A <strong>design meeting</strong> is a one-hour deep-dive discussion into some particular
+topic. Each meeting is centered around a document that is prepared for
+that meeting explaining the details of what is to be discussed; we begin by reading
+the document and then discussing its contents. These meetings are used for all kinds
+of purposes, such as brainstorming, getting feedback on an idea, or building
+consensus around a specific proposals.</p>
+<h2 id="how-are-design-meetings-scheduled"><a class="header" href="#how-are-design-meetings-scheduled">How are design meetings scheduled?</a></h2>
+<p>To schedule design meetings, we hold a special <strong>planning meeeting</strong> once per month.
+In that meeting, we choose what design meetings we will hold the rest of the month.</p>
+<h2 id="how-do-i-propose-a-design-meeting"><a class="header" href="#how-do-i-propose-a-design-meeting">How do I propose a design meeting?</a></h2>
+<p>You need to open an issue, <a href="./how_to/design_meeting.html">as described here</a>.</p>
+<h2 id="can-i-attend"><a class="header" href="#can-i-attend">Can I attend?</a></h2>
+<p>Yes! Design meetings are open to the public. You'll find the details on our <a href="./calendar.html">calendar</a>.</p>
+<h2 id="how-does-a-design-meeting-work"><a class="header" href="#how-does-a-design-meeting-work">How does a design meeting work?</a></h2>
+<p>Before the meeting starts, someone has to prepare a document -- we recommend using hackmd and using <a href="https://hackmd.io/VJrbVMeqT4uUDBRVncHyTw">this template</a>. </p>
+<p>When the meeting starts, send out the link to your document on Zulip (and on Zoom, if you like). Everyone will start to read it. <strong>There is no expectation that people will read the document in advance.</strong></p>
+<p>As they read, people will append questions to the end of the document -- the template has a space for this. We recommend making each question into a markdown section (e.g., <code>### Why is this document so great?</code>). People will append their question in that section.</p>
+<p>After everyone is done reading, whoever is driving the meeting will pick questions to discuss. Typically we go in linear order but that's not required, we can go in whatever order seems best.</p>
+<h2 id="where-can-i-find-the-minutes"><a class="header" href="#where-can-i-find-the-minutes">Where can I find the minutes?</a></h2>
+<p>The <a href="https://github.com/rust-lang/lang-team/tree/master/design-meeting-minutes">design-meeting-minutes directory</a> contains the document from each meeting along with any questions that were asked and the ensuing disceussion.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../meetings/triage.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../meetings/backlog-bonanza.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../meetings/triage.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../meetings/backlog-bonanza.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../mermaid.min.js"></script>
+        <script type="text/javascript" src="../mermaid-init.js"></script>
+    </body>
+</html>

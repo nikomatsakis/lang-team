@@ -135,15 +135,15 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="start-an-experimental-feature"><a class="header" href="#start-an-experimental-feature">Start an experimental feature</a></h1>
-<p>Adding a new language feature to Rust <a href="https://github.com/rust-lang/rfcs/#when-you-need-to-follow-this-process">requires an apporoved RFC</a>. However, especially for larger designs, it is sometimes helpful to start by experimenting with an implementation first, in order to feel out the design space. There are a few ways to do this.</p>
-<h2 id="use-a-procedural-macro"><a class="header" href="#use-a-procedural-macro">Use a procedural macro</a></h2>
-<p>Prototyping your feature with a procedural macro is always the best option, if it works for you. That allows users on stable to play with it and means you can even gain real experience. As a result, RFCs that have been prototyped with a procedural macro are much easier to evaluate, and you are also able to give real experience reports from actual users, which can help make the case for your idea.</p>
-<h2 id="use-an-experimental-feature-gate-requires-a-lang-team-second"><a class="header" href="#use-an-experimental-feature-gate-requires-a-lang-team-second">Use an experimental feature gate (requires a lang-team second)</a></h2>
-<p>For some features, working in a macro is not convenient, and it would be better to implement it in the real compiler. We allow implementation and experimentation language features on master, but only in limited circumstances. To add an experimental feature gate, you need:</p>
+<p>Sometimes it is helpful to be able to do experimentation before authoring the RFC. <strong>We allow experienced Rust contributors to create an experimental nightly feature gate even before an RFC is authored, if you can find a lang-team champion for the idea.</strong></p>
+<h2 id="roles"><a class="header" href="#roles">Roles</a></h2>
+<p>When doing an experiment, there are two roles:</p>
 <ul>
 <li>An <strong>experimentor</strong> who is driving the work. They need to be an experienced contributor and able to devote enough time to keep the idea moving forward steadily.</li>
-<li>A <strong>lang-team champion</strong> who will <a href="../decision_process.html">second</a> the idea. </li>
+<li>A <strong>lang-team champion</strong> who will <a href="../decision_process.html">second</a> the PR. </li>
 </ul>
+<p>These can be the same person, but in that case, you should find someone else to second the PR.</p>
+<h2 id="process"><a class="header" href="#process">Process</a></h2>
 <p>The process is as follows:</p>
 <ul>
 <li>The <strong>experimentor</strong> should open a PR adding a new feature gate to the compiler, along with an associated tracking issue. They should include a short write-up documenting the motivation and outline of what they are trying to achieve. </li>

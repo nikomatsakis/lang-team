@@ -293,17 +293,22 @@ click StyleTeamNotified href &quot;./stabilize.html&quot; &quot;Read about stabi
 <h3 id="what-about-adding-special-traits-and-things-to-the-standard-library"><a class="header" href="#what-about-adding-special-traits-and-things-to-the-standard-library">What about adding special traits and things to the standard library?</a></h3>
 <p>We consider intrinsics and &quot;lang item&quot; (things that need special treatment from the language) to be under the lang team purview. Specifically, the lang team governs the semantics and capabilities exposed by this new feature. The details of the API are governed by the <a href="how_to/(https://github.com/rust-lang/libs-team)">libs team</a>.</p>
 <p>Whenever possible, though, we prefer to issue a quick approval for the &quot;general feature&quot; being discussed, and leave it to the libs team to decide where to apply it. For example, we approved the ability to add inherent methods to standard library types like <code>u32</code> long ago, but the <a href="how_to/(https://github.com/rust-lang/libs-team)">libs team</a> governs what APIs are available.</p>
+<h3 id="my-rfc-has-been-waiting-for-a-comment-from-the-lang-team-for-a-long-time"><a class="header" href="#my-rfc-has-been-waiting-for-a-comment-from-the-lang-team-for-a-long-time">My RFC has been waiting for a comment from the lang-team for a long time!</a></h3>
+<p>First off, I'm sorry, that sucks. We are aware that we need to do a better job keeping up with RFCs. :/ That said, what you can do is to <a href="how_to/./nominate.html">nominate</a> the RFC and we will discuss it during the meeting.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="start-an-experimental-feature"><a class="header" href="#start-an-experimental-feature">Start an experimental feature</a></h1>
 <p>Adding a new language feature to Rust <a href="https://github.com/rust-lang/rfcs/#when-you-need-to-follow-this-process">requires an apporoved RFC</a>. However, especially for larger designs, it is sometimes helpful to start by experimenting with an implementation first, in order to feel out the design space. There are a few ways to do this.</p>
 <h2 id="use-a-procedural-macro"><a class="header" href="#use-a-procedural-macro">Use a procedural macro</a></h2>
 <p>Prototyping your feature with a procedural macro is always the best option, if it works for you. That allows users on stable to play with it and means you can even gain real experience. As a result, RFCs that have been prototyped with a procedural macro are much easier to evaluate, and you are also able to give real experience reports from actual users, which can help make the case for your idea.</p>
 <h2 id="use-an-experimental-feature-gate-requires-a-lang-team-second"><a class="header" href="#use-an-experimental-feature-gate-requires-a-lang-team-second">Use an experimental feature gate (requires a lang-team second)</a></h2>
-<p>For some features, working in a macro is not convenient, and it would be better to implement it in the real compiler. We allow implementation and experimentation language features on master, but only in limited circumstances:</p>
+<p>For some features, working in a macro is not convenient, and it would be better to implement it in the real compiler. We allow implementation and experimentation language features on master, but only in limited circumstances. To add an experimental feature gate, you need:</p>
 <ul>
-<li>You need to have a lang team champion who supports the idea. The champion must be some <a href="https://www.rust-lang.org/governance/teams/lang">active member of the language team</a>.</li>
-<li>You need to open a PR adding an feature gate to the compiler. This feature gate should be marked as <strong>experimental</strong> so that it warns if people try to use it.</li>
-<li>You or the champion should create a tracking issue for this feature and mark it as <strong>experimental</strong>, indicating that an RFC has not yet been written.</li>
-<li>The champion should initiative an FCP approving the decision to add the feature gate.
+<li>An <strong>experimentor</strong> who is driving the work. They need to be an experienced contributor and able to devote enough time to keep the idea moving forward steadily.</li>
+<li>A <strong>lang-team champion</strong> who will <a href="how_to/../decision_process.html">second</a> the idea. </li>
+</ul>
+<p>The process is as follows:</p>
+<ul>
+<li>The <strong>experimentor</strong> should open a PR adding a new feature gate to the compiler, along with an associated tracking issue. They should include a short write-up documenting the motivation and outline of what they are trying to achieve. </li>
+<li>The <strong>lang-team champion</strong> can &quot;second&quot; the PR, starting an FCP. Once the FCP completes, the PR can land and implementation work begins (always gated under the new feature gate).
 <ul>
 <li><strong>Approving a new feature gate does not imply support for the feature.</strong> It implies only that the lang team thinks it is worth doing the experiment to see what results.</li>
 <li><em>Note to lang team members:</em> If you have concerns about the feasibility or wisdom of the feature, the right course of action is usually to allow experimentation to continue, but ensure that your concerns are noted on the tracking issue. This allows the experimentors to try and gather data and address your concern.</li>
@@ -311,6 +316,21 @@ click StyleTeamNotified href &quot;./stabilize.html&quot; &quot;Read about stabi
 </li>
 </ul>
 <p><strong>In order to be stabilized, a full RFC will be required.</strong> The goal of the experimentation period is simply to gain experience and information so that a better RFC can be authored.</p>
+<h2 id="frequently-asked-questions-1"><a class="header" href="#frequently-asked-questions-1">Frequently asked questions</a></h2>
+<h3 id="what-is-the-role-of-the-lang-team-champion"><a class="header" href="#what-is-the-role-of-the-lang-team-champion">What is the role of the lang team champion?</a></h3>
+<p>The lang team champion is the connection to the lang team. They should be available to discuss progress and generally track what's going on, and they can also raise questions to the broader lang team during triage meetings and the like (of course, the meetings are open, so you're also welcome to join if you are able).</p>
+<h3 id="ive-got-an-idea-how-do-i-find-a-lang-team-champion"><a class="header" href="#ive-got-an-idea-how-do-i-find-a-lang-team-champion">I've got an idea, how do I find a lang-team champion?</a></h3>
+<p>We don't really have a process for that, but circulating the idea on Zulip is a good idea, or perhaps reach out to lang-team members that you know.</p>
+<h3 id="why-is-experimentation-limited-to-experienced-contributors"><a class="header" href="#why-is-experimentation-limited-to-experienced-contributors">Why is experimentation limited to experienced contributors?</a></h3>
+<p>We've found that it works best when the person driving the experiment is able to move independently and without mentoring. Most folks on the lang team have limited bandwidth, so when they agree to serve as champion, they are committing to meet regularly, give feedback on your progress, and to circulate ideas within the lang team, but they are not necesarily going to have time to help find solutions to problems beyond that ((many lang team members aren't that familiar with the compiler details anyway). </p>
+<h3 id="what-if-ive-got-an-implementation-on-a-branch-already"><a class="header" href="#what-if-ive-got-an-implementation-on-a-branch-already">What if I've got an implementation on a branch already?</a></h3>
+<p>What we're really looking for in experimentors is commitment and the ability to see the work through. If you're able to implement the idea in a branch, that's good evidence. See if you can find a lang-team champion.</p>
+<h3 id="can-a-lang-team-member-propose-an-experiment-too"><a class="header" href="#can-a-lang-team-member-propose-an-experiment-too">Can a lang-team member propose an experiment, too?</a></h3>
+<p>Lang-team members can be the one to propose an experiment, and can serve as their own champion, but they should find someone else to &quot;second&quot; the FCP on the feature gate PR.</p>
+<h3 id="what-if-im-not-an-experienced-contributor-but-i-have-a-mentor-who-is"><a class="header" href="#what-if-im-not-an-experienced-contributor-but-i-have-a-mentor-who-is">What if I'm not an experienced contributor, but I have a mentor who is?</a></h3>
+<p>That's fine, you can still open the PR, but your mentor should be the one to nominate it for lang-team consideration.</p>
+<h3 id="what-if-im-an-experienced-contributor-and-i-want-to-mentor-someone"><a class="header" href="#what-if-im-an-experienced-contributor-and-i-want-to-mentor-someone">What if I'm an experienced contributor, and I want to mentor someone?</a></h3>
+<p>See the previous question.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="how-do-i-propose-a-new-lint-or-extend-an-existing-one"><a class="header" href="#how-do-i-propose-a-new-lint-or-extend-an-existing-one">How do I propose a new lint, or extend an existing one?</a></h1>
 <p>For small lints, you can follow the <a href="how_to/./propose.html">policy for smaller changes</a>: implement the lint, open a PR, and then <a href="how_to/./nominate.html">nominate</a> it for lang-team attention. </p>
 <p>We may request an RFC if the lint will warn by default and is expected to affect a lot of users, or if the lint is controversial, we may request an RFC. If in doubt, you can always raise the idea on Zulip first.</p>
@@ -818,7 +838,7 @@ should link to the previous decision summary table.</li>
 </ul>
 </li>
 </ul>
-<h1 id="frequently-asked-questions-1"><a class="header" href="#frequently-asked-questions-1">Frequently asked questions</a></h1>
+<h1 id="frequently-asked-questions-2"><a class="header" href="#frequently-asked-questions-2">Frequently asked questions</a></h1>
 <h2 id="why-can-members-override-other-members-positions"><a class="header" href="#why-can-members-override-other-members-positions">Why can members override other members positions?</a></h2>
 <p>It's quite common to want to check boxes and similar on behalf of all the
 people in a meeting. It's also annoying to have to restart a decision process

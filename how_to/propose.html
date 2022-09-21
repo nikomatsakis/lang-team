@@ -173,11 +173,11 @@ subgraph Stages
     RFCAccepted --&gt; FeatureComplete
     FeatureComplete --&gt; StabilizationProposed
     %% StabilizationProposed --&gt; StabilizationAccepted
-    StabilizationProposed --&gt; Documented
+    StabilizationProposed --do this--&gt; Documented
     Documented --&gt; StabilizationAccepted
-    StabilizationProposed --&gt; TypesTeamApproval
+    StabilizationProposed --and this--&gt; TypesTeamApproval
     TypesTeamApproval --&gt; StabilizationAccepted
-    StabilizationProposed --&gt; StyleTeamNotified
+    StabilizationProposed --and this--&gt; StyleTeamNotified
     StyleTeamNotified --&gt; StabilizationAccepted
     StabilizationAccepted -.if a change is needed.-&gt; ChangeProposed
     ChangeProposed --FCP proposed and accepted--&gt; ChangeAccepted

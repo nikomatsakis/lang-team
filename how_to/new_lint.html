@@ -136,7 +136,17 @@
                     <main>
                         <h1 id="how-do-i-propose-a-new-lint-or-extend-an-existing-one"><a class="header" href="#how-do-i-propose-a-new-lint-or-extend-an-existing-one">How do I propose a new lint, or extend an existing one?</a></h1>
 <p>For small lints, you can follow the <a href="./propose.html">policy for smaller changes</a>: implement the lint, open a PR, and then <a href="./nominate.html">nominate</a> it for lang-team attention. </p>
-<p>We may request an RFC if the lint will warn by default and is expected to affect a lot of users, or if the lint is controversial, we may request an RFC. If in doubt, you can always raise the idea on Zulip first.</p>
+<p>We may request an RFC if:</p>
+<ul>
+<li>the lint is on (warn or higher level) by default, and is expected to affect a lot of users</li>
+<li>the lint is controversial</li>
+<li>the lint sets a (new) direction for Rust -- for example, changing an existing pattern to a different one, even if the pattern isn't widely used
+<ul>
+<li>e.g., deprecating a syntax to make room for a possible new language feature</li>
+</ul>
+</li>
+</ul>
+<p>If in doubt, you can always raise the idea on Zulip first.</p>
 
                     </main>
 

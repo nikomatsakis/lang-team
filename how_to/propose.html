@@ -141,15 +141,15 @@
 <ul>
 <li>An <a href="https://github.com/rust-lang/rfcs/#when-you-need-to-follow-this-process">RFC</a> is required for most changes.</li>
 <li>Small changes that fit in a PR, have narrow impact, and are uncontroversial can skip the RFC process (<a href="#what-constitutes-a-small-addition-or-tweak-to-an-existing-feature">read more</a>).</li>
-<li>If you have a lang-team champion and an experienced implementor, you can start <a href="./experiment.html">experimenting</a> by just adding a feature gate and a tracking issue, but you'll still need an RFC later.</li>
+<li>If you have a lang-team liaison and an experienced implementor, you can start <a href="./experiment.html">experimenting</a> by just adding a feature gate and a tracking issue, but you'll still need an RFC later.</li>
 </ul>
 <h2 id="complete-flowchart"><a class="header" href="#complete-flowchart">Complete flowchart</a></h2>
 <p>The following lays out the complete flow chart for language features. Note that you can click on most of the nodes to read about that step in more detail.</p>
-<pre><code class="language-mermaid">flowchart TD
+<pre class="mermaid">flowchart TD
 
 subgraph LangTeamChangeProcess [Lang Team Change Process]
 TweakToExistingFeature[&quot;How large is your proposed change?&quot;]
-LangTeamChampion[&quot;Are you an experienced contributor\nwith a lang team champion?&quot;]
+LangTeamLiaison[&quot;Are you an experienced contributor\nwith a lang team liaison?&quot;]
 NeedToExperiment[&quot;Do you need to experiment\nbefore you can write RFC?&quot;]
 
 subgraph Stages
@@ -183,9 +183,9 @@ subgraph Stages
 end
 
 TweakToExistingFeature -- Tweak to an existing aspect of Rust --&gt; ChangeProposed
-TweakToExistingFeature -- New feature or a complex change --&gt; LangTeamChampion
-LangTeamChampion -- Yes --&gt; NeedToExperiment
-LangTeamChampion -- No --&gt; RFCOpen
+TweakToExistingFeature -- New feature or a complex change --&gt; LangTeamLiaison
+LangTeamLiaison -- Yes --&gt; NeedToExperiment
+LangTeamLiaison -- No --&gt; RFCOpen
 NeedToExperiment -- Yes --&gt; ExperimentalFeatureGateProposed
 NeedToExperiment -- No --&gt; RFCOpen
 end
@@ -206,14 +206,14 @@ click Documented href &quot;./stabilize.html&quot; &quot;Read about stabilizatio
 click TypesTeamApproval href &quot;./stabilize.html&quot; &quot;Read about stabilization procedure&quot;
 click StyleTeamNotified href &quot;./stabilize.html&quot; &quot;Read about stabilization procedure&quot;
 click TweakToExistingFeature href &quot;./propose.html#what-constitutes-a-small-addition-or-tweak-to-an-existing-feature&quot;
-click LangTeamChampion &quot;./experiment.html&quot; &quot;Read about experimental feature gates&quot;
+click LangTeamLiaison &quot;./experiment.html&quot; &quot;Read about experimental feature gates&quot;
 click NeedToExperiment &quot;./experiment.html&quot; &quot;Read about experimental feature gates&quot;
-</code></pre>
+</pre>
 <h2 id="frequently-asked-questions"><a class="header" href="#frequently-asked-questions">Frequently asked questions</a></h2>
 <h3 id="what-do-the-labels-lang-team-second-and-lang-team-consensus-mean"><a class="header" href="#what-do-the-labels-lang-team-second-and-lang-team-consensus-mean">What do the labels &quot;lang-team second&quot; and &quot;lang-team consensus&quot; mean?</a></h3>
 <p>These refer to our <a href="./decision_process.html">decision process</a>:</p>
 <ul>
-<li>A <strong>second</strong> means that some <a href="https://www.rust-lang.org/governance/teams/lang">lang team member</a> must champion the idea, but it doesn't require full checkboxes. Instead, the idea goes immediately into &quot;final comment period&quot; (which lasts for 10 days), giving other lang team members a chance to comment on it and raise concerns. We use seconding for <em>reversible decisions</em> that don't commit the language to anything in particular.</li>
+<li>A <strong>second</strong> means that some <a href="https://www.rust-lang.org/governance/teams/lang">lang team member</a> must liaison the idea, but it doesn't require full checkboxes. Instead, the idea goes immediately into &quot;final comment period&quot; (which lasts for 10 days), giving other lang team members a chance to comment on it and raise concerns. We use seconding for <em>reversible decisions</em> that don't commit the language to anything in particular.</li>
 <li>A <strong>consensus</strong> means that every <a href="https://www.rust-lang.org/governance/teams/lang">lang team member</a> must check their box and actively approve.</li>
 </ul>
 <p>In both cases, we currently handle consensus with rfcbot (<code>@rfcbot fcp</code>). For a second, however, the lang team member who initiatives FCP can go ahead and check the boxes of other lang-team members, they can raise concerns if needed. This is a temporary measure until we have first-class support for seconding.</p>

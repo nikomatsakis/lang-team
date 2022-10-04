@@ -139,18 +139,18 @@
 <h2 id="process"><a class="header" href="#process">Process</a></h2>
 <p>If you are an experienced Rust contributor who would like to start an experiment in-tree, the process is as follows:</p>
 <ul>
-<li>Write-up a description of the problem you are trying to solve and the general shape of the solution you want to work on. Discuss it on Zulip or elsewhere to find a <strong>lang-team champion</strong>:
+<li>Write-up a description of the problem you are trying to solve and the general shape of the solution you want to work on. Discuss it on Zulip or elsewhere to find a <strong>lang-team liaison</strong>:
 <ul>
-<li>The champion is the connection to the lang-team. They can check in with you from time to time to see how the work is going and relay those updates to the lang-team (of course, you're always welcome to join meetings yourself too!). They can also help to discuss problems that arise.</li>
+<li>The liaison is the connection to the lang-team. They can check in with you from time to time to see how the work is going and relay those updates to the lang-team (of course, you're always welcome to join meetings yourself too!). They can also help to discuss problems that arise.</li>
 </ul>
 </li>
-<li>Once you've found a champion, open a PR adding a new feature gate to the compiler and create an associated tracking issue.
+<li>Once you've found a liaison, open a PR adding a new feature gate to the compiler and create an associated tracking issue.
 <ul>
 <li>The PR and tracking issue should include a write-up documenting the motivation and outline of what they are trying to achieve. </li>
 <li>The feature gate should be marked as 'experimental', so that users get warnings if they try to use it. This flag has to stay until an RFC is accepted, even if the implementation is in good shape.</li>
 </ul>
 </li>
-<li>The lang-team champion will &quot;second&quot; the PR, starting an FCP. Once the FCP completes, the PR can land and implementation work begins (always gated under the new feature gate).
+<li>The lang-team liaison will &quot;second&quot; the PR, starting an FCP. Once the FCP completes, the PR can land and implementation work begins (always gated under the new feature gate).
 <ul>
 <li><strong>Approving a new feature gate does not imply support for the feature.</strong> It implies only that the lang team thinks it is worth doing the experiment to see what results.</li>
 <li>Note to lang team members: If you have concerns about the feasibility or wisdom of the feature, the right course of action is usually to allow experimentation to continue, but ensure that your concerns are noted on the tracking issue. This allows the experimentors to try and gather data and address your concern.</li>
@@ -159,32 +159,32 @@
 <li>When you feel the design is ready, you write an RFC as normal with your proposal. The goal of the experimentation period is simply to gain experience and information so that a better RFC can be authored.</li>
 </ul>
 <h2 id="frequently-asked-questions"><a class="header" href="#frequently-asked-questions">Frequently asked questions</a></h2>
-<h3 id="what-is-the-role-of-the-lang-team-champion"><a class="header" href="#what-is-the-role-of-the-lang-team-champion">What is the role of the lang team champion?</a></h3>
-<p>The lang team champion is the connection to the lang team. They should be available to discuss progress and generally track what's going on, and they can also raise questions to the broader lang team during triage meetings and the like (of course, the meetings are open, so you're also welcome to join if you are able).</p>
-<h3 id="ive-got-an-idea-how-do-i-find-a-lang-team-champion"><a class="header" href="#ive-got-an-idea-how-do-i-find-a-lang-team-champion">I've got an idea, how do I find a lang-team champion?</a></h3>
+<h3 id="what-is-the-role-of-the-lang-team-liaison"><a class="header" href="#what-is-the-role-of-the-lang-team-liaison">What is the role of the lang team liaison?</a></h3>
+<p>The lang team liaison is the connection to the lang team. They should be available to discuss progress and generally track what's going on, and they can also raise questions to the broader lang team during triage meetings and the like (of course, the meetings are open, so you're also welcome to join if you are able).</p>
+<h3 id="ive-got-an-idea-how-do-i-find-a-lang-team-liaison"><a class="header" href="#ive-got-an-idea-how-do-i-find-a-lang-team-liaison">I've got an idea, how do I find a lang-team liaison?</a></h3>
 <p>We don't really have a process for that, but circulating the idea on Zulip is a good idea, or perhaps reach out to lang-team members that you know.</p>
 <h3 id="why-is-experimentation-limited-to-experienced-contributors"><a class="header" href="#why-is-experimentation-limited-to-experienced-contributors">Why is experimentation limited to experienced contributors?</a></h3>
-<p>We've found that it works best when the person driving the experiment is able to move independently and without mentoring. Most folks on the lang team have limited bandwidth, so when they agree to serve as champion, they are committing to meet regularly, give feedback on your progress, and to circulate ideas within the lang team, but they are not necesarily going to have time to help find solutions to problems beyond that ((many lang team members aren't that familiar with the compiler details anyway). </p>
+<p>We've found that it works best when the person driving the experiment is able to move independently and without mentoring. Most folks on the lang team have limited bandwidth, so when they agree to serve as liaison, they are committing to meet regularly, give feedback on your progress, and to circulate ideas within the lang team, but they are not necesarily going to have time to help find solutions to problems beyond that ((many lang team members aren't that familiar with the compiler details anyway). </p>
 <h3 id="what-if-ive-got-an-implementation-on-a-branch-already"><a class="header" href="#what-if-ive-got-an-implementation-on-a-branch-already">What if I've got an implementation on a branch already?</a></h3>
-<p>What we're really looking for in experimentors is commitment and the ability to see the work through. If you're able to implement the idea in a branch, that's good evidence. See if you can find a lang-team champion.</p>
+<p>What we're really looking for in experimentors is commitment and the ability to see the work through. If you're able to implement the idea in a branch, that's good evidence. See if you can find a lang-team liaison.</p>
 <h3 id="can-a-lang-team-member-propose-an-experiment-too"><a class="header" href="#can-a-lang-team-member-propose-an-experiment-too">Can a lang-team member propose an experiment, too?</a></h3>
-<p>Lang-team members can be the one to propose an experiment, and can serve as their own champion, but they should find someone else to &quot;second&quot; the FCP on the feature gate PR.</p>
+<p>Lang-team members can be the one to propose an experiment, and can serve as their own liaison, but they should find someone else to &quot;second&quot; the FCP on the feature gate PR.</p>
 <h3 id="what-if-im-not-an-experienced-contributor-but-i-have-a-mentor-who-is"><a class="header" href="#what-if-im-not-an-experienced-contributor-but-i-have-a-mentor-who-is">What if I'm not an experienced contributor, but I have a mentor who is?</a></h3>
 <p>That's fine, you can still open the PR, but your mentor should be the one to nominate it for lang-team consideration.</p>
 <h3 id="what-if-im-an-experienced-contributor-and-i-want-to-mentor-someone"><a class="header" href="#what-if-im-an-experienced-contributor-and-i-want-to-mentor-someone">What if I'm an experienced contributor, and I want to mentor someone?</a></h3>
 <p>See the previous question.</p>
 <h3 id="as-the-experimentor-what-do-i-do-when-i-feel-like-i-am-ready-to-write-the-rfc"><a class="header" href="#as-the-experimentor-what-do-i-do-when-i-feel-like-i-am-ready-to-write-the-rfc">As the experimentor, what do I do when I feel like I am ready to write the RFC?</a></h3>
-<p>Glad to hear the experiment was a success! Check in with the champion to figure out if they feel like it's time to author the RFC. In particular, if people raised concerns about the design in the beginning, make sure that you have a good answer for them. Even better, show them the answer, and see if they are convinced!</p>
+<p>Glad to hear the experiment was a success! Check in with the liaison to figure out if they feel like it's time to author the RFC. In particular, if people raised concerns about the design in the beginning, make sure that you have a good answer for them. Even better, show them the answer, and see if they are convinced!</p>
 <h3 id="as-the-experimentor-what-if-i-feel-like-we-dont-want-the-feature-after-all"><a class="header" href="#as-the-experimentor-what-if-i-feel-like-we-dont-want-the-feature-after-all">As the experimentor, what if I feel like we don't want the feature after all?</a></h3>
-<p>This is also a very useful finding! In this case, it's best to write up a comment (potentially short) on the tracking issue reflecting the findings from the experimentation phase, and suggest to your lang team champion that the tracking issue may want to be fcp'd to close so we can remove the feature from the compiler.</p>
+<p>This is also a very useful finding! In this case, it's best to write up a comment (potentially short) on the tracking issue reflecting the findings from the experimentation phase, and suggest to your lang team liaison that the tracking issue may want to be fcp'd to close so we can remove the feature from the compiler.</p>
 <p>It's generally a good idea to do this for features that aren't being actively driven to conclusion and are in the experimental phase, as they can easily accumulate otherwise.</p>
 <h3 id="as-the-experimentor-what-if-i-run-out-of-time-to-drive-this-proposal"><a class="header" href="#as-the-experimentor-what-if-i-run-out-of-time-to-drive-this-proposal">As the experimentor, what if I run out of time to drive this proposal?</a></h3>
 <p>First off, it's always ok to take a break. If you are going to step away for a long time, you should at minimum leave a comment with your current thinking on things -- if nothing else, it'll help you remember what was going on when you come back. </p>
-<p>If you feel like you have to step away indefinitely, then discuss with the champion. They may be able to find someone else, or it may make sense to simply write-up your findings and remove the feature from the compiler.</p>
+<p>If you feel like you have to step away indefinitely, then discuss with the liaison. They may be able to find someone else, or it may make sense to simply write-up your findings and remove the feature from the compiler.</p>
 <h3 id="as-a-lang-team-member-what-do-i-do-if-i-feel-like-my-concerns-are-not-being-addressed"><a class="header" href="#as-a-lang-team-member-what-do-i-do-if-i-feel-like-my-concerns-are-not-being-addressed">As a lang team member, what do I do if I feel like my concerns are not being addressed?</a></h3>
-<p>Bring up your concerns with the lang team champion and try to work towards finding experiments or new approaches that can resolve them. If this feature is ever going to make it to RFC, they are going to need your agreement, after all!</p>
+<p>Bring up your concerns with the lang team liaison and try to work towards finding experiments or new approaches that can resolve them. If this feature is ever going to make it to RFC, they are going to need your agreement, after all!</p>
 <h3 id="what-if-i-have-a-competing-proposal-can-i-land-my-own-experimental-feature"><a class="header" href="#what-if-i-have-a-competing-proposal-can-i-land-my-own-experimental-feature">What if I have a competing proposal? Can I land my own experimental feature?</a></h3>
-<p>Obviously the <em>best</em> is if you can combine your idea with the existing experiment, particularly if your idea is a minor variation. But it is also ok to have multiple competing experiments, if the idea is going in a different direction. Just follow the same process (find a lang team champion, etc). Be sure to note in the PR etc that you know this overlaps with the existing experiment and are looking to explore a different part of the design space. Also, it will be really helpful if you and the other experimenters can jointly maintain a kind of FAQ comparing and contrasting the two ideas.</p>
+<p>Obviously the <em>best</em> is if you can combine your idea with the existing experiment, particularly if your idea is a minor variation. But it is also ok to have multiple competing experiments, if the idea is going in a different direction. Just follow the same process (find a lang team liaison, etc). Be sure to note in the PR etc that you know this overlaps with the existing experiment and are looking to explore a different part of the design space. Also, it will be really helpful if you and the other experimenters can jointly maintain a kind of FAQ comparing and contrasting the two ideas.</p>
 
                     </main>
 
